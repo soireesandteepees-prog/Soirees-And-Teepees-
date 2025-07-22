@@ -14,13 +14,15 @@ export const Header = () => {
 
 return (
     <header className="bg-white/90 backdrop-blur-sm border-b border-pink-100 sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-2">
+        <div className="container mx-auto py-2">
             <nav className="flex items-center justify-between">
-            <div className="flex items-center space-x-1">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center">
-                    <Image src={logo} alt="Logo" className="w-10 h-10 rounded-xl" />
-                </div>
-                <span className="text-sm font-semibold font-cinzel">SOIREES & TEEPEES</span>
+            <div >
+                <Link href='/' className="flex items-center space-x-1">
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center">
+                        <Image src={logo} alt="Logo" className="w-10 h-10 rounded-xl" />
+                    </div>
+                    <span className="text-sm font-semibold font-cinzel">SOIREES & TEEPEES</span>
+                </Link>
             </div>
             <div className="hidden md:flex items-center space-x-8">
                 <Link href="/" className="text-gray-700 hover:text-primary_button transition-colors cursor-pointer">Home</Link>
@@ -40,11 +42,16 @@ return (
 
         {
             isMenuOpen &&
-        <div className="container flex justify-center mx-auto px-4 py-2">
+        <div onClick={handleModal} className="flex justify-center py-2">
             <nav className="flex items-center text-center justify-between align-middle">
                 <div className="flex flex-col items-center space-y-6 space-x-8">
-                    <Link href="/" className="text-gray-700 hover:text-primary_button pl-6 transition-colors cursor-pointer">Home</Link>
-                    <Link href="/about" className="text-gray-700 hover:text-primary_button transition-colors cursor-pointer">About</Link>
+                    <button onClick={handleModal}>
+                        <Link href="/" className="text-gray-700 hover:text-primary_button pl-6 transition-colors cursor-pointer">Home</Link>
+                    </button>
+
+                    <button onClick={handleModal}>
+                        <Link href="/about" className="text-gray-700 hover:text-primary_button transition-colors cursor-pointer">About</Link>
+                    </button>
                     <Link href="/services" className="text-gray-700 hover:text-primary_button transition-colors cursor-pointer">Services</Link>
                     <Link href="/gallery" className="text-gray-700 hover:text-primary_button transition-colors cursor-pointer">Gallery</Link>
                     <Link href="/portfolio" className="text-gray-700 hover:text-primary_button transition-colors cursor-pointer">Portfolio</Link>

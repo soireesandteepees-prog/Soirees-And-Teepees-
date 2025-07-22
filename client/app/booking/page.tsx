@@ -151,7 +151,7 @@ export default function Booking() {
     <div className="min-h-screen bg-gradient-to-br from-primary_background to-secondary_background">
 
       {/* Progress Steps */}
-      <section className="fixed top-18 z-50 w-full py-8 bg-white border-b border-primary_button">
+      <section className="sticky top-0 z-50 w-full py-8 bg-white border-b border-primary_button">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-center space-x-5">
             {[
@@ -161,23 +161,18 @@ export default function Booking() {
               { step: 4, title: 'Payment', icon: 'ri-secure-payment-line' }
             ].map((item, index) => (
               <div key={item.step} className="flex items-center">
-                <div className={`flex flex-col lg:flex-row  items-center ${index > 0 ? 'md:ml-8' : ''}`}>
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
+                <div className={`flex flex-col p-0 m-0 space-x-3 lg:flex-row  items-center ${index > 0 ? 'md:ml-8' : ''}`}>
+                  <div className={`w-12 h-12 ml-3 rounded-full flex items-center justify-center ${
                     currentStep >= item.step ? 'bg-primary_button text-white' : 'bg-gray-200 text-gray-500'
                   }`}>
                     <i className={`${item.icon} text-lg`}></i>
                   </div>
-                  <span className={`ml-3 font-medium ${
+                  <span className={` font-medium ${
                     currentStep >= item.step ? 'text-primary_button' : 'text-gray-500'
                   }`}>
                     {item.title}
                   </span>
                 </div>
-                {index < 3 && (
-                  <div className={`w-3 mb-5 lg:mb-0 md:w-16 h-0.5 md:ml-8 ${
-                    currentStep > item.step ? 'bg-primary_button' : 'bg-gray-200'
-                  }`}></div>
-                )}
               </div>
             ))}
           </div>
