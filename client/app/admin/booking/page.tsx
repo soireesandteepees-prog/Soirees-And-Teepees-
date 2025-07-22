@@ -225,7 +225,7 @@ export default function Booking() {
                                 // onChange={(e) => updateStatus(booking.id, e.target.value)}
                                 className={`text-xs items-center pr-2 space-x-1 font-medium flex ${books.status === 'pending' && 'text-yellow-500'} ${books.status === 'completed' && 'text-green-500'} ${books.status === 'cancelled' && 'text-red-500'}`}
                             >
-                                <div className={`w-2 h-2 rounded-full ${books.status === 'pending' && 'bg-yellow-500'} ${books.status === 'completed' && 'bg-green-500'} ${books.status === 'cancelled' && 'bg-red-500'}`}></div>
+                                
                                 {statusOptions.map((status) => (
                                     <option key={status} value={status}>
                                         {capitalizeFirstLetter(status as string)}
