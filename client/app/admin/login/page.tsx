@@ -54,11 +54,8 @@ export default function Contact() {
             dispatch(setIsAuthenticated(true));
 
             toast.success('Login successful, Redirecting to Home');
-
-            setTimeout(() => {
-                router.push('/admin')
-            }, 3000)
-
+            router.push('/admin')
+            
         } else {
             toast.error('Invalid email or password');
         }

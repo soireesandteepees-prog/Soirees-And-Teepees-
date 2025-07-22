@@ -174,7 +174,7 @@ export default function Booking() {
                   </span>
                 </div>
                 {index < 3 && (
-                  <div className={`w-5 mb-5 lg:mb-0 md:w-16 h-0.5 ml-4 md:ml-8 ${
+                  <div className={`w-3 mb-5 lg:mb-0 md:w-16 h-0.3 ml-1 md:ml-8 ${
                     currentStep > item.step ? 'bg-primary_button' : 'bg-gray-200'
                   }`}></div>
                 )}
@@ -342,7 +342,7 @@ export default function Booking() {
                   </div>
                 </form>
 
-                <div className="flex justify-between mt-8">
+                <div className="flex flex-col md:flex-row justify-between mt-8">
                   <button
                     onClick={prevStep}
                     className="border-2 border-primary_button text-primary_button px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary_button hover:text-white transition-colors whitespace-nowrap"
@@ -461,7 +461,7 @@ export default function Booking() {
                   </div>
                 </form>
 
-                <div className="flex justify-between mt-8">
+                <div className="flex flex-col md:flex-row justify-between mt-8">
                   <button
                     onClick={prevStep}
                     className="border-2 border-primary_button text-primary_button px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary_button hover:text-white transition-colors whitespace-nowrap"
@@ -537,7 +537,7 @@ export default function Booking() {
                 <div className="text-center">
                   <button
                     onClick={handleSubmit}
-                    className="bg-primary_button text-white px-12 py-4 rounded-full text-xl font-semibold hover:bg-[#FFB88C] transition-colors mb-4 whitespace-nowrap"
+                    className="bg-primary_button text-white px-7 py-4 rounded-full text-xl font-semibold hover:bg-[#FFB88C] transition-colors mb-4 whitespace-nowrap"
                   >
                     {loading ? (
                       <FaSpinner className="animate-spin mr-2" />
