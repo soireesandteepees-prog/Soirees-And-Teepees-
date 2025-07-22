@@ -151,7 +151,7 @@ export default function Booking() {
     <div className="min-h-screen bg-gradient-to-br from-primary_background to-secondary_background">
 
       {/* Progress Steps */}
-      <section className="relative w-full py-8 bg-white border-b border-primary_button">
+      <section className="fixed top-18 z-50 w-full py-8 bg-white border-b border-primary_button">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-center space-x-5">
             {[
@@ -161,7 +161,7 @@ export default function Booking() {
               { step: 4, title: 'Payment', icon: 'ri-secure-payment-line' }
             ].map((item, index) => (
               <div key={item.step} className="flex items-center">
-                <div className={`flex flex-col lg:flex-row  items-center ${index > 0 ? 'ml- md:ml-8' : ''}`}>
+                <div className={`flex flex-col lg:flex-row  items-center ${index > 0 ? 'md:ml-8' : ''}`}>
                   <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
                     currentStep >= item.step ? 'bg-primary_button text-white' : 'bg-gray-200 text-gray-500'
                   }`}>
@@ -174,7 +174,7 @@ export default function Booking() {
                   </span>
                 </div>
                 {index < 3 && (
-                  <div className={`w-3 mb-5 lg:mb-0 md:w-16 h-0.3 ml-1 md:ml-8 ${
+                  <div className={`w-3 mb-5 lg:mb-0 md:w-16 h-0.5 md:ml-8 ${
                     currentStep > item.step ? 'bg-primary_button' : 'bg-gray-200'
                   }`}></div>
                 )}
@@ -342,7 +342,7 @@ export default function Booking() {
                   </div>
                 </form>
 
-                <div className="flex flex-col md:flex-row justify-between mt-8">
+                <div className="flex flex-col space-y-4 md:flex-row justify-between mt-8">
                   <button
                     onClick={prevStep}
                     className="border-2 border-primary_button text-primary_button px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary_button hover:text-white transition-colors whitespace-nowrap"
@@ -461,7 +461,7 @@ export default function Booking() {
                   </div>
                 </form>
 
-                <div className="flex flex-col md:flex-row justify-between mt-8">
+                <div className="flex space-y-4 flex-col md:flex-row justify-between mt-8">
                   <button
                     onClick={prevStep}
                     className="border-2 border-primary_button text-primary_button px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary_button hover:text-white transition-colors whitespace-nowrap"
