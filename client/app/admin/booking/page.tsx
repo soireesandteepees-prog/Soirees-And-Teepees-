@@ -175,8 +175,7 @@ export default function Booking() {
 }
 
 
-
-export const BookingDiv = ({books}: {books: BookingState}) => {
+ const BookingDiv = ({books}: {books: BookingState}) => {
     const capitalizeFirstLetter = (str: string | undefined) => {
         if (!str || typeof str !== 'string') {
             return "";
