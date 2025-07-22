@@ -14,7 +14,7 @@ export const Header = () => {
 
 return (
     <header className="bg-white/90 backdrop-blur-sm border-b border-pink-100 sticky top-0 z-50">
-        <div className="container mx-auto py-2">
+        <div className="container mx-auto px-2 py-2">
             <nav className="flex items-center justify-between">
             <div >
                 <Link href='/' className="flex items-center space-x-1">
@@ -52,10 +52,22 @@ return (
                     <button onClick={handleModal}>
                         <Link href="/about" className="text-gray-700 hover:text-primary_button transition-colors cursor-pointer">About</Link>
                     </button>
-                    <Link href="/services" className="text-gray-700 hover:text-primary_button transition-colors cursor-pointer">Services</Link>
-                    <Link href="/gallery" className="text-gray-700 hover:text-primary_button transition-colors cursor-pointer">Gallery</Link>
-                    <Link href="/portfolio" className="text-gray-700 hover:text-primary_button transition-colors cursor-pointer">Portfolio</Link>
-                    <Link href="/contact" className="text-gray-700 hover:text-primary_button transition-colors cursor-pointer">Contact</Link>
+
+                    <button onClick={handleModal}>
+                        <Link href="/services" className="text-gray-700 hover:text-primary_button transition-colors cursor-pointer">Services</Link>
+                    </button>
+
+                    <button onClick={handleModal}>
+                        <Link href="/gallery" className="text-gray-700 hover:text-primary_button transition-colors cursor-pointer">Gallery</Link>
+                    </button>
+
+                    <button onClick={handleModal}>
+                        <Link href="/portfolio" className="text-gray-700 hover:text-primary_button transition-colors cursor-pointer">Portfolio</Link>
+                    </button>
+
+                    <button onClick={handleModal}>
+                        <Link href="/contact" className="text-gray-700 hover:text-primary_button transition-colors cursor-pointer">Contact</Link>
+                    </button>
                 </div>
             </nav>
         </div>
