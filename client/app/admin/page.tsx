@@ -14,10 +14,8 @@ export default function Admin() {
     useEffect(() => {
     if (!isAuthenticated) {
         router.push("/admin/login");
-    
-        return;
-    }
-    // fetchBookings();
+        console.log(isAuthenticated);
+        }
     }, [isAuthenticated]);
 
 
