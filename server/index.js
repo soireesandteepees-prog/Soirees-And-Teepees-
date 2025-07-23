@@ -1,5 +1,5 @@
-require('dotenv').config();
 const express = require('express');
+require('dotenv').config();
 const app = express();
 const cors = require('cors');
 const db = require('./models');
@@ -16,7 +16,7 @@ app.use(cors({
 }));
 
 app.post('/api/webhooks/stripe', express.raw({ type: 'application/json' }), async (req, res) => {
-  const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET; // Set this in your Stripe dashboard
+  const endpointSecret = 'whsec_oENVy8ynWDUeiH4Ct4i6Z4BL1Lyq4WBT'; // Set this in your Stripe dashboard
   const sig = req.headers['stripe-signature'];
   let event;
 
@@ -87,7 +87,7 @@ app.post('/api/create-stripe-session', async (req, res) => {
 
 app.use('/api/booking', bookingRoutes);
 app.get('/', (req, res) => {
-  res.send(process.env.STRIPE_WEBHOOK_SECRET);
+  res.send('API is running...');
 });
 // app.use('/api/auth', authRoutes);
 // app.use('/api/users', usersRoutes);
