@@ -19,7 +19,7 @@ export default function Booking() {
     const fetchBookings = async () => {
         setIsloading(true);
         try {
-            const response = await fetch('soiressandteepees-production.up.railway.app/api/booking/allbookings', {
+            const response = await fetch('https://soiressandteepees-production.up.railway.app/api/booking/allbookings', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -82,8 +82,8 @@ export default function Booking() {
                             className="flex items-center cursor-pointer"
                             onClick={() => setCurrentStep(item.step)} 
                         >
-                            <div className={`flex flex-col lg:flex-row  items-center ${index > 0 ? 'ml- md:ml-8' : ''}`}>
-                            <span className={`ml-3 font-medium ${
+                            <div className={`flex flex-col lg:flex-row  items-center ${index > 0 ? ' md:ml-8' : ''}`}>
+                            <span className={`ml-0 font-medium ${
                                 currentStep === item.step ? 'text-primary_button border-b-2 border-primary_button rounded-sm' : 'text-gray-500'
                             }`}>
                                 {item.title}
@@ -188,7 +188,7 @@ export default function Booking() {
             status: newStatus
         }
         try {
-            const patch = await fetch(`soiressandteepees-production.up.railway.app/api/booking/${bookingId}/status`, {
+            const patch = await fetch(`https://soiressandteepees-production.up.railway.app/api/booking/${bookingId}/status`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
