@@ -21,7 +21,7 @@ const persistConfig = {
 
 const persistedAuthReducer = persistReducer(persistConfig, AuthReducer);
 
-export const makestore = () =>
+export const store = 
   configureStore({
     reducer: {
       booking: BookingReducer,
@@ -36,10 +36,8 @@ export const makestore = () =>
     // devTools: process.env.NODE_ENV !== "production",
   });
 
-  export const persistor = persistStore(makestore());
+  
+  export const persistor = persistStore(store);
 
-  export type AppStore = ReturnType<typeof makestore>;
-  export type AppState = ReturnType<AppStore['getState']>;
-  export type AppDispatch = AppStore['dispatch'];
-
-export const wrapper = createWrapper<AppStore>(makestore);
+export type AppState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

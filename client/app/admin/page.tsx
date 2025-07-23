@@ -4,19 +4,37 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { AppState } from "@/redux/store";
-import { useEffect } from "react";
+import { Component, useEffect } from "react";
+import { logout } from "@/redux/slice/authSlice";
+import { useDispatch } from 'react-redux';
+
 
 export default function Admin() {
     const router = useRouter();
+      const dispatch = useDispatch()
+
+
     const {isAuthenticated} = useSelector((state: AppState) => state.auth);
 
     
     useEffect(() => {
-    if (!isAuthenticated) {
-        router.push("/admin/login");
-        console.log(isAuthenticated);
-        }
+        if (!isAuthenticated) {
+            router.push("/admin/login");
+            console.log(isAuthenticated);
+            }    
     }, [isAuthenticated]);
+
+    useEffect(() => {
+        const handleBeforeUnload = () => {
+            dispatch(logout());
+        };
+
+        window.addEventListener("beforeunload", handleBeforeUnload);
+
+        return () => {
+            window.removeEventListener("beforeunload", handleBeforeUnload);
+        };
+    }, [dispatch]);
 
 
     return(

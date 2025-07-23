@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react"
 import { BookingState } from "@/redux/slice/BookingSlice";
 import { FaSpinner } from 'react-icons/fa'; // You can use other spinner icons too
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
+import toast from "react-hot-toast";
 
 
 
@@ -14,7 +15,6 @@ export default function Booking() {
     const [pending, setPending] = useState<BookingState[]>([]);
     const [completed, setCompleted] = useState<BookingState[]>([]);
     const [cancelled, setCancelled] = useState<BookingState[]>([]);
-
 
     const fetchBookings = async () => {
         setIsloading(true);
@@ -39,6 +39,7 @@ export default function Booking() {
         }
     }
 
+
     const filterPendingBooking = booking.filter(book => {
         return book.status?.toLowerCase().includes('pending');
     });
@@ -52,9 +53,7 @@ export default function Booking() {
         return book.status?.toLowerCase().includes('cancelled')
     });
 
-    useCallback(() => {
 
-    }, [])
 
     useEffect(() => {
         fetchBookings();
@@ -65,8 +64,6 @@ export default function Booking() {
         setCancelled(filterCancelledBooking);
         setCompleted(filterCompletedBooking);
     }, [booking])
-
-
 
     
     return (
@@ -108,7 +105,7 @@ export default function Booking() {
                                     <span className="p-4 text-center text-gray-500 flex justify-center">No Booking Found</span> : 
                                     <div className="relative w-[95%] space-y-3 mx-3">
                                         {booking.map(books => (
-                                            <BookingDiv key={books.id} books={books}/>
+                                            <BookingDiv key={books.id} books={books} fetchBookings={fetchBookings}/>
                                         ))}
                                     </div>
                                     }
@@ -125,7 +122,7 @@ export default function Booking() {
                                     <span className="p-4 text-center text-gray-500">No Booking Found</span> : 
                                     <div className="relative w-[95%] space-y-3 mx-3">
                                         {pending.map(books => (
-                                            <BookingDiv key={books.id} books={books}/>
+                                            <BookingDiv key={books.id} books={books} fetchBookings={fetchBookings}/>
                                         ))}
                                     </div>
                                     }
@@ -142,7 +139,7 @@ export default function Booking() {
                                     <span className="p-4 text-center text-gray-500">No Booking Found</span> : 
                                     <div className="relative w-[95%] space-y-3 mx-3">
                                         {completed.map(books => (
-                                            <BookingDiv key={books.id} books={books}/>
+                                            <BookingDiv key={books.id} books={books} fetchBookings={fetchBookings}/>
                                         ))}
                                     </div>
                                     }
@@ -160,7 +157,7 @@ export default function Booking() {
                                     <span className="p-4 text-center text-gray-500">No Booking Found</span> : 
                                     <div className="relative w-[95%] space-y-3 mx-3">
                                         {cancelled.map(books => (
-                                            <BookingDiv key={books.id} books={books}/>
+                                            <BookingDiv key={books.id} books={books} fetchBookings={fetchBookings}/>
                                         ))}
                                     </div>
                                     }
@@ -175,7 +172,8 @@ export default function Booking() {
 }
 
 
- const BookingDiv = ({books}: {books: BookingState}) => {
+ const BookingDiv = ({books, fetchBookings}: {books: BookingState, fetchBookings: () => {}}) => {
+    
     const capitalizeFirstLetter = (str: string | undefined) => {
         if (!str || typeof str !== 'string') {
             return "";
@@ -184,6 +182,28 @@ export default function Booking() {
     }
 
     const statusOptions = ["pending", "completed", "cancelled"];
+
+    const updateStatus = async (bookingId: string, newStatus: string) => {
+        const bookingStatus = {
+            status: newStatus
+        }
+        try {
+            const patch = await fetch(`http://localhost:8080/api/booking/${bookingId}/status`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(bookingStatus)
+            })
+            const response = await patch.json()
+            console.log(response);
+            toast.success(response.message);
+            fetchBookings();
+        } catch (err) {
+            console.error(err);
+            toast.error("Failed to update booking.");
+        }
+    };
 
     return (
         <div key={books.id} className="relative w-full border rounded-md border-primary_button">
@@ -222,7 +242,7 @@ export default function Booking() {
 
                             <select
                                 value={books.status}
-                                // onChange={(e) => updateStatus(booking.id, e.target.value)}
+                                onChange={(e) => updateStatus(books.id as string, e.target.value)}
                                 className={`text-xs items-center pr-2 space-x-1 font-medium flex ${books.status === 'pending' && 'text-yellow-500'} ${books.status === 'completed' && 'text-green-500'} ${books.status === 'cancelled' && 'text-red-500'}`}
                             >
                                 
