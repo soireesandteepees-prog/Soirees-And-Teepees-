@@ -218,7 +218,7 @@ export default function Booking() {
                     <div className="flex flex-col">
                         <span className="font-bold text-xl text-gray-700 mr-10">${books.totalAmount}</span>
                         <span className={`text-xs items-center space-x-1 font-medium flex ${books.paymentStatus === 'pending' && 'text-yellow-500'} ${books.paymentStatus === 'paid' && 'text-green-500'} ${books.paymentStatus === 'failed' && 'text-red-500'}`}>
-                            <div className={`w-2 h-2 rounded-full ${books.paymentStatus === 'pending' && 'bg-yellow-500'} ${books.paymentStatus === 'completed' && 'bg-green-500'} ${books.paymentStatus === 'cancelled' && 'bg-red-500'}`}></div>
+                            <div className={`w-2 h-2 rounded-full ${books.paymentStatus === 'pending' && 'bg-yellow-500'} ${books.paymentStatus === 'paid' && 'bg-green-500'} ${books.paymentStatus === 'failed' && 'bg-red-500'}`}></div>
                             <span>
                                 {capitalizeFirstLetter(books.paymentStatus as string)}
                             </span>
