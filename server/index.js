@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -7,7 +8,6 @@ const bookingRoutes = require('./routes/booking');
 // const usersRoutes = require('./routes/userRoute');
 // const cartRoutes = require('./routes/cart');
 // const galleryRoutes = require('./routes/gallery');
-require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 app.use(cors({
@@ -87,7 +87,7 @@ app.post('/api/create-stripe-session', async (req, res) => {
 
 app.use('/api/booking', bookingRoutes);
 app.get('/', (req, res) => {
-  res.send('API is running...');
+  res.send(process.env.STRIPE_WEBHOOK_SECRET);
 });
 // app.use('/api/auth', authRoutes);
 // app.use('/api/users', usersRoutes);
