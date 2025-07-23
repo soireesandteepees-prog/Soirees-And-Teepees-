@@ -19,7 +19,7 @@ export default function Booking() {
     const fetchBookings = async () => {
         setIsloading(true);
         try {
-            const response = await fetch('http://localhost:8080/api/booking/allbookings', {
+            const response = await fetch('soiressandteepees-production.up.railway.app/api/booking/allbookings', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -188,7 +188,7 @@ export default function Booking() {
             status: newStatus
         }
         try {
-            const patch = await fetch(`http://localhost:8080/api/booking/${bookingId}/status`, {
+            const patch = await fetch(`soiressandteepees-production.up.railway.app/api/booking/${bookingId}/status`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'

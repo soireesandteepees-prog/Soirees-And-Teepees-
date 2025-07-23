@@ -47,8 +47,8 @@ app.post('/api/create-stripe-session', async (req, res) => {
         },
       ],
       metadata: {bookingId},
-      success_url: 'http://localhost:3000/thank-you',
-      cancel_url: 'http://localhost:3000/error',
+      success_url: 'https://soiress-and-teepees.vercel.app/thank-you',
+      cancel_url: 'https://soiress-and-teepees.vercel.app/error',
     });
     res.json({ sessionId: session.id });
   } catch (error) {
