@@ -16,7 +16,7 @@ app.use(cors({
 }));
 
 app.post('/api/webhooks/stripe', express.raw({ type: 'application/json' }), async (req, res) => {
-  const endpointSecret = 'whsec_oENVy8ynWDUeiH4Ct4i6Z4BL1Lyq4WBT'; // Set this in your Stripe dashboard
+  const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET; // Set this in your Stripe dashboard
   const sig = req.headers['stripe-signature'];
   let event;
 
