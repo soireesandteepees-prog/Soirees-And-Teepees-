@@ -10,37 +10,10 @@ const bookingRoutes = require('./routes/booking');
 require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-
-app.post('/api/create-stripe-session', async (req, res) => {
-  try {
-    const { totalAmount, email, bookingId } = req.body;
-
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      mode: 'payment',
-      customer_email: email,
-      line_items: [
-        {
-          price_data: {
-            currency: 'usd',
-            product_data: {
-              name: 'Payment Summary for Party Booking',
-            },
-            unit_amount: Math.round(totalAmount * 100), // Stripe expects amount in cents
-          },
-          quantity: 1,
-        },
-      ],
-      metadata: {bookingId},
-      success_url: 'https://soiress-and-teepees.vercel.app/thank-you',
-      cancel_url: 'https://soiress-and-teepees.vercel.app/error',
-    });
-    res.json({ sessionId: session.id });
-  } catch (error) {
-    console.error('Stripe session error:', error);
-    res.status(500).json({ error: 'Stripe session creation failed' });
-  }
-});
+app.use(cors({
+  origin: ['https://soiress-and-teepees.vercel.app', 'http://localhost:3000'],
+  credentials: true,           
+}));
 
 app.post('/api/webhooks/stripe', express.raw({ type: 'application/json' }), async (req, res) => {
   const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET; // Set this in your Stripe dashboard
@@ -78,6 +51,40 @@ app.post('/api/webhooks/stripe', express.raw({ type: 'application/json' }), asyn
 
   res.json({ received: true });
 });
+
+app.use(express.json());
+
+app.post('/api/create-stripe-session', async (req, res) => {
+  try {
+    const { totalAmount, email, bookingId } = req.body;
+
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      mode: 'payment',
+      customer_email: email,
+      line_items: [
+        {
+          price_data: {
+            currency: 'usd',
+            product_data: {
+              name: 'Payment Summary for Party Booking',
+            },
+            unit_amount: Math.round(totalAmount * 100), // Stripe expects amount in cents
+          },
+          quantity: 1,
+        },
+      ],
+      metadata: {bookingId},
+      success_url: 'https://soiress-and-teepees.vercel.app/thank-you',
+      cancel_url: 'https://soiress-and-teepees.vercel.app/error',
+    });
+    res.json({ sessionId: session.id });
+  } catch (error) {
+    console.error('Stripe session error:', error);
+    res.status(500).json({ error: 'Stripe session creation failed' });
+  }
+});
+
 app.use('/api/booking', bookingRoutes);
 app.get('/', (req, res) => {
   res.send('API is running...');
@@ -94,11 +101,6 @@ app.get('/', (req, res) => {
 // }
 const port = process.env.PORT || 8080;
 
-app.use(cors({
-  origin: ['https://soiress-and-teepees.vercel.app', 'http://localhost:3000'],
-  credentials: true,           
-}));
-app.use(express.json());
 // app.use(fileUpload());
 // app.use(cookieParser());
 
