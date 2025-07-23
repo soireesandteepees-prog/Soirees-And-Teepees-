@@ -62,7 +62,7 @@ app.use('/api/booking', bookingRoutes);
 // app.use('/api/cart', cartRoutes);
 // app.use('/api/gallery', galleryRoutes);
 
-db.sequelize.sync({alter: true}).then(() => {
+db.sequelize.sync().then(() => {
     app.listen(port, '0.0.0.0', () => {
         console.log(`server is running on port ${port}`); 
     });
