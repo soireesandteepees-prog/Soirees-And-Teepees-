@@ -42,7 +42,7 @@ app.post('/api/create-stripe-session', async (req, res) => {
   }
 });
 
-app.post('/api/webhooks', express.raw({ type: 'application/json' }), async (req, res) => {
+app.post('/api/webhooks/stripe', express.raw({ type: 'application/json' }), async (req, res) => {
   const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET; // Set this in your Stripe dashboard
   const sig = req.headers['stripe-signature'];
   let event;
