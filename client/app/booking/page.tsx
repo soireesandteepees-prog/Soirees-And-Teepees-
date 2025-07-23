@@ -532,17 +532,17 @@ export default function Booking() {
                 <div className="text-center">
                   <button
                     onClick={handleSubmit}
-                    className="bg-primary_button text-white px-7 py-4 rounded-full text-xl font-semibold hover:bg-[#FFB88C] transition-colors mb-4 whitespace-nowrap"
+                    className="bg-primary_button text-white px-7 py-4 rounded-full font-semibold text-xl hover:bg-[#FFB88C] transition-colors mb-4 whitespace-nowrap"
                   >
                     {loading ? (
                       <FaSpinner className="animate-spin mr-2" />
                     ) : (
-                      `Pay Deposit & Book Party (${Math.round(calculateTotal() * 0.5)})`
+                      `Pay Deposit $(${Math.round(calculateTotal() * 0.5)})`
                     )}
                   </button>
                   
                   <p className="text-gray-600 text-sm">
-                    By clicking "Pay Deposit & Book Party", you agree to our terms of service and cancellation policy.
+                    By clicking "Pay Deposit", you agree to our terms of service and cancellation policy.
                   </p>
 
                   <button
