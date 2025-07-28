@@ -147,7 +147,7 @@ export default function About() {
               <div className="text-xl">Happy Children</div>
             </div>
             <div>
-              <div className="text-5xl font-bold mb-2">5</div>
+              <div className="text-5xl font-bold mb-2">6+</div>
               <div className="text-xl">Years Experience</div>
             </div>
             <div>

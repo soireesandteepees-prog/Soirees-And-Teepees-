@@ -10,10 +10,10 @@ module.exports = {
       },
 
       colors: {
-        primary_button: '#f4985f',
+        primary_button: '#97423b',
         secondary_button: '#FFB88C',
-        primary_background: '#FFD3B8',
-        secondary_background: '#FFFAF7',
+        primary_background: '#e5b8b2',
+        secondary_background: '#bc8783',
       }
     },
   },

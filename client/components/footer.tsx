@@ -14,7 +14,7 @@ export const Footer = () => {
                         <span className="text-xl font-pacifico text-[#FFD3B8]">SOIREES & TEEPEES</span>
                     </div>
                     <p className="text-gray-400 leading-relaxed">
-                        Creating magical slumber party experiences that your children will treasure forever.
+                        Creating memorable slumber party experiences that you will treasure forever.
                     </p>
                     </div>
                     <div>
@@ -29,10 +29,10 @@ export const Footer = () => {
                     <div>
                     <h3 className="text-lg font-semibold mb-4">Services</h3>
                     <div className="space-y-2">
-                        <p className="text-gray-400">Teepee Parties</p>
-                        <p className="text-gray-400">Princess Parties</p>
-                        <p className="text-gray-400">Boho Parties</p>
-                        <p className="text-gray-400">Movie Nights</p>
+                        <p className="text-gray-400">Slumber Parties</p>
+                        <p className="text-gray-400">Luxe Picnic</p>
+                        <p className="text-gray-400">Bridal/Baby Shower</p>
+                        <p className="text-gray-400">Backyard Movie Night</p>
                     </div>
                     </div>
                     <div>
@@ -40,15 +40,15 @@ export const Footer = () => {
                     <div className="space-y-2 text-gray-400">
                         <p className="flex items-center">
                         <i className="ri-phone-line w-5 h-5 mr-2"></i>
-                        (555) 123-4567
+                         240-930-4524
                         </p>
                         <p className="flex items-center">
                         <i className="ri-mail-line w-5 h-5 mr-2"></i>
-                        hello@soireesandteepees.com
+                        soireesandteepees@gmail.com
                         </p>
                         <p className="flex items-center">
                         <i className="ri-map-pin-line w-5 h-5 mr-2"></i>
-                        Los Angeles, CA
+                        Hanover, Maryland  21076
                         </p>
                     </div>
                     </div>

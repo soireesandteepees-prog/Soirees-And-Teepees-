@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function Services() {
   const services = [
     {
-      id: 'teepee-parties',
+      id: 'slumber-parties',
       title: 'Teepee Parties',
       price: 'From $299',
       duration: '24 hours',
@@ -22,7 +22,7 @@ export default function Services() {
       ]
     },
     {
-      id: 'princess-parties',
+      id: 'bridal/baby shower',
       title: 'Princess Parties',
       price: 'From $349',
       duration: '24 hours',
@@ -38,7 +38,7 @@ export default function Services() {
       ]
     },
     {
-      id: 'boho-parties',
+      id: 'luxe picnic',
       title: 'Boho Chic Parties',
       price: 'From $329',
       duration: '24 hours',
@@ -54,7 +54,7 @@ export default function Services() {
       ]
     },
     {
-      id: 'movie-nights',
+      id: 'backyard movie-night',
       title: 'Movie Night Parties',
       price: 'From $279',
       duration: '6-8 hours',
@@ -69,38 +69,6 @@ export default function Services() {
         'Late night snack service'
       ]
     },
-    {
-      id: 'unicorn-parties',
-      title: 'Unicorn Dreams',
-      price: 'From $359',
-      duration: '24 hours',
-      guests: 'Up to 6 children',
-      image: 'magical+unicorn+slumber+party+with+rainbow+colors+sparkles+fantasy+decorations+dreamy+setup+colorful+bedding+whimsical+atmosphere',
-      features: [
-        'Rainbow and pastel decorations',
-        'Unicorn themed accessories',
-        'Sparkly and glittery elements',
-        'Cloud and star decorations',
-        'Fantasy themed bedding',
-        'Magical breakfast presentation'
-      ]
-    },
-    {
-      id: 'spa-parties',
-      title: 'Spa Retreat Parties',
-      price: 'From $389',
-      duration: '24 hours',
-      guests: 'Up to 6 children',
-      image: 'relaxing+spa+themed+slumber+party+with+face+masks+nail+polish+zen+atmosphere+pampering+setup+calm+colors+wellness+theme',
-      features: [
-        'DIY spa station setup',
-        'Face masks and nail polish',
-        'Fluffy robes and slippers',
-        'Aromatherapy elements',
-        'Zen and calming decor',
-        'Healthy breakfast options'
-      ]
-    }
   ];
 
   return (
