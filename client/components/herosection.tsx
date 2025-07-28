@@ -5,9 +5,9 @@ import {image2, image28} from '../public/assets/images/index';
 
 export const Herosection = () => {
     return (
-        <div className="relative mt-[70px]">
+        <div className="relative mt-[80px]">
           <div className="relative flex flex-col items-center justify-center">
-            <div className="relative w-[90%] md:w-[80%] h-[60vh] md:h-[80vh] rounded-lg">
+            <div className="relative w-[95%] md:w-[80%] h-[50vh] md:h-[80vh] rounded-lg">
               <Image 
                 src={image28}
                 alt='herosection'
@@ -25,7 +25,7 @@ export const Herosection = () => {
                 <p className="text-lg md:text-2xl text-black/90 mb-4 leading-relaxed italic">
                   Create unforgettable memories with our luxury slumber party experiences. 
                 </p>
-                <div className="flex gap-4 justify-center">
+                <div className="flex flex-col md:flex-row gap-4 justify-center">
                   <Link href="/booking" className="bg-primary_button text-white black px-8 py-4 rounded-xl text-lg font-semibold hover:bg-secondary_button transition-all transform hover:scale-105 cursor-pointer blackspace-nowrap">
                     Book Your Party
                   </Link>

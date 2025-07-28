@@ -13,7 +13,7 @@ export const Header = () => {
     }
 
 return (
-    <div className="bg-[#e5b8b2] mx-autobackdrop-blur-sm fixed w-full top-0 z-50 items-center shadow-lg py-2 px-4">
+    <div className="bg-[#e5b8b2] mx-autobackdrop-blur-sm sticky w-full top-0 z-50 items-center shadow-lg py-2 px-4">
         <nav className="flex justify-between ">
             <div>
                 <Link href='/' className="flex items-center space-x-1">
