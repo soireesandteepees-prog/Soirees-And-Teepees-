@@ -5,7 +5,7 @@ import {image2, image28} from '../public/assets/images/index';
 
 export const Herosection = () => {
     return (
-        <div className="relative mt-[80px]">
+        <div className="relative mt-[70px]">
           <div className="relative flex flex-col items-center justify-center">
             <div className="relative w-[95%] md:w-[80%] h-[50vh] md:h-[80vh] rounded-lg">
               <Image 
