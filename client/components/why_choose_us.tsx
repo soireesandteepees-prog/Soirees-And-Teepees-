@@ -14,7 +14,7 @@ const cardVariants = {
 
 export const WhyChooseUs = () => {
   return (
-    <section className="py-20 bg-peach relative overflow-hidden">
+    <section className="py-2 rounded-tl-xl bg-minty bg-[url('/festive-background.svg')] bg-cover bg-repeat relative overflow-hidden">
       {/* Background Bubbles */}
       <div className="absolute -top-20 -left-10 w-40 h-40 bg-bloomPink rounded-full blur-3xl opacity-30 animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-48 h-48 bg-minty rounded-full blur-2xl opacity-20 animate-bounce"></div>

@@ -3,18 +3,19 @@ import Link from "next/link";
 import Image from "next/image";
 import {image2, image28} from '../public/assets/images/index';
 import { motion } from 'framer-motion';
+import { GalleryPreview } from '@/components/galleryPreview';
+
 
 
 export const Herosection = () => {
     return (
-
       <motion.section
-        className="bg-minty text-white py-32 text-center px-4"
+        className=" text-white py-32 text-center px-4 bg-[url('/festive-background.svg')] bg-cover bg-repeat"
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-5xl md:text-6xl font-heading drop-shadow-lg">Make Every Party Magical ✨</h1>
+        <h1 className="text-5xl text-bloomPink md:text-6xl font-heading drop-shadow-lg">Make Every Party Magical ✨</h1>
         <p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto font-body">
           Discover beautiful teepee setups, fun-filled themes, and unforgettable moments.
         </p>
@@ -24,6 +25,8 @@ export const Herosection = () => {
           >
           Book a Party
         </motion.button>
+
+        <GalleryPreview/>
       </motion.section>
       //   <div className="relative mt-[20px]">
       //     <div className="relative flex flex-col items-center justify-center">

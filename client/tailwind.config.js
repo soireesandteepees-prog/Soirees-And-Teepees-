@@ -21,6 +21,7 @@ module.exports = {
         skyBlue: '#6EC3F4',
         minty: '#A3F7BF',
         peach: '#FFD1BA',
+        pastelYellow: '#fce89f',
       }
     },
   },
