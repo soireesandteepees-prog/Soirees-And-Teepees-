@@ -9,11 +9,18 @@ module.exports = {
         lg: '4px 4px 6px rgba(0,0,0,0.4)',
       },
 
+      fontFamily: {
+        heading: 'var(--font-pacifico)',
+        body: 'var(--font-inter)',
+        playfair: ['var(--font-playfair)'],
+      },
+
       colors: {
-        primary_button: '#97423b',
-        secondary_button: '#FFB88C',
-        primary_background: '#e5b8b2',
-        secondary_background: '#bc8783',
+        bloomPink: '#FF6FA3',
+        sunshine: '#FFDD57',
+        skyBlue: '#6EC3F4',
+        minty: '#A3F7BF',
+        peach: '#FFD1BA',
       }
     },
   },

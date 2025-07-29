@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Pacifico, Cinzel, } from "next/font/google";
+import { Geist, Geist_Mono, Pacifico, Inter} from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/header";
+import Header from "@/components/header";
 import { Footer } from "@/components/footer";
 import Providers from "@/redux/Provider";
 import { Toaster } from "react-hot-toast";
+
+import { Playfair_Display } from 'next/font/google';
+
+const playfair = Playfair_Display({ subsets: ['latin'], weight: ['400', '600', '700'], variable: '--font-playfair' });
 
 const pacifico = Pacifico({
   weight: '400',
@@ -13,11 +17,11 @@ const pacifico = Pacifico({
   variable: '--font-pacifico',
 })
 
-const cinzel = Cinzel({
+const inter = Inter({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-cinzel',
+  variable: '--font-inter',
 })
 
 const geistSans = Geist({
@@ -43,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} ${cinzel.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${pacifico.variable} ${inter.variable} antialiased`}
       >
         <Providers>
           <Header/>
