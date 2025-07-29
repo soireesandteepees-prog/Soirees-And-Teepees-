@@ -46,13 +46,13 @@ export const WhyChooseUs = () => {
             {
               icon: 'ri-magic-line',
               title: 'Themed Experiences',
-              bg: 'border-skyBlue bg-skyBlue text-white',
+              bg: 'border-skyBlue bg-skyBlue text-pastelYellow',
               desc: "From princess castles to boho dreams, every theme is tailored to your child's imagination.",
             },
             {
               icon: 'ri-heart-line',
               title: 'Full Service',
-              bg: 'border-bloomPink bg-bloomPink text-white',
+              bg: 'border-bloomPink bg-bloomPink text-sunshine',
               desc: 'We take care of setup, styling, and cleanup — you just enjoy the fun stress-free! 🎈',
             },
           ].map((card, index) => (

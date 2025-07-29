@@ -2,61 +2,72 @@
 import Link from "next/link";
 
 export const Footer = () => {
-    return (
-        <footer className="bg-gray-900 text-white py-16">
-            <div className="container mx-auto px-6">
-                <div className="grid md:grid-cols-4 gap-8">
-                    <div>
-                    <div className="flex items-center space-x-2 mb-6">
-                        <div className="w-8 h-8 bg-[#FFD3B8] rounded-full flex items-center justify-center">
-                        <i className="ri-tent-line text-white text-lg"></i>
-                        </div>
-                        <span className="text-xl font-pacifico text-[#FFD3B8]">SOIREES & TEEPEES</span>
-                    </div>
-                    <p className="text-gray-400 leading-relaxed">
-                        Creating memorable slumber party experiences that you will treasure forever.
-                    </p>
-                    </div>
-                    <div>
-                    <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-                    <div className="space-y-2">
-                        <Link href="/about" className="block text-gray-400 hover:text-[#FFD3B8] transition-colors cursor-pointer">About Us</Link>
-                        <Link href="/services" className="block text-gray-400 hover:text-[#FFD3B8] transition-colors cursor-pointer">Services</Link>
-                        <Link href="/gallery" className="block text-gray-400 hover:text-[#FFD3B8] transition-colors cursor-pointer">Gallery</Link>
-                        <Link href="/booking" className="block text-gray-400 hover:text-[#FFD3B8] transition-colors cursor-pointer">Book Now</Link>
-                    </div>
-                    </div>
-                    <div>
-                    <h3 className="text-lg font-semibold mb-4">Services</h3>
-                    <div className="space-y-2">
-                        <p className="text-gray-400">Slumber Parties</p>
-                        <p className="text-gray-400">Luxe Picnic</p>
-                        <p className="text-gray-400">Bridal/Baby Shower</p>
-                        <p className="text-gray-400">Backyard Movie Night</p>
-                    </div>
-                    </div>
-                    <div>
-                    <h3 className="text-lg font-semibold mb-4">Contact</h3>
-                    <div className="space-y-2 text-gray-400">
-                        <p className="flex items-center">
-                        <i className="ri-phone-line w-5 h-5 mr-2"></i>
-                         240-930-4524
-                        </p>
-                        <p className="flex items-center">
-                        <i className="ri-mail-line w-5 h-5 mr-2"></i>
-                        soireesandteepees@gmail.com
-                        </p>
-                        <p className="flex items-center">
-                        <i className="ri-map-pin-line w-5 h-5 mr-2"></i>
-                        Hanover, Maryland  21076
-                        </p>
-                    </div>
-                    </div>
-                </div>
-                <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-                    <p className="text-gray-400">© 2024 Soirees & Teepees. All rights reserved.</p>
-                </div>
+  return (
+    <footer className="bg-[#97423b] text-[#fdf5f2] relative rounded-t-[3rem] overflow-hidden">
+      <div className="absolute inset-0 bg-[url('/festive-background.svg')] bg-cover bg-no-repeat bg-blend-multiply opacity-20"></div>
+
+      <div className="relative z-10 container mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-4 gap-12">
+          {/* Logo Section */}
+          <div>
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-10 h-10 bg-[#FFD3B8] rounded-full flex items-center justify-center shadow-md">
+                <i className="ri-tent-line text-[#97423b] text-lg"></i>
+              </div>
+              <span className="text-2xl font-pacifico text-[#FFD3B8]">SOIREES & TEEPEES</span>
             </div>
-      </footer>
-    )
-}
+            <p className="text-[#fdf5f2]/80 leading-relaxed">
+              Creating memorable slumber party experiences you’ll treasure forever.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-[#FFD3B8]">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
+              {['about', 'services', 'gallery', 'booking'].map((item) => (
+                <li key={item}>
+                  <Link href={`/${item}`} className="text-[#fdf5f2]/80 hover:text-[#FFD3B8] transition duration-300">
+                    {item.charAt(0).toUpperCase() + item.slice(1).replace('-', ' ')}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-[#FFD3B8]">Services</h3>
+            <ul className="space-y-2 text-sm text-[#fdf5f2]/80">
+              <li>Slumber Parties</li>
+              <li>Luxe Picnic</li>
+              <li>Bridal/Baby Shower</li>
+              <li>Backyard Movie Night</li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-[#FFD3B8]">Contact</h3>
+            <ul className="space-y-3 text-sm text-[#fdf5f2]/80">
+              <li className="flex items-center gap-2">
+                <i className="ri-phone-line text-[#FFD3B8]"></i> 240-930-4524
+              </li>
+              <li className="flex items-center gap-2">
+                <i className="ri-mail-line text-[#FFD3B8]"></i> soireesandteepees@gmail.com
+              </li>
+              <li className="flex items-center gap-2">
+                <i className="ri-map-pin-line text-[#FFD3B8]"></i> Hanover, Maryland 21076
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Line */}
+        <div className="border-t border-[#fdf5f2]/20 mt-12 pt-8 text-center text-sm text-[#fdf5f2]/60">
+          © 2025 Soirees & Teepees. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  );
+};
