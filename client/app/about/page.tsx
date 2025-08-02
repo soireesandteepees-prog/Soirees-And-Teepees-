@@ -2,26 +2,29 @@
 'use client';
 
 import Link from 'next/link';
+import { ConfettiBackground } from '@/components/confettiBackground';
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
-      <section className="py-20 bg-white">
+    <div className="min-h-screen bg-black ">
+      <ConfettiBackground/>
+      <section className="py-20">
+      <div className="absolute inset-0 bg-[url('/festive-background.svg')] bg-cover bg-no-repeat bg-blend-multiply opacity-60"></div>
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
+              <h1 className="text-5xl md:text-6xl font-bold text-bloomPink mb-6 leading-tight font-heading">
                 About Our 
                 <span className="text-primary_button block">Magical Story</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-lg text-skyBlue mb-8 leading-relaxed italic font-semibold">
                 Founded with a passion for creating unforgettable childhood memories, SOIREES & TEEPEES transforms ordinary sleepovers into extraordinary magical experiences.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/booking" className="bg-primary_button text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-secondary_button transition-colors cursor-pointer whitespace-nowrap">
+                <Link href="/booking" className="border-2 border-peach text-primary_button px-8 py-4 rounded-full text-lg font-semibold bg-[#d6665b] text-white hover:bg-[#b7534b] transition-colors cursor-pointer whitespace-nowrap">
                   Start Planning
                 </Link>
-                <Link href="/portfolio" className="border-2 border-primary_button text-primary_button px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary_button hover:text-white transition-colors cursor-pointer whitespace-nowrap">
+                <Link href="/portfolio" className="border-2 border-peach text-primary_button px-8 py-4 rounded-full text-lg font-semibold bg-[#d6665b] text-white hover:bg-[#b7534b] transition-colors cursor-pointer whitespace-nowrap">
                   View Our Work
                 </Link>
               </div>
@@ -32,8 +35,8 @@ export default function About() {
                 alt="About Us"
                 className="rounded-2xl shadow-xl object-cover w-full h-96"
               />
-              <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary_button rounded-full flex items-center justify-center">
-                <i className="ri-heart-line text-white text-3xl"></i>
+              <div className="absolute -top-6 -left-6 w-24 h-24 bg-peach rounded-full flex items-center justify-center">
+                <i className="ri-heart-line text-bloomPink text-3xl"></i>
               </div>
             </div>
           </div>
@@ -41,30 +44,31 @@ export default function About() {
       </section>
 
       {/* Our Story */}
-      <section className="py-20 bg-gradient-to-br from-primary_background to-secondary_background">
-        <div className="container mx-auto px-6">
+      <section className="py-12 relative">
+        <div className="absolute inset-0 bg-[url('/festive-background.svg')] bg-cover bg-no-repeat bg-blend-multiply opacity-60"></div>
+        <div className=" mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8">Our Story</h2>
-            <p className="text-xl text-gray-600 mb-12 leading-relaxed">
+            <h2 className="text-4xl md:text-5xl font-bold text-sunshine mb-8 font-heading">Our Story</h2>
+            <p className="text-lg text-minty mb-12 leading-relaxed">
               It all started when our founder, Sarah, wanted to create the perfect slumber party for her daughter's 8th birthday. What began as a simple idea quickly blossomed into a passion for creating magical experiences that children treasure forever.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary_button rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="text-center bg-peach w-full p-2 rounded-xl border-4 border-white">
+                <div className="w-16 h-16 bg-sunshine rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className="ri-lightbulb-line text-white text-2xl"></i>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-3">The Idea</h3>
                 <p className="text-gray-600">Born from a desire to create something truly special for children's celebrations</p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary_button rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="text-center bg-peach w-full p-2 rounded-xl border-4 border-white">
+                <div className="w-16 h-16 bg-pastelYellow rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className="ri-heart-line text-white text-2xl"></i>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-3">The Passion</h3>
                 <p className="text-gray-600">Driven by love for creating joy and wonder in children's lives</p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary_button rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="text-center bg-peach w-full p-2 rounded-xl border-4 border-white">
+                <div className="w-16 h-16 bg-minty rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className="ri-star-line text-white text-2xl"></i>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-3">The Magic</h3>
@@ -76,11 +80,12 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-[url('/festive-background.svg')] bg-cover bg-no-repeat bg-blend-multiply opacity-60"></div>
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Meet Our Team</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">The creative minds behind every magical experience</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-pastelYellow font-heading mb-4">Meet Our Team</h2>
+            <p className="text-xl text-skyBlue max-w-2xl mx-auto">The creative minds behind every magical experience</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -99,9 +104,9 @@ export default function About() {
                     <i className="ri-star-line text-white text-lg"></i>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">{member.name}</h3>
-                <p className="text-primary_button font-semibold mb-3">{member.role}</p>
-                <p className="text-gray-600">{member.bio}</p>
+                <h3 className="text-2xl font-bold text-peach mb-0">{member.name}</h3>
+                <p className="text-peach font-semibold mb-3">{member.role}</p>
+                <p className="text-peach">{member.bio}</p>
               </div>
             ))}
           </div>
@@ -109,10 +114,11 @@ export default function About() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-gradient-to-br from-primary_background to-secondary_background">
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-[url('/festive-background.svg')] bg-cover bg-no-repeat bg-blend-multiply opacity-60"></div>
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Values</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-bloomPink mb-4 font-heading">Our Values</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">The principles that guide everything we do</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -122,8 +128,8 @@ export default function About() {
               { icon: "ri-heart-line", title: "Love", description: "We pour love into every detail of your celebration" },
               { icon: "ri-star-line", title: "Excellence", description: "We strive for perfection in every experience we create" }
             ].map((value, index) => (
-              <div key={index} className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 bg-primary_button rounded-full flex items-center justify-center mx-auto mb-4">
+              <div key={index} className="text-center p-6 bg-skyBlue rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-bloomPink rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className={`${value.icon} text-white text-2xl`}></i>
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-3">{value.title}</h3>
@@ -135,7 +141,8 @@ export default function About() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 relative text-bloomPink">
+        <div className="absolute inset-0 bg-[url('/festive-background.svg')] bg-cover bg-no-repeat bg-blend-multiply opacity-60"></div>
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
@@ -159,13 +166,13 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary_background to-secondary_background">
+      <section className="relative rounded-tl-[150px] py-24 text-white text-center px-6 bg-[linear-gradient(to_right,#FF6FA3,#FFDD57),url('/festive-background.svg')] bg-cover bg-blend-overlay bg-repeat">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-shadow-lg mb-6">Join Our Magical Journey</h2>
           <p className="text-xl text-shadow-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             Whether you're planning a birthday party or a special celebration, we're here to make it unforgettable
           </p>
-          <Link href="/contact" className="bg-primary_button text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-secondary_button transition-colors cursor-pointer whitespace-nowrap">
+          <Link href="/contact" className="mt-8 bg-white text-bloomPink font-semibold px-8 py-3 rounded-full hover:scale-105 transition">
             Contact Us Today
           </Link>
         </div>

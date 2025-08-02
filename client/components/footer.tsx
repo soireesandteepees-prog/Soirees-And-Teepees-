@@ -1,9 +1,12 @@
 'use client';
 import Link from "next/link";
+import Image from "next/image";
+import {logo} from '../public/assets/images/index'
+
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#97423b] text-[#fdf5f2] relative rounded-t-[3rem] overflow-hidden">
+    <footer className="bg-[#97423b] text-[#fdf5f2] relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/festive-background.svg')] bg-cover bg-no-repeat bg-blend-multiply opacity-20"></div>
 
       <div className="relative z-10 container mx-auto px-6 py-16">
@@ -12,27 +15,13 @@ export const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-10 h-10 bg-[#FFD3B8] rounded-full flex items-center justify-center shadow-md">
-                <i className="ri-tent-line text-[#97423b] text-lg"></i>
+                <Image src={logo} alt="Logo" className="w-10 h-10 rounded-xl" />
               </div>
               <span className="text-2xl font-pacifico text-[#FFD3B8]">SOIREES & TEEPEES</span>
             </div>
             <p className="text-[#fdf5f2]/80 leading-relaxed">
               Creating memorable slumber party experiences you’ll treasure forever.
             </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-[#FFD3B8]">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              {['about', 'services', 'gallery', 'booking'].map((item) => (
-                <li key={item}>
-                  <Link href={`/${item}`} className="text-[#fdf5f2]/80 hover:text-[#FFD3B8] transition duration-300">
-                    {item.charAt(0).toUpperCase() + item.slice(1).replace('-', ' ')}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Services */}
