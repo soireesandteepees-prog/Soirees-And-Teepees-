@@ -12,11 +12,11 @@ export default function Portfolio() {
     {
       id: 1,
       title: "Emma's Enchanted Forest",
-      category: "Teepee Party",
+      category: "Slumber Party",
       age: "8th Birthday",
       guests: 6,
       theme: "Woodland Adventure",
-      description: "A magical forest-themed teepee party complete with fairy lights, woodland creatures, and nature-inspired decorations. The birthday girl and her friends spent the night in a enchanted forest setting right in their living room.",
+      description: "A magical forest-themed slumber party complete with fairy lights, woodland creatures, and nature-inspired decorations. The birthday girl and her friends spent the night in a enchanted forest setting right in their living room.",
       images: [image1, image2, image4],
       highlights: ["Custom woodland backdrop", "LED fairy lights", "Plush forest animals", "Nature scavenger hunt", "S'mores station"],
       testimonial: "Emma is still talking about her magical forest party! The attention to detail was incredible.",
@@ -25,7 +25,7 @@ export default function Portfolio() {
     {
       id: 2,
       title: "Princess Sofia's Royal Celebration",
-      category: "Princess Party",
+      category: "Luxe Party",
       age: "7th Birthday",
       guests: 8,
       theme: "Royal Palace",
@@ -38,7 +38,7 @@ export default function Portfolio() {
     {
       id: 3,
       title: "Zoe's Bohemian Dream",
-      category: "Boho Party",
+      category: "Shower Party",
       age: "10th Birthday",
       guests: 5,
       theme: "Desert Oasis",
@@ -51,7 +51,7 @@ export default function Portfolio() {
     {
       id: 4,
       title: "Mia's Unicorn Wonderland",
-      category: "Unicorn Party",
+      category: "Luxe Party",
       age: "6th Birthday",
       guests: 7,
       theme: "Rainbow Magic",
@@ -64,7 +64,7 @@ export default function Portfolio() {
     {
       id: 5,
       title: "Lily's Movie Marathon",
-      category: "Movie Night",
+      category: "Backyard Movie Night",
       age: "9th Birthday",
       guests: 10,
       theme: "Hollywood Cinema",
@@ -77,7 +77,7 @@ export default function Portfolio() {
     {
       id: 6,
       title: "Ava's Spa Retreat",
-      category: "Spa Party",
+      category: "Slumber Party",
       age: "11th Birthday",
       guests: 4,
       theme: "Zen Garden",
@@ -94,7 +94,7 @@ export default function Portfolio() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-            Our <span className="text-primary_button">Portfolio</span>
+            Our <span className="text-[#d6665b]">Portfolio</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
             Discover the magical experiences we've created for families across Los Angeles. Each project tells a unique story of joy, creativity, and unforgettable memories.
@@ -121,7 +121,7 @@ export default function Portfolio() {
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                       />
                       {imgIndex === 0 && (
-                        <div className="absolute top-4 left-4 bg-primary_button text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        <div className="absolute top-4 left-4 bg-[#d6665b] text-white px-3 py-1 rounded-full text-sm font-semibold">
                           {project.category}
                         </div>
                       )}
@@ -132,16 +132,16 @@ export default function Portfolio() {
                 <div className="p-8">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-2xl font-bold text-gray-800">{project.title}</h3>
-                    <span className="text-primary_button font-semibold">{project.age}</span>
+                    <span className="text-[#d6665b] font-semibold">{project.age}</span>
                   </div>
                   
                   <div className="flex items-center space-x-6 mb-4 text-gray-600">
                     <div className="flex items-center">
-                      <i className="ri-group-line w-5 h-5 mr-2 text-primary_button"></i>
+                      <i className="ri-group-line w-5 h-5 mr-2 text-[#d6665b]"></i>
                       {project.guests} guests
                     </div>
                     <div className="flex items-center">
-                      <i className="ri-palette-line w-5 h-5 mr-2 text-primary_button"></i>
+                      <i className="ri-palette-line w-5 h-5 mr-2 text-[#d6665b]"></i>
                       {project.theme}
                     </div>
                   </div>
@@ -152,7 +152,7 @@ export default function Portfolio() {
                     <h4 className="font-semibold text-gray-800 mb-3">Party Highlights:</h4>
                     <div className="flex flex-wrap gap-2">
                       {project.highlights.map((highlight, idx) => (
-                        <span key={idx} className="bg-primary_button/10 text-primary_button px-3 py-1 rounded-full text-sm">
+                        <span key={idx} className="bg-[#d6665b10] text-[#d6665b] px-3 py-1 rounded-full text-sm">
                           {highlight}
                         </span>
                       ))}
@@ -161,12 +161,12 @@ export default function Portfolio() {
                   
                   <div className="bg-gradient-to-r from-primary_background to-secondary_background p-4 rounded-xl mb-6">
                     <p className="text-gray-700 italic mb-2">"{project.testimonial}"</p>
-                    <p className="text-primary_button font-semibold">- {project.client}</p>
+                    <p className="text-[#d6665b] font-semibold">- {project.client}</p>
                   </div>
                   
                   {/* <button 
                     onClick={() => setSelectedProject(selectedProject === project.id ? null : project.id)}
-                    className="w-full bg-primary_button text-white py-3 px-6 rounded-full font-semibold hover:bg-[#FFB88C] transition-colors whitespace-nowrap"
+                    className="w-full bg-peach text-white py-3 px-6 rounded-full font-semibold hover:bg-[#FFB88C] transition-colors whitespace-nowrap"
                   >
                     {selectedProject === project.id ? 'Close Details' : 'View Full Details'}
                   </button> */}
@@ -194,10 +194,10 @@ export default function Portfolio() {
             ].map((item, index) => (
               <div className='flex'>
                 <div key={index} className="text-center">
-                  <div className="w-20 h-20 bg-primary_button rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-20 h-20 bg-[#d6665b] rounded-full flex items-center justify-center mx-auto mb-6">
                     <i className={`${item.icon} text-white text-2xl`}></i>
                   </div>
-                  <div className="text-primary_button font-bold text-lg mb-2">{item.step}</div>
+                  <div className="text-[#d6665b] font-bold text-lg mb-2">{item.step}</div>
                   <h3 className="text-xl font-bold text-gray-800 mb-3">{item.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
                 </div>
@@ -223,7 +223,7 @@ export default function Portfolio() {
               { award: "Excellence in Service", organization: "LA Business Chamber", icon: 'ri-medal-line' }
             ].map((item, index) => (
               <div key={index} className="text-center bg-white p-8 rounded-2xl shadow-lg">
-                <div className="w-16 h-16 bg-primary_button rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#d6665b] rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className={`${item.icon} text-white text-2xl`}></i>
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{item.award}</h3>
@@ -235,17 +235,17 @@ export default function Portfolio() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-peach">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-shadow-lg mb-6">Ready to Create Your Story?</h2>
           <p className="text-xl text-gray-600 text-shadow-lg mb-8 max-w-2xl mx-auto">
             Let us design a magical experience that will become a cherished memory for your family
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/booking" className="bg-primary_button text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-secondary_button transition-colors cursor-pointer whitespace-nowrap">
+            <Link href="/booking" className="px-8 py-4 rounded-full text-lg font-semibold  bg-[#d6665b] text-white hover:bg-[#b7534b] transition-colors cursor-pointer whitespace-nowrap">
               Start Planning
             </Link>
-            <Link href="/contact" className="border-2 border-primary_button text-primary_button px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary_button hover:text-white transition-colors cursor-pointer whitespace-nowrap">
+            <Link href="/contact" className="border-2 px-8 py-4 rounded-full text-lg font-semibold  bg-[#d6665b] text-white hover:bg-[#b7534b] transition-colors cursor-pointer whitespace-nowrap">
               Discuss Ideas
             </Link>
           </div>

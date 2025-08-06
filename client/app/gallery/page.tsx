@@ -11,30 +11,28 @@ export default function Gallery() {
 
   const categories = [
     { id: 'all', name: 'All Parties' },
-    { id: 'teepee', name: 'Teepee Parties' },
-    { id: 'princess', name: 'Princess Parties' },
-    { id: 'boho', name: 'Boho Chic' },
-    { id: 'movie', name: 'Movie Nights' },
-    { id: 'unicorn', name: 'Unicorn Dreams' },
-    { id: 'spa', name: 'Spa Retreats' }
+    { id: 'slumber', name: 'Slumber Parties' },
+    { id: 'luxe', name: 'Luxe Picnic' },
+    { id: 'shower', name: 'Bridal/Baby Shower' },
+    { id: 'movie', name: 'Backyard Movie Night' },
   ];
 
   const galleryImages = [
-    { category: 'teepee', title: 'Magical Teepee Setup', image: image1 },
-    { category: 'princess', title: 'Princess Castle Dreams', image: image2 },
-    { category: 'boho', title: 'Bohemian Paradise', image: image3 },
+    { category: 'slumber', title: 'Magical Slumber Setup', image: image1 },
+    { category: 'luxe', title: 'luxe Castle Dreams', image: image2 },
+    { category: 'shower', title: 'Bohemian Paradise', image: image3 },
     { category: 'movie', title: 'Cinema Under Stars', image: image4 },
-    { category: 'teepee', title: 'Forest Adventure', image: image5 },
-    { category: 'unicorn', title: 'Rainbow Magic', image: image6 },
-    { category: 'spa', title: 'Zen Relaxation', image: image7 },
-    { category: 'princess', title: 'Royal Elegance', image: image8 },
-    { category: 'boho', title: 'Desert Oasis', image: image9 },
+    { category: 'slumber', title: 'Forest Adventure', image: image5 },
+    { category: 'slumber', title: 'Rainbow Magic', image: image6 },
+    { category: 'shower', title: 'Zen Relaxation', image: image7 },
+    { category: 'luxe', title: 'Royal Elegance', image: image8 },
+    { category: 'shower', title: 'Desert Oasis', image: image9 },
     { category: 'movie', title: 'Retro Cinema', image: image10 },
-    { category: 'teepee', title: 'Galaxy Dreams', image: image11 },
-    { category: 'unicorn', title: 'Cotton Candy Clouds', image: image12 },
-    { category: 'spa', title: 'Garden Spa', image: image13 },
-    { category: 'princess', title: 'Frozen Wonderland', image: image14 },
-    { category: 'boho', title: 'Sunset Vibes', image: image15 },
+    { category: 'slumber', title: 'Galaxy Dreams', image: image11 },
+    { category: 'luxe', title: 'Cotton Candy Clouds', image: image12 },
+    { category: 'luxe', title: 'Garden Spa', image: image13 },
+    { category: 'luxe', title: 'Frozen Wonderland', image: image14 },
+    { category: 'shower', title: 'Sunset Vibes', image: image15 },
     { category: 'movie', title: 'Superhero Cinema', image: image16 }
   ];
 
@@ -49,7 +47,7 @@ export default function Gallery() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-            Our <span className="text-primary_button">Gallery</span>
+            Our <span className="text-[#d6665b]">Gallery</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
             Explore our collection of magical slumber parties and see the joy we create for families across Los Angeles. Each party is uniquely designed to make dreams come true.
@@ -67,8 +65,8 @@ export default function Gallery() {
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-6 py-3 rounded-full font-medium transition-all whitespace-nowrap ${
                   activeCategory === category.id
-                    ? 'bg-primary_button text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-primary_button hover:text-white'
+                    ? 'bg-[#d6665b] text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-[#d6665b] hover:text-white'
                 }`}
               >
                 {category.name}
@@ -133,7 +131,7 @@ export default function Gallery() {
       )}
 
       {/* Stats Section */}
-      <section className="py-20 bg-primary_button">
+      <section className="py-20 bg-[#d6665b]">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8 text-center text-white">
             <div>
@@ -164,10 +162,10 @@ export default function Gallery() {
             Let us design a one-of-a-kind slumber party experience that your child will treasure forever
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/booking" className="bg-primary_button text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#FFB88C] transition-colors cursor-pointer whitespace-nowrap">
+            <Link href="/booking" className="bg-[#d6665b] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#b7534b] transition-colors cursor-pointer whitespace-nowrap">
               Book Your Party
             </Link>
-            <Link href="/portfolio" className="border-2 border-primary_button text-primary_button px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary_button hover:text-white transition-colors cursor-pointer whitespace-nowrap">
+            <Link href="/portfolio" className="border-2 border-[#d6665b] text-[#d6665b] px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#d6665b] hover:text-white transition-colors cursor-pointer whitespace-nowrap">
               View Portfolio
             </Link>
           </div>

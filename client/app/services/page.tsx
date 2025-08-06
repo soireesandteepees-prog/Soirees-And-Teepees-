@@ -7,7 +7,7 @@ export default function Services() {
   const services = [
     {
       id: 'slumber-parties',
-      title: 'Teepee Parties',
+      title: 'Slumber Parties',
       price: 'From $299',
       duration: '24 hours',
       guests: 'Up to 8 children',
@@ -23,7 +23,7 @@ export default function Services() {
     },
     {
       id: 'bridal/baby shower',
-      title: 'Princess Parties',
+      title: 'Bridal/Baby Shower',
       price: 'From $349',
       duration: '24 hours',
       guests: 'Up to 6 children',
@@ -39,7 +39,7 @@ export default function Services() {
     },
     {
       id: 'luxe picnic',
-      title: 'Boho Chic Parties',
+      title: 'Luxe Picnic',
       price: 'From $329',
       duration: '24 hours',
       guests: 'Up to 8 children',
@@ -55,7 +55,7 @@ export default function Services() {
     },
     {
       id: 'backyard movie-night',
-      title: 'Movie Night Parties',
+      title: 'Backyard Movie Night',
       price: 'From $279',
       duration: '6-8 hours',
       guests: 'Up to 10 children',
@@ -78,7 +78,7 @@ export default function Services() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-            Our <span className="text-primary_button">Services</span>
+            Our <span className="text-[#d6665b]">Services</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
             Choose from our carefully crafted slumber party packages, each designed to create magical memories that will last a lifetime. Every package includes setup, styling, and cleanup.
@@ -98,7 +98,7 @@ export default function Services() {
                     alt={service.title}
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-6 left-6 bg-primary_button text-white px-4 py-2 rounded-full font-semibold">
+                  <div className="absolute top-6 left-6 bg-[#d6665b] text-white px-4 py-2 rounded-full font-semibold">
                     {service.price}
                   </div>
                 </div>
@@ -106,23 +106,23 @@ export default function Services() {
                   <h3 className="text-3xl font-bold text-gray-800 mb-4">{service.title}</h3>
                   <div className="flex items-center space-x-6 mb-6 text-gray-600">
                     <div className="flex items-center">
-                      <i className="ri-time-line w-5 h-5 mr-2 text-primary_button"></i>
+                      <i className="ri-time-line w-5 h-5 mr-2 text-[#d6665b]"></i>
                       {service.duration}
                     </div>
                     <div className="flex items-center">
-                      <i className="ri-group-line w-5 h-5 mr-2 text-primary_button"></i>
+                      <i className="ri-group-line w-5 h-5 mr-2 text-[#d6665b]"></i>
                       {service.guests}
                     </div>
                   </div>
                   <div className="space-y-3 mb-8">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center">
-                        <i className="ri-check-line w-5 h-5 text-primary_button mr-3"></i>
+                        <i className="ri-check-line w-5 h-5 text-[#d6665b] mr-3"></i>
                         <span className="text-gray-700">{feature}</span>
                       </div>
                     ))}
                   </div>
-                  <Link href="/booking" className="w-full bg-primary_button text-white py-4 px-6 rounded-full font-semibold hover:bg-[#FFB88C] transition-colors cursor-pointer block text-center whitespace-nowrap">
+                  <Link href="/booking" className="w-full bg-[#d6665b] text-white py-4 px-6 rounded-full font-semibold hover:bg-[#FFB88C] transition-colors cursor-pointer block text-center whitespace-nowrap">
                     Book This Package
                   </Link>
                 </div>
@@ -151,11 +151,11 @@ export default function Services() {
               { icon: 'ri-moon-line', title: 'Midnight Snacks', price: '+$39', description: 'Late night treat service' }
             ].map((addon, index) => (
               <div key={index} className="text-center p-6 bg-gradient-to-br from-primary_background to-secondary_background rounded-2xl hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-primary_button rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#d6665b] rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className={`${addon.icon} text-white text-2xl`}></i>
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{addon.title}</h3>
-                <p className="text-primary_button font-semibold text-lg mb-2">{addon.price}</p>
+                <p className="text-[#d6665b] font-semibold text-lg mb-2">{addon.price}</p>
                 <p className="text-gray-600 text-sm">{addon.description}</p>
               </div>
             ))}
@@ -178,13 +178,13 @@ export default function Services() {
               { step: '04', title: 'Enjoy & Cleanup', description: 'You enjoy the party while we handle all the cleanup the next day' }
             ].map((item, index) => (
               <div key={index} className="text-center relative">
-                <div className="w-20 h-20 bg-primary_button rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-20 h-20 bg-[#d6665b] rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-white text-2xl font-bold">{item.step}</span>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">{item.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{item.description}</p>
                 {index < 3 && (
-                  <div className="hidden md:block absolute top-10 -right-12 w-24 h-0.5 bg-primary_button opacity-30"></div>
+                  <div className="hidden md:block absolute top-10 -right-12 w-24 h-0.5 bg-[#d6665b] opacity-30"></div>
                 )}
               </div>
             ))}
@@ -193,17 +193,17 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-primary_background to-secondary_background">
+      <section className="py-20 bg-peach to-secondary_background">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 text-shadow-lg">Ready to Book Your Dream Party?</h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto text-shadow-lg">
             Let us create an unforgettable slumber party experience for your child and their friends
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/booking" className="bg-primary_button text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-50 transition-colors cursor-pointer whitespace-nowrap">
+            <Link href="/booking" className="bg-[#d6665b] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-50 transition-colors cursor-pointer whitespace-nowrap">
               Book Now
             </Link>
-            <Link href="/contact" className="bg-primary_button text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-secondary_button transition-colors cursor-pointer whitespace-nowrap">
+            <Link href="/contact" className="bg-[#d6665b] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-secondary_button transition-colors cursor-pointer whitespace-nowrap">
               Ask Questions
             </Link>
           </div>

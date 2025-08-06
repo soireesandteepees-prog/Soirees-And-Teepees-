@@ -21,12 +21,10 @@ export default function Booking() {
 
 
   const packages = [
-    { id: 'teepee', name: 'Teepee Parties', price: 299, duration: '24 hours', guests: 'Up to 8' },
-    { id: 'princess', name: 'Princess Parties', price: 349, duration: '24 hours', guests: 'Up to 6' },
-    { id: 'boho', name: 'Boho Chic', price: 329, duration: '24 hours', guests: 'Up to 8' },
-    { id: 'movie', name: 'Movie Nights', price: 279, duration: '6-8 hours', guests: 'Up to 10' },
-    { id: 'unicorn', name: 'Unicorn Dreams', price: 359, duration: '24 hours', guests: 'Up to 6' },
-    { id: 'spa', name: 'Spa Retreats', price: 389, duration: '24 hours', guests: 'Up to 6' }
+    { id: 'slumber', name: 'Slumber Parties', price: 299, duration: '24 hours', guests: 'Up to 8' },
+    { id: 'luxe', name: 'Luxe Picnic', price: 349, duration: '24 hours', guests: 'Up to 6' },
+    { id: 'shower', name: 'Bridal/Baby Shower', price: 329, duration: '24 hours', guests: 'Up to 8' },
+    { id: 'movie', name: 'Backyard Movie Night', price: 279, duration: '6-8 hours', guests: 'Up to 10' },
   ];
 
   const AddOns = [
@@ -148,10 +146,10 @@ export default function Booking() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary_background to-secondary_background">
+    <div className="min-h-screen bg-[#d6665b50]">
 
       {/* Progress Steps */}
-      <section className="sticky top-0 z-50 w-full py-8 bg-white border-b border-primary_button">
+      <section className="sticky top-0 z-50 w-full py-8 bg-white border-b border-[#d6665b]">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-center space-x-5">
             {[
@@ -163,12 +161,12 @@ export default function Booking() {
               <div key={item.step} className="flex items-center">
                 <div className={`flex flex-col p-0 m-0 space-x-3 lg:flex-row  items-center ${index > 0 ? 'md:ml-8' : ''}`}>
                   <div className={`w-12 h-12 ml-3 rounded-full flex items-center justify-center ${
-                    currentStep >= item.step ? 'bg-primary_button text-white' : 'bg-gray-200 text-gray-500'
+                    currentStep >= item.step ? 'bg-[#d6665b] text-white' : 'bg-gray-200 text-gray-500'
                   }`}>
                     <i className={`${item.icon} text-lg`}></i>
                   </div>
                   <span className={` font-medium ${
-                    currentStep >= item.step ? 'text-primary_button' : 'text-gray-500'
+                    currentStep >= item.step ? 'text-[#d6665b]' : 'text-gray-500'
                   }`}>
                     {item.title}
                   </span>
@@ -196,13 +194,13 @@ export default function Booking() {
                       onClick={() => {dispatch(setPackagetype(pkg.id))}}
                       className={`border-2 rounded-2xl p-6 cursor-pointer transition-all ${
                         packageType === pkg.id
-                          ? 'border-primary_button bg-primary_button/5'
-                          : 'border-gray-200 hover:border-primary_button/50'
+                          ? 'border-[#d6665b] bg-[#d6665b]/5'
+                          : 'border-gray-200 hover:border-[#d6665b]/50'
                       }`}
                     >
                       <div className="text-center">
                         <h3 className="text-xl font-bold text-gray-800 mb-2">{pkg.name}</h3>
-                        <div className="text-3xl font-bold text-primary_button mb-3">${pkg.price}</div>
+                        <div className="text-3xl font-bold text-[#d6665b] mb-3">${pkg.price}</div>
                         <div className="text-gray-600 space-y-1">
                           <p className="flex items-center justify-center">
                             <i className="ri-time-line w-4 h-4 mr-2"></i>
@@ -225,8 +223,8 @@ export default function Booking() {
                       key={addOn.id}
                       className={`border-2 rounded-xl p-4 cursor-pointer transition-all ${
                         addOns?.includes(addOn.id)
-                          ? 'border-primary_button bg-primary_button/5'
-                          : 'border-gray-200 hover:border-primary_button/50'
+                          ? 'border-[#d6665b] bg-[#d6665b]/5'
+                          : 'border-gray-200 hover:border-[#d6665b50]'
                       }`}
                     >
                       <input
@@ -237,7 +235,7 @@ export default function Booking() {
                       />
                       <div className="text-center">
                         <h4 className="font-semibold text-gray-800 mb-1">{addOn.name}</h4>
-                        <p className="text-primary_button font-bold">+${addOn.price}</p>
+                        <p className="text-[#d6665b] font-bold">+${addOn.price}</p>
                       </div>
                     </label>
                   ))}
@@ -245,12 +243,12 @@ export default function Booking() {
 
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gray-800 mb-6">
-                    Total: <span className="text-primary_button">${calculateTotal()}</span>
+                    Total: <span className="text-[#d6665b]">${calculateTotal()}</span>
                   </div>
                   <button
                     onClick={nextStep}
                     disabled={!packageType}
-                    className="bg-primary_button text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#FFB88C] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                    className="bg-[#d6665b] text-white px-8 py-4 rounded-full text-lg font-semibold hover-[#b7534b] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
                   >
                     Continue to Event Details
                   </button>
@@ -274,7 +272,7 @@ export default function Booking() {
                         onChange={(e) => dispatch(setEventDate(e.target.value))}
                         required
                         min={new Date().toISOString().split('T')[0]}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                       />
                     </div>
                     <div>
@@ -285,7 +283,7 @@ export default function Booking() {
                         value={eventTime}
                         onChange={(e) => dispatch(setEventTime(e.target.value))}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                       />
                     </div>
                   </div>
@@ -301,7 +299,7 @@ export default function Booking() {
                         required
                         min="1"
                         max="12"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                         placeholder="6"
                       />
                     </div>
@@ -314,7 +312,7 @@ export default function Booking() {
                         onChange={(e) => dispatch(setChildAge(e.target.value))}
                         min="3"
                         max="16"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                         placeholder="8"
                       />
                     </div>
@@ -328,7 +326,7 @@ export default function Booking() {
                       onChange={(e) => dispatch(setSpecialRequest(e.target.value))}
                       rows={4}
                       maxLength={500}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm resize-none"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm resize-none"
                       placeholder="Tell us about any special themes, colors, or requests you have in mind..."
                     ></textarea>
                     <div className="text-right text-sm text-gray-500 mt-1">
@@ -340,14 +338,14 @@ export default function Booking() {
                 <div className="flex flex-col space-y-4 md:flex-row justify-between mt-8">
                   <button
                     onClick={prevStep}
-                    className="border-2 border-primary_button text-primary_button px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary_button hover:text-white transition-colors whitespace-nowrap"
+                    className="border-2 border-[#d6665b] text-[#d6665b] px-8 py-4 rounded-full text-lg font-semibold hover-[#b7534b] hover:text-[#b7534b] transition-colors whitespace-nowrap"
                   >
                     Back to Packages
                   </button>
                   <button
                     onClick={nextStep}
                     disabled={!eventDate || !eventTime || !guestCount}
-                    className="bg-primary_button text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#FFB88C] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                    className="bg-[#d6665b] text-white px-8 py-4 rounded-full text-lg font-semibold hover-[#b7534b] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
                   >
                     Continue to Contact Info
                   </button>
@@ -370,7 +368,7 @@ export default function Booking() {
                         value={parentName}
                         onChange={(e) => dispatch(setParentName(e.target.value))}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                         placeholder="Your full name"
                       />
                     </div>
@@ -381,7 +379,7 @@ export default function Booking() {
                         name="childName"
                         value={childName}
                         onChange={(e) => dispatch(setChildName(e.target.value))}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                         placeholder="Child's name"
                       />
                     </div>
@@ -396,7 +394,7 @@ export default function Booking() {
                         value={email}
                         onChange={(e) => dispatch(setEmail(e.target.value))}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -408,7 +406,7 @@ export default function Booking() {
                         value={phone}
                         onChange={(e) => dispatch(setPhone(e.target.value))}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                         placeholder="(555) 123-4567"
                       />
                     </div>
@@ -422,7 +420,7 @@ export default function Booking() {
                       value={address}
                       onChange={(e) => dispatch(setAddress(e.target.value))}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                       placeholder="Street address where party will be held"
                     />
                   </div>
@@ -436,7 +434,7 @@ export default function Booking() {
                         value={city}
                         onChange={(e) => dispatch(setCity(e.target.value))}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                         placeholder="Los Angeles"
                       />
                     </div>
@@ -449,7 +447,7 @@ export default function Booking() {
                         onChange={(e) => dispatch(setZipCode(e.target.value))}
                         required
                         pattern="[0-9]{5}"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                         placeholder="90210"
                       />
                     </div>
@@ -459,14 +457,14 @@ export default function Booking() {
                 <div className="flex space-y-4 flex-col md:flex-row justify-between mt-8">
                   <button
                     onClick={prevStep}
-                    className="border-2 border-primary_button text-primary_button px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary_button hover:text-white transition-colors whitespace-nowrap"
+                    className="border-2 border-[#d6665b] text-[#d6665b] px-8 py-4 rounded-full text-lg font-semibold hover-[#b7534b] hover:text-[#b7534b] transition-colors whitespace-nowrap"
                   >
                     Back to Details
                   </button>
                   <button
                     onClick={nextStep}
                     disabled={!parentName || !email || !phone || !address || !city || !zipCode}
-                    className="bg-primary_button text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#FFB88C] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                    className="bg-[#d6665b] text-white px-8 py-4 rounded-full text-lg font-semibold hover-[#b7534b] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
                   >
                     Continue to Payment
                   </button>
@@ -511,7 +509,7 @@ export default function Booking() {
                     
                     <div className="border-t pt-3 flex justify-between text-xl font-bold">
                       <span>Total:</span>
-                      <span className="text-primary_button">${calculateTotal()}</span>
+                      <span className="text-[#d6665b]">${calculateTotal()}</span>
                     </div>
                   </div>
                 </div>
@@ -532,7 +530,7 @@ export default function Booking() {
                 <div className="text-center">
                   <button
                     onClick={handleSubmit}
-                    className="bg-primary_button text-white px-7 py-4 rounded-full font-semibold text-xl hover:bg-[#FFB88C] transition-colors mb-4 whitespace-nowrap"
+                    className="bg-[#d6665b] text-white px-7 py-4 rounded-full font-semibold text-xl hover-[#b7534b] transition-colors mb-4 whitespace-nowrap"
                   >
                     {loading ? (
                       <FaSpinner className="animate-spin mr-2" />
@@ -547,7 +545,7 @@ export default function Booking() {
 
                   <button
                     onClick={prevStep}
-                    className="block mx-auto mt-6 text-primary_button hover:text-[#FFB88C] transition-colors"
+                    className="block mx-auto mt-6 text-[#d6665b] hover:text-[#FFB88C] transition-colors"
                   >
                     ← Back to Contact Info
                   </button>

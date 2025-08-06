@@ -45,14 +45,14 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
+    <div className="min-h-screen bg-[#d6665b]">
       {/* Header */}
 
       {/* Hero Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-            Get In <span className="text-primary_button">Touch</span>
+            Get In <span className="text-[#d6665b]">Touch</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
             Ready to plan your magical slumber party? We'd love to hear from you! Contact us to discuss your vision and let us create an unforgettable experience.
@@ -87,7 +87,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -99,7 +99,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -113,7 +113,7 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                       placeholder="(555) 123-4567"
                     />
                   </div>
@@ -124,7 +124,7 @@ export default function Contact() {
                       name="eventDate"
                       value={formData.eventDate}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                     />
                   </div>
                 </div>
@@ -139,7 +139,7 @@ export default function Contact() {
                       onChange={handleInputChange}
                       min="1"
                       max="12"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                       placeholder="6"
                     />
                   </div>
@@ -150,15 +150,13 @@ export default function Contact() {
                         name="packageType"
                         value={formData.packageType}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm appearance-none bg-white pr-8"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm appearance-none bg-white pr-8"
                       >
                         <option value="">Select a package</option>
-                        <option value="teepee">Teepee Parties</option>
-                        <option value="princess">Princess Parties</option>
-                        <option value="boho">Boho Chic</option>
-                        <option value="movie">Movie Nights</option>
-                        <option value="unicorn">Unicorn Dreams</option>
-                        <option value="spa">Spa Retreats</option>
+                        <option value="teepee">Slumber Parties</option>
+                        <option value="princess">Luxe Picnic</option>
+                        <option value="boho">Bridal/Baby Shower</option>
+                        <option value="movie">Backyard Movie Night</option>
                       </select>
                       <i className="ri-arrow-down-s-line absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
                     </div>
@@ -173,7 +171,7 @@ export default function Contact() {
                     onChange={handleInputChange}
                     rows={5}
                     maxLength={500}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-primary_button transition-colors text-sm resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm resize-none"
                     placeholder="Share your ideas, theme preferences, special requests, or any questions you have..."
                   ></textarea>
                   <div className="text-right text-sm text-gray-500 mt-1">
@@ -184,7 +182,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary_button text-white py-4 px-6 rounded-xl font-semibold hover:bg-[#FFB88C] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                  className="w-full bg-[#d6665b] text-white py-4 px-6 rounded-xl font-semibold hover:bg-[#FFB88C] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
                 >
                   {isSubmitting ? 'Sending Message...' : 'Send Message'}
                 </button>
@@ -197,40 +195,40 @@ export default function Contact() {
                 <h3 className="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <div className="w-12 h-12 bg-primary_button rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#d6665b] rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                       <i className="ri-phone-line text-white text-xl"></i>
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-1">Phone</h4>
-                      <p className="text-gray-600">(555) 123-4567</p>
+                      <p className="text-gray-600">240-930-4524</p>
                       <p className="text-sm text-gray-500">Available 9 AM - 8 PM PST</p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="w-12 h-12 bg-primary_button rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#d6665b] rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                       <i className="ri-mail-line text-white text-xl"></i>
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
-                      <p className="text-gray-600">hello@soireesandteepees.com</p>
+                      <p className="text-gray-600">soireesandteepees@gmail.com</p>
                       <p className="text-sm text-gray-500">We respond within 24 hours</p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="w-12 h-12 bg-primary_button rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#d6665b] rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                       <i className="ri-map-pin-line text-white text-xl"></i>
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-1">Service Area</h4>
-                      <p className="text-gray-600">Los Angeles County</p>
+                      <p className="text-gray-600">Hanover, Maryland 21076</p>
                       <p className="text-sm text-gray-500">Free consultation within 25 miles</p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="w-12 h-12 bg-primary_button rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#d6665b] rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                       <i className="ri-time-line text-white text-xl"></i>
                     </div>
                     <div>
@@ -266,23 +264,23 @@ export default function Contact() {
                 <h3 className="text-2xl font-bold text-gray-800 mb-6">Quick Questions?</h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
-                    <i className="ri-question-line text-primary_button text-lg mr-3"></i>
+                    <i className="ri-question-line text-[#d6665b] text-lg mr-3"></i>
                     <span className="text-gray-700">How far in advance should I book?</span>
                   </div>
                   <div className="flex items-center">
-                    <i className="ri-question-line text-primary_button text-lg mr-3"></i>
+                    <i className="ri-question-line text-[#d6665b] text-lg mr-3"></i>
                     <span className="text-gray-700">What's included in the cleanup?</span>
                   </div>
                   <div className="flex items-center">
-                    <i className="ri-question-line text-primary_button text-lg mr-3"></i>
+                    <i className="ri-question-line text-[#d6665b] text-lg mr-3"></i>
                     <span className="text-gray-700">Can you accommodate special themes?</span>
                   </div>
                   <div className="flex items-center">
-                    <i className="ri-question-line text-primary_button text-lg mr-3"></i>
+                    <i className="ri-question-line text-[#d6665b] text-lg mr-3"></i>
                     <span className="text-gray-700">Do you provide party favors?</span>
                   </div>
                 </div>
-                <Link href="/booking" className="inline-block mt-6 bg-primary_button text-white px-6 py-3 rounded-full font-semibold hover:bg-[#FFB88C] transition-colors cursor-pointer whitespace-nowrap">
+                <Link href="/booking" className="inline-block mt-6 bg-[#d6665b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#FFB88C] transition-colors cursor-pointer whitespace-nowrap">
                   Book a Consultation
                 </Link>
               </div> */}

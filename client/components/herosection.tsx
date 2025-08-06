@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link'
 import { motion } from 'framer-motion';
 import { GalleryPreview } from '@/components/galleryPreview';
 import { HeroImageSlider } from "./heroImageSlider";
@@ -22,7 +23,9 @@ export const Herosection = () => {
             whileHover={{ scale: 1.1 }}
             className="mt-5 bg-bloomPink hover:bg-pink-500 text-white px-8 py-3 rounded-full font-semibold text-lg transition"
           >
-          Book a Party
+            <Link href='/booking'>
+                Book a Party
+            </Link>
         </motion.button>
 
         <GalleryPreview/>
