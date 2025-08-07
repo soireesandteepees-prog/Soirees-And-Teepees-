@@ -1,6 +1,5 @@
-
 'use client';
-
+import { ConfettiBackground } from '@/components/confettiBackground';
 import Link from 'next/link';
 
 export default function Services() {
@@ -72,10 +71,11 @@ export default function Services() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary_background to-secondary_background">
-
+    <div className="min-h-screen">
+      <ConfettiBackground/>
+    
       {/* Hero Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
             Our <span className="text-[#d6665b]">Services</span>
@@ -133,7 +133,7 @@ export default function Services() {
       </section>
 
       {/* Add-ons Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Popular Add-ons</h2>
@@ -164,7 +164,7 @@ export default function Services() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">How It Works</h2>

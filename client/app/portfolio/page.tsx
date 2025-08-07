@@ -3,6 +3,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { ConfettiBackground } from '@/components/confettiBackground';
 import { image1, image10, image11, image12, image13, image16, image2, image22, image23, image24, image25, image26, image28, image4, image7 } from '@/public/assets/images';
 
 export default function Portfolio() {
@@ -90,8 +91,9 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary_background to-secondary_background">
-      <section className="py-20 bg-white">
+    <div className="min-h-screen">
+      <ConfettiBackground/>
+      <section className="py-20">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
             Our <span className="text-[#d6665b]">Portfolio</span>
@@ -178,7 +180,7 @@ export default function Portfolio() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Creative Process</h2>
@@ -210,7 +212,7 @@ export default function Portfolio() {
       </section>
 
       {/* Awards Section */}
-      <section className="py-20 bg-gradient-to-br from-primary_background to-secondary_background">
+      <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Recognition & Awards</h2>

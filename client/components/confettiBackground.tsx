@@ -2,10 +2,10 @@
 export const ConfettiBackground = () => {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-      {[...Array(20)].map((_, i) => (
+      {[...Array(45)].map((_, i) => (
         <div
           key={i}
-          className={`absolute w-3 h-3 rounded-full opacity-70 animate-[float_6s_infinite]`}
+          className={`absolute w-4 h-4 rounded-full opacity-90 animate-[float_6s_infinite]`}
           style={{
             backgroundColor: ['#FF6FA3', '#FFDD57', '#A3F7BF', '#6EC3F4'][i % 4],
             top: `${Math.random() * 100}%`,

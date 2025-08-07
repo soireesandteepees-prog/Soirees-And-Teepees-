@@ -3,6 +3,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { ConfettiBackground } from '@/components/confettiBackground';
 import {image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, image17, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27} from '../../public/assets/images/index';
 
 export default function Gallery() {
@@ -41,10 +42,10 @@ export default function Gallery() {
     : galleryImages.filter(img => img.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-white">
-
+    <div className="min-h-screen">
+      <ConfettiBackground/>
       {/* Hero Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
             Our <span className="text-[#d6665b]">Gallery</span>
@@ -155,7 +156,7 @@ export default function Gallery() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 text-shadow-lg">Ready to Create Your Own Magic?</h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto text-shadow-lg">

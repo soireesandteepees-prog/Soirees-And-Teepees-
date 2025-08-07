@@ -6,18 +6,18 @@ import { ConfettiBackground } from '@/components/confettiBackground';
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-black ">
+    <div className="min-h-screen">
       <ConfettiBackground/>
       <section className="py-20">
       <div className="absolute inset-0 bg-[url('/festive-background.svg')] bg-cover bg-no-repeat bg-blend-multiply opacity-60"></div>
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold text-peach mb-6 leading-tight font-heading">
+              <h1 className="text-5xl md:text-6xl font-bold text-[#EE8F63] mb-6 leading-tight font-heading">
                 About Our 
-                <span className="text-peach block">Magical Story</span>
+                <span className="text-[#EE8F63] block">Magical Story</span>
               </h1>
-              <p className="text-lg text-white mb-8 leading-relaxed italic font-semibold">
+              <p className="text-lg text-black mb-8 leading-relaxed italic font-semibold">
                 Founded with a passion for creating unforgettable childhood memories, SOIREES & TEEPEES transforms ordinary sleepovers into extraordinary magical experiences.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -48,27 +48,27 @@ export default function About() {
         <div className="absolute inset-0 bg-[url('/festive-background.svg')] bg-cover bg-no-repeat bg-blend-multiply opacity-60"></div>
         <div className=" mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-peach mb-8 font-heading">Our Story</h2>
-            <p className="text-lg text-white mb-12 leading-relaxed">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#EE8F63] mb-8 font-heading">Our Story</h2>
+            <p className="text-lg text-black mb-12 leading-relaxed">
               It all started when our founder, Sarah, wanted to create the perfect slumber party for her daughter's 8th birthday. What began as a simple idea quickly blossomed into a passion for creating magical experiences that children treasure forever.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center bg-peach w-full p-2 rounded-xl border-4 border-white">
-                <div className="w-16 h-16 bg-sunshine border-4 border-white rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#EE8F63] border-4 border-white rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className="ri-lightbulb-line text-white text-2xl"></i>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-3">The Idea</h3>
                 <p className="text-gray-600">Born from a desire to create something truly special for children's celebrations</p>
               </div>
               <div className="text-center bg-peach w-full p-2 rounded-xl border-4 border-white">
-                <div className="w-16 h-16 bg-pastelYellow border-4 border-white rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#EAB3C6] border-4 border-white rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className="ri-heart-line text-white text-2xl"></i>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-3">The Passion</h3>
                 <p className="text-gray-600">Driven by love for creating joy and wonder in children's lives</p>
               </div>
               <div className="text-center bg-peach w-full p-2 rounded-xl border-4 border-white">
-                <div className="w-16 h-16 bg-[#b7534b] border-4 border-white rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#D5666D] border-4 border-white rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className="ri-star-line text-white text-2xl"></i>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-3">The Magic</h3>
@@ -122,12 +122,12 @@ export default function About() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: "ri-magic-line", color:'[#b7534b]', title: "Creativity", description: "Every party is uniquely designed to spark imagination" },
-              { icon: "ri-shield-check-line", color:'[#b7534b]', title: "Safety", description: "Child safety is our top priority in every setup" },
-              { icon: "ri-heart-line", color:'[#b7534b]', title: "Love", description: "We pour love into every detail of your celebration" },
-              { icon: "ri-star-line", color:'[#b7534b]', title: "Excellence", description: "We strive for perfection in every experience we create" }
+              { icon: "ri-magic-line", color:'[#EE8F63]', title: "Creativity", description: "Every party is uniquely designed to spark imagination" },
+              { icon: "ri-shield-check-line", color:'[#EAB3C6]', title: "Safety", description: "Child safety is our top priority in every setup" },
+              { icon: "ri-heart-line", color:'[#D5666D]', title: "Love", description: "We pour love into every detail of your celebration" },
+              { icon: "ri-star-line", color:'[#E89C62]', title: "Excellence", description: "We strive for perfection in every experience we create" }
             ].map((value, index) => (
-              <div key={index} className="text-center p-6 bg-skyBlue rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <div key={index} className="text-center p-6 bg-peach rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className={`w-16 h-16 bg-${value.color} border-4 border-white rounded-full flex items-center justify-center mx-auto mb-4`}>
                   <i className={`${value.icon} text-white text-2xl`}></i>
                 </div>
@@ -140,7 +140,7 @@ export default function About() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 relative text-white">
+      <section className="py-20 relative text-black">
         <div className="absolute inset-0 bg-[url('/festive-background.svg')] bg-cover bg-no-repeat bg-blend-multiply opacity-60"></div>
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8 text-center">
