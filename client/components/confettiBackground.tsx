@@ -1,8 +1,8 @@
 // components/ConfettiBackground.tsx
 export const ConfettiBackground = () => {
   return (
-    <div className="fixed inset-0 z-30 overflow-hidden pointer-events-none">
-      {[...Array(45)].map((_, i) => (
+    <div className="fixed inset-0 z-10 overflow-hidden pointer-events-none">
+      {[...Array(25)].map((_, i) => (
         <div
           key={i}
           className={`absolute w-4 h-4 rounded-full opacity-90 animate-[float_6s_infinite]`}
