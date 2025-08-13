@@ -82,8 +82,8 @@ export default function About() {
       <section className="py-20 relative">
         <div className="container mx-auto px-6">
           <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#D5666D] font-heading mb-4">Meet Our Team</h2>
-            <p className="text-xl text-[#EE8F63] max-w-2xl mx-auto">The creative minds behind every magical experience</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#D5666D] font-heading mb-4">Meet the creative director</h2>
+            <p className="text-xl text-[#EE8F63] max-w-2xl mx-auto">The creative mind behind every magical experience</p>
           </div>
           <div>
             {[
