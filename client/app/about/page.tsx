@@ -45,7 +45,6 @@ export default function About() {
 
       {/* Our Story */}
       <section className="py-12 relative">
-        <div className="absolute inset-0 bg-[url('/festive-background.svg')] bg-cover bg-no-repeat bg-blend-multiply opacity-60"></div>
         <div className=" mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-[#EE8F63] mb-8 font-heading">Our Story</h2>
@@ -112,7 +111,6 @@ export default function About() {
 
       {/* Values Section */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 bg-[url('/festive-background.svg')] bg-cover bg-no-repeat bg-blend-multiply opacity-60"></div>
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#D5666D] mb-4 font-heading">Our Values</h2>
@@ -139,7 +137,6 @@ export default function About() {
 
       {/* Stats Section */}
       <section className="py-20 relative text-black">
-        <div className="absolute inset-0 bg-[url('/festive-background.svg')] bg-cover bg-no-repeat bg-blend-multiply opacity-60"></div>
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
@@ -163,7 +160,7 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative rounded-tl-[150px] py-24 text-white text-center px-6 bg-peach bg-[url('/festive-background.svg')] bg-cover bg-blend-overlay bg-repeat">
+      <section className="relative rounded-tl-[150px] py-24 text-white text-center px-6 bg-peach">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-shadow-lg mb-6">Join Our Magical Journey</h2>
           <p className="text-xl text-shadow-lg text-gray-600 mb-8 max-w-2xl mx-auto">
