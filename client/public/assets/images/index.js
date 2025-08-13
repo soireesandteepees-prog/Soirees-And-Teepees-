@@ -27,6 +27,7 @@ import image26 from './IMG-20250712-WA0028.jpg';
 import image27 from './IMG-20250712-WA0029.jpg';
 import image28 from './herosection.jpg';
 import logo from './ST LOGO.jpg'
+import admin from './admin.jpg'
 
 
 export {
@@ -58,5 +59,6 @@ export {
     image26,
     image27,
     image28,
-    logo
+    logo, 
+    admin
 };

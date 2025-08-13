@@ -3,13 +3,13 @@
 
 import Link from 'next/link';
 import { ConfettiBackground } from '@/components/confettiBackground';
+import { admin } from '@/public/assets/images';
 
 export default function About() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#FBEDE6]">
       <ConfettiBackground/>
-      <section className="py-20">
-      <div className="absolute inset-0 bg-[url('/festive-background.svg')] bg-cover bg-no-repeat bg-blend-multiply opacity-60"></div>
+      <section className="py-10">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -31,9 +31,9 @@ export default function About() {
             </div>
             <div className="relative">
               <img 
-                src="https://readdy.ai/api/search-image?query=beautiful%20mother%20daughter%20setting%20up%20dreamy%20slumber%20party%20with%20teepees%20fairy%20lights%20cozy%20pillows%20warm%20family%20moment%20magical%20sleepover%20preparation%20pastel%20colors%20loving%20atmosphere%20bonding%20experience%20happy%20family&width=600&height=500&seq=about-hero&orientation=landscape"
+                src={admin.src}
                 alt="About Us"
-                className="rounded-2xl shadow-xl object-cover w-full h-96"
+                className="rounded-2xl shadow-xl object-cover w-full h-[500px]"
               />
               <div className="absolute -top-6 -left-6 w-24 h-24 bg-peach rounded-full flex items-center justify-center">
                 <i className="ri-heart-line text-bloomPink text-3xl"></i>
@@ -82,30 +82,28 @@ export default function About() {
       {/* Team Section */}
       <section className="py-20 relative">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-pastelYellow font-heading mb-4">Meet Our Team</h2>
-            <p className="text-xl text-skyBlue max-w-2xl mx-auto">The creative minds behind every magical experience</p>
+          <div className="text-center mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#D5666D] font-heading mb-4">Meet Our Team</h2>
+            <p className="text-xl text-[#EE8F63] max-w-2xl mx-auto">The creative minds behind every magical experience</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div>
             {[
-              { name: "Sarah Johnson", role: "Founder & Creative Director", bio: "Mother of two with 8+ years of event planning experience" },
-              { name: "Emma Davis", role: "Event Coordinator", bio: "Specializes in themed parties and children's entertainment" },
-              { name: "Lisa Chen", role: "Design Specialist", bio: "Interior designer passionate about creating magical spaces" }
+              { name: "Rukevwe Osuhor", role: "Founder & Creative Director", bio: "Mother of two with 5+ years of event planning experience" }
             ].map((member, index) => (
               <div key={index} className="text-center group">
                 <div className="relative mb-6">
                   <img 
-                    src={`https://readdy.ai/api/search-image?query=professional%20friendly%20woman%20event%20planner%20smiling%20warm%20portrait%20creative%20team%20member%20party%20planning%20specialist%20approachable%20confident%20business%20professional&width=300&height=300&seq=team-${index}&orientation=squarish`}
+                    src={admin.src}
                     alt={member.name}
-                    className="w-48 h-48 rounded-full mx-auto object-cover shadow-lg group-hover:shadow-xl transition-shadow"
+                    className="w-72 h-72 rounded-full mx-auto object-cover shadow-lg group-hover:shadow-xl transition-shadow"
                   />
                   <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-peach rounded-full flex items-center justify-center">
                     <i className="ri-star-line text-white text-lg"></i>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-peach mb-0">{member.name}</h3>
-                <p className="text-peach font-semibold mb-3">{member.role}</p>
-                <p className="text-peach">{member.bio}</p>
+                <h3 className="text-3xl font-bold text-[#D5666D] mb-0">{member.name}</h3>
+                <p className="text-[#EE8F63] text-xl font-bold mb-2">{member.role}</p>
+                <p className="text-gray-700">{member.bio}</p>
               </div>
             ))}
           </div>
@@ -117,7 +115,7 @@ export default function About() {
         <div className="absolute inset-0 bg-[url('/festive-background.svg')] bg-cover bg-no-repeat bg-blend-multiply opacity-60"></div>
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-bloomPink mb-4 font-heading">Our Values</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#D5666D] mb-4 font-heading">Our Values</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">The principles that guide everything we do</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
