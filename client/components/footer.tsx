@@ -7,7 +7,6 @@ import {logo} from '../public/assets/images/index'
 export const Footer = () => {
   return (
     <footer className="bg-[#d6665b] text-[#fdf5f2] relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/festive-background.svg')] bg-cover bg-no-repeat bg-blend-multiply opacity-20"></div>
 
       <div className="relative z-10 container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-12">
