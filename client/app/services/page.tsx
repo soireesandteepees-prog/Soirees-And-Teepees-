@@ -193,7 +193,7 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-peach to-secondary_background">
+      <section className="py-20 bg-peach">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 text-shadow-lg">Ready to Book Your Dream Party?</h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto text-shadow-lg">

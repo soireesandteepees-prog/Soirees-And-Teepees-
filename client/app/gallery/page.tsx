@@ -85,7 +85,7 @@ export default function Gallery() {
               <div 
                 key={index}
                 className="group cursor-pointer relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
-                onClick={() => setLightboxImage(`https://readdy.ai/api/search-image?query=$%7Bitem.image%7D&width=800&height=600&seq=gallery-${index}&orientation=landscape`)}
+                onClick={() => setLightboxImage(item.image.src)}
               >
                 <div className="aspect-square">
                   <img 
