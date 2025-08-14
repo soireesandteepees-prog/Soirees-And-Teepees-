@@ -42,7 +42,7 @@ export default function Gallery() {
     : galleryImages.filter(img => img.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-[#c8a2c8]">
+    <div className="min-h-screen bg-[#FCE5FC]">
       <ConfettiBackground/>
       {/* Hero Section */}
       <section className="py-20">

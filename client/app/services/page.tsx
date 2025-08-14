@@ -71,7 +71,7 @@ export default function Services() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#c8a2c8]">
+    <div className="min-h-screen bg-[#FCE5FC]">
       <ConfettiBackground/>
     
       {/* Hero Section */}
