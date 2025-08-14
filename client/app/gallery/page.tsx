@@ -106,11 +106,11 @@ export default function Gallery() {
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
           onClick={() => setLightboxImage(null)}
         >
-          <div className="relative w-full h-full">
+          <div className="relative max-w-4xl max-h-full">
             <img 
               src={lightboxImage}
               alt="Gallery Image"
-              className="relative w-full h-full object-fill rounded-lg"
+              className="max-w-full max-h-full object-contain rounded-lg"
             />
             <button 
               onClick={() => setLightboxImage(null)}
