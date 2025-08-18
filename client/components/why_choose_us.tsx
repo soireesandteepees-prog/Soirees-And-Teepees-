@@ -14,7 +14,7 @@ const cardVariants = {
 
 export const WhyChooseUs = () => {
   return (
-    <section className="pt-2 pb-10  rounded-tl-xl bg-[#FCE5FC] relative overflow-hidden">
+    <section className="pt-2 pb-10  rounded-tl-xl bg-[#f8dbcd] relative overflow-hidden">
       {/* Background Bubbles */}
       <div className="absolute -top-20 -left-10 w-40 h-40 bg-bloomPink rounded-full blur-3xl opacity-30 animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-48 h-48 bg-[#FBEDE6] rounded-full blur-2xl opacity-20 animate-bounce"></div>
@@ -58,7 +58,7 @@ export const WhyChooseUs = () => {
           ].map((card, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border-4"
+              className="bg-[#FCE5FC] rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border-4"
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: true, amount: 0.3 }}
