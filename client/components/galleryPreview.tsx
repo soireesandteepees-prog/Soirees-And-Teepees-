@@ -19,11 +19,11 @@ import {image1, image2, image3, image4, image5, image6, image7, image8, image9, 
 
 export const GalleryPreview = () => {
     return (
-        <section className=" pt-12 pb-20 px-6 text-center">
-      <h2 className="text-4xl font-heading text-[#EE8F63] mb-12 ">Peek Into The Fun!</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <section className=" pt-12 pb-20 z-50 px-6 text-center">
+      <h2 className="text-4xl font-heading text-[#EE8F63] mb-12 drop-shadow-lg">Peek Into The Fun!</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 z-40 gap-6 max-w-6xl mx-auto">
         {images.map((src, i) => (
-          <div key={i} className="overflow-hidden rounded-2xl shadow-lg hover:scale-105 transition">
+          <div key={i} className="overflow-hidden rounded-2xl shadow-lg scale-105 transition">
             <img src={src.src} alt={`party ${i}`} className="w-full h-64 object-cover" />
           </div>
         ))}

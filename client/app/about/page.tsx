@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { ConfettiBackground } from '@/components/confettiBackground';
-import { admin } from '@/public/assets/images';
+import { admin, logo } from '@/public/assets/images';
 
 export default function About() {
   return (
@@ -31,13 +31,11 @@ export default function About() {
             </div>
             <div className="relative">
               <img 
-                src={admin.src}
+                src={logo.src}
                 alt="About Us"
                 className="rounded-2xl shadow-xl object-cover w-full h-[500px]"
               />
-              <div className="absolute -top-6 -left-6 w-24 h-24 bg-peach rounded-full flex items-center justify-center">
-                <i className="ri-heart-line text-bloomPink text-3xl"></i>
-              </div>
+
             </div>
           </div>
         </div>

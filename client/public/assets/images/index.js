@@ -26,7 +26,7 @@ import image25 from './IMG-20250712-WA0027.jpg';
 import image26 from './IMG-20250712-WA0028.jpg';
 import image27 from './IMG-20250712-WA0029.jpg';
 import image28 from './herosection.jpg';
-import logo from './ST LOGO.jpg'
+import logo from './ST Tent LOGO.png'
 import admin from './admin.jpg'
 
 
