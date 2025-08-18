@@ -8,7 +8,6 @@ import { admin, logo } from '@/public/assets/images';
 export default function About() {
   return (
     <div className="min-h-screen bg-[#FBEDE6]">
-      <ConfettiBackground/>
       <section className="py-10">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -29,14 +28,11 @@ export default function About() {
                 </Link>
               </div>
             </div>
-            <div className="relative">
-              <img 
-                src={logo.src}
-                alt="About Us"
-                className="rounded-2xl shadow-xl object-cover w-full h-[500px]"
-              />
-
-            </div>
+            <img 
+              src={logo.src}
+              alt="About Us"
+              className="rounded-2xl object-contain w-full h-[500px]"
+            />
           </div>
         </div>
       </section>
@@ -80,8 +76,8 @@ export default function About() {
       <section className="py-20 relative">
         <div className="container mx-auto px-6">
           <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#D5666D] font-heading mb-4">Meet the creative director</h2>
-            <p className="text-xl text-[#EE8F63] max-w-2xl mx-auto">The creative mind behind every magical experience</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#EE8F63] font-heading mb-4">Meet the creative director</h2>
+            <p className="text-xl text-black max-w-2xl mx-auto">The creative mind behind every magical experience</p>
           </div>
           <div>
             {[
@@ -98,9 +94,9 @@ export default function About() {
                     <i className="ri-star-line text-white text-lg"></i>
                   </div>
                 </div>
-                <h3 className="text-3xl font-bold text-[#D5666D] mb-0">{member.name}</h3>
-                <p className="text-[#EE8F63] text-xl font-bold mb-2">{member.role}</p>
-                <p className="text-gray-700">{member.bio}</p>
+                <h3 className="text-3xl font-bold text-black mb-0">{member.name}</h3>
+                <p className="text-black text-xl font-bold mb-2">{member.role}</p>
+                <p className="text-black">{member.bio}</p>
               </div>
             ))}
           </div>
@@ -111,8 +107,8 @@ export default function About() {
       <section className="py-20 relative">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#D5666D] mb-4 font-heading">Our Values</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">The principles that guide everything we do</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#EE8F63] mb-4 font-heading">Our Values</h2>
+            <p className="text-xl text-black max-w-2xl mx-auto">The principles that guide everything we do</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -164,7 +160,7 @@ export default function About() {
           <p className="text-xl text-shadow-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             Whether you're planning a birthday party or a special celebration, we're here to make it unforgettable
           </p>
-          <Link href="/contact" className="mt-8 bg-white text-bloomPink font-semibold px-8 py-3 rounded-full hover:scale-105 transition">
+          <Link href="/contact" className="mt-8 bg-[#d6665b] text-white font-semibold px-8 py-3 rounded-full hover:scale-105 transition">
             Contact Us Today
           </Link>
         </div>
