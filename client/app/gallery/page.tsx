@@ -43,7 +43,6 @@ export default function Gallery() {
 
   return (
     <div className="min-h-screen bg-[#FBEDE6]">
-      <ConfettiBackground/>
       {/* Hero Section */}
       <section className="py-20">
         <div className="container mx-auto px-6 text-center">

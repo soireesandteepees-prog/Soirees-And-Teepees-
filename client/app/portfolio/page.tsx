@@ -91,12 +91,11 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="min-h-screen">
-      <ConfettiBackground/>
+    <div className="min-h-screen bg-[#FBEDE6]">
       <section className="py-20">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-            Our <span className="text-[#d6665b]">Portfolio</span>
+          <h1 className="text-5xl md:text-6xl font-bold font-heading text-[#EE8F63] mb-6 leading-tight">
+            Our <span className="text-[#EE8F63]">Portfolio</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
             Discover the magical experiences we've created for families across Los Angeles. Each project tells a unique story of joy, creativity, and unforgettable memories.
