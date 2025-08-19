@@ -45,14 +45,14 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-[#d6665b]">
+    <div className="min-h-screen bg-[#FBEDE6]">
       {/* Header */}
 
       {/* Hero Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#FBEDE6]">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-            Get In <span className="text-[#d6665b]">Touch</span>
+          <h1 className="text-5xl md:text-6xl font-bold font-heading text-[#EE8F63] mb-6 leading-tight">
+            Get In <span className="text-[#EE8F63]">Touch</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
             Ready to plan your magical slumber party? We'd love to hear from you! Contact us to discuss your vision and let us create an unforgettable experience.

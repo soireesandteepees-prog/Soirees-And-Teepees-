@@ -95,7 +95,7 @@ export default function Portfolio() {
       <section className="py-20">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold font-heading text-[#EE8F63] mb-6 leading-tight">
-            Our <span className="text-[#EE8F63]">Portfolio</span>
+            Our <span className="text-[#EE8F63] tracking-widest">Portfolio</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
             Discover the magical experiences we've created for families across Los Angeles. Each project tells a unique story of joy, creativity, and unforgettable memories.
@@ -211,7 +211,7 @@ export default function Portfolio() {
       </section>
 
       {/* Awards Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Recognition & Awards</h2>
@@ -219,12 +219,12 @@ export default function Portfolio() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { award: "Best Party Planner 2023", organization: "Los Angeles Family Magazine", icon: 'ri-award-line' },
-              { award: "Top Event Designer", organization: "Children's Party Awards", icon: 'ri-star-line' },
-              { award: "Excellence in Service", organization: "LA Business Chamber", icon: 'ri-medal-line' }
+              { award: "Best Party Planner 2023", color:'[#EE8F63]', organization: "Los Angeles Family Magazine", icon: 'ri-award-line' },
+              { award: "Top Event Designer", color:'[#D5666D]', organization: "Children's Party Awards", icon: 'ri-star-line' },
+              { award: "Excellence in Service", color:'[#EAB3C6]', organization: "LA Business Chamber", icon: 'ri-medal-line' }
             ].map((item, index) => (
-              <div key={index} className="text-center bg-white p-8 rounded-2xl shadow-lg">
-                <div className="w-16 h-16 bg-[#d6665b] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div key={index} className="text-center bg-peach border-4 border-white p-8 rounded-2xl shadow-lg">
+                <div className={`w-16 h-16 bg-${item.color} rounded-full border-4 border-white flex items-center justify-center mx-auto mb-4`}>
                   <i className={`${item.icon} text-white text-2xl`}></i>
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{item.award}</h3>
@@ -233,7 +233,7 @@ export default function Portfolio() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-peach">
