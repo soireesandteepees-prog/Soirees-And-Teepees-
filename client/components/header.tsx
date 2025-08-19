@@ -21,7 +21,7 @@ export default function Header() {
       <nav className="flex items-center justify-between">
         {/* Logo Section */}
         <Link href="/" className="flex items-center space-x-2">
-          <div className="w-12 h-12 rounded-xl bg-white shadow-inner flex items-center justify-center">
+          <div className="w-12 h-12 rounded-xl bg-[#fce7e3] shadow-inner flex items-center justify-center">
             <Image src={logo} alt="Logo" className="w-10 h-10 rounded-xl" />
           </div>
           <span className="font-playfair italic text-[#4c1d18] font-bold text-sm leading-tight">

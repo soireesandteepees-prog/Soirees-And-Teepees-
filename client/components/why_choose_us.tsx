@@ -58,12 +58,12 @@ export const WhyChooseUs = () => {
           ].map((card, index) => (
             <motion.div
               key={index}
-              className="bg-[#FCE5FC] rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border-4"
+              className="bg-peach border-4 border-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300"
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className={`w-16 h-16 ${card.bg.split(' ')[1]} rounded-full flex items-center justify-center mx-auto mb-6 shadow-md`}>
+              <div className={`w-16 h-16 ${card.bg.split(' ')[1]} rounded-full border-4 border-white flex items-center justify-center mx-auto mb-6 shadow-md`}>
                 <i className={`${card.icon} text-3xl ${card.bg.split(' ')[2]}`}></i>
               </div>
               <h3 className={`text-2xl font-heading mb-3 text-gray-600`}>{card.title}</h3>
