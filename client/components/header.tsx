@@ -24,9 +24,6 @@ export default function Header() {
           <div className="w-12 h-12 rounded-xl bg-[#fce7e3] shadow-inner flex items-center justify-center">
             <Image src={logo} alt="Logo" className="w-10 h-10 rounded-xl" />
           </div>
-          <span className="font-playfair italic text-[#4c1d18] font-bold text-sm leading-tight">
-            SOIRÉES <br /> <span className="text-xs tracking-wider">& TEEPEES</span>
-          </span>
         </Link>
 
         {/* Desktop Links */}

@@ -71,14 +71,12 @@ export default function Services() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FBEDE6]">
-      <ConfettiBackground/>
-    
+    <div className="min-h-screen bg-[#FBEDE6]">    
       {/* Hero Section */}
       <section className="py-20">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-            Our <span className="text-[#d6665b]">Services</span>
+          <h1 className="text-5xl md:text-6xl font-bold font-heading text-[#EE8F63] mb-6 leading-tight">
+            Our <span className="text-[#EE8F63]">Services</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
             Choose from our carefully crafted slumber party packages, each designed to create magical memories that will last a lifetime. Every package includes setup, styling, and cleanup.
@@ -91,7 +89,7 @@ export default function Services() {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12">
             {services.map((service, index) => (
-              <div key={service.id} className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow group">
+              <div key={service.id} className="bg-white drop-shadow-lg rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow group">
                 <div className="relative">
                   <img 
                     src={`https://readdy.ai/api/search-image?query=$%7Bservice.image%7D&width=600&height=400&seq=service-${index}&orientation=landscape`}
@@ -139,19 +137,19 @@ export default function Services() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Popular Add-ons</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">Enhance your party with these magical extras</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="text-center flex justify-center">
             {[
-              { icon: 'ri-camera-line', title: 'Photo Booth', price: '+$49', description: 'Polaroid camera with props' },
-              { icon: 'ri-cake-2-line', title: 'Birthday Cake', price: '+$65', description: 'Custom themed birthday cake' },
-              { icon: 'ri-gift-line', title: 'Party Favors', price: '+$89', description: 'Themed goodie bags for guests' },
-              { icon: 'ri-music-line', title: 'Playlist Setup', price: '+$29', description: 'Curated music for the party' },
-              { icon: 'ri-star-line', title: 'Face Painting', price: '+$99', description: 'Professional face painting' },
-              { icon: 'ri-palette-line', title: 'Craft Station', price: '+$79', description: 'DIY craft activities' },
-              { icon: 'ri-magic-line', title: 'Magic Show', price: '+$149', description: '30-minute magic performance' },
+              // { icon: 'ri-camera-line', title: 'Photo Booth', price: '+$49', description: 'Polaroid camera with props' },
+              // { icon: 'ri-cake-2-line', title: 'Birthday Cake', price: '+$65', description: 'Custom themed birthday cake' },
+              // { icon: 'ri-gift-line', title: 'Party Favors', price: '+$89', description: 'Themed goodie bags for guests' },
+              // { icon: 'ri-music-line', title: 'Playlist Setup', price: '+$29', description: 'Curated music for the party' },
+              // { icon: 'ri-star-line', title: 'Face Painting', price: '+$99', description: 'Professional face painting' },
+              // { icon: 'ri-palette-line', title: 'Craft Station', price: '+$79', description: 'DIY craft activities' },
+              // { icon: 'ri-magic-line', title: 'Magic Show', price: '+$149', description: '30-minute magic performance' },
               { icon: 'ri-moon-line', title: 'Midnight Snacks', price: '+$39', description: 'Late night treat service' }
             ].map((addon, index) => (
-              <div key={index} className="text-center p-6 bg-gradient-to-br from-primary_background to-secondary_background rounded-2xl hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-[#d6665b] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div key={index} className="text-center w-1/2 p-6 drop-shadow-lg bg-peach border-4 border-white rounded-2xl hover:shadow-lg transition-shadow">
+                <div className="w-16 h-16 bg-[#d6665b] border-4 border-white rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className={`${addon.icon} text-white text-2xl`}></i>
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{addon.title}</h3>
@@ -174,11 +172,11 @@ export default function Services() {
             {[
               { step: '01', title: 'Book Online', description: 'Choose your package and preferred date through our easy booking system' },
               { step: '02', title: 'Plan Together', description: 'We discuss themes, colors, and special requests to customize your party' },
-              { step: '03', title: 'We Setup', description: 'Our team arrives 2-3 hours before to create the magical experience' },
-              { step: '04', title: 'Enjoy & Cleanup', description: 'You enjoy the party while we handle all the cleanup the next day' }
+              { step: '03', title: 'We Setup', description: 'Our team arrives 3-4 hours before to create the magical experience' },
+              { step: '04', title: 'Breakdown', description: 'You enjoy the party while we handle all the breakdown the next day' }
             ].map((item, index) => (
               <div key={index} className="text-center relative">
-                <div className="w-20 h-20 bg-[#d6665b] rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-20 h-20 bg-[#d6665b] border-4 border-white rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-white text-2xl font-bold">{item.step}</span>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">{item.title}</h3>
