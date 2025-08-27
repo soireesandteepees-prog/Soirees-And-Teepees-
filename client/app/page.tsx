@@ -12,7 +12,7 @@ import { CallToAction } from '@/components/call_to_action';
 
 export default function Home() {
   return (
-    <div className="relative bg-[#FBEDE6] min-h-screen">
+    <div className="relative min-h-screen">
       <Herosection />
       <WhyChooseUs/>
       {/* <GalleryPreview/> */}

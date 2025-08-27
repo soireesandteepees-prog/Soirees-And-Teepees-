@@ -21,21 +21,12 @@ export default function Booking() {
 
 
   const packages = [
-    { id: 'slumber', name: 'Slumber Parties', price: 299, duration: '24 hours', guests: 'Up to 8' },
-    { id: 'luxe', name: 'Luxe Picnic', price: 349, duration: '24 hours', guests: 'Up to 6' },
-    { id: 'shower', name: 'Bridal/Baby Shower', price: 329, duration: '24 hours', guests: 'Up to 8' },
-    { id: 'movie', name: 'Backyard Movie Night', price: 279, duration: '6-8 hours', guests: 'Up to 10' },
+    { id: 'kids-sleepover', name: 'Kids Sleepover', price: 415, duration: '24 hours', guests: 'Minimum of 3 Children' },
+    { id: 'adult-sleepover', name: 'Adult Sleepover', price: 465, duration: '24 hours', guests: 'Minimum of 3 Adults' },
   ];
 
   const AddOns = [
-    { id: 'photo-booth', name: 'Photo Booth', price: 49 },
-    { id: 'birthday-cake', name: 'Birthday Cake', price: 65 },
-    { id: 'party-favors', name: 'Party Favors', price: 89 },
-    { id: 'playlist', name: 'Playlist Setup', price: 29 },
-    { id: 'face-painting', name: 'Face Painting', price: 99 },
-    { id: 'craft-station', name: 'Craft Station', price: 79 },
-    { id: 'magic-show', name: 'Magic Show', price: 149 },
-    { id: 'midnight-snacks', name: 'Midnight Snacks', price: 39 }
+    { id: 'balloons', name: 'Balloons', price: 100 },
   ];
 
 

@@ -16,8 +16,8 @@ export const Herosection = () => {
         <div className="pb-5 relative flex justify-center">
           <HeroImageSlider />
         </div>
-        <h1 className="text-5xl text-[#EE8F63] md:text-6xl font-heading drop-shadow-lg">Make Every Party Magical ✨</h1>
-        <p className="mt-6 text-[#EE8F63] drop-shadow-lg text-lg md:text-xl max-w-2xl mx-auto font-body">
+        <h1 className="text-5xl text-[#EE8F63] md:text-6xl font-heading drop-shadow-lg">Make Every Party Magical</h1>
+        <p className="mt-6 drop-shadow-lg text-lg md:text-xl max-w-2xl mx-auto font-body">
           Discover beautiful teepee setups, fun-filled themes, and unforgettable moments.
         </p>
         <motion.button

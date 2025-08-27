@@ -5,8 +5,8 @@ import {logo} from '../public/assets/images/index'
 
 
 export const Footer = () => {
-  return (
-    <footer className="bg-[#d6665b] text-[#fdf5f2] relative overflow-hidden">
+  return (  //#d6665b
+    <footer className="bg-[#d75044] text-[#fdf5f2] relative overflow-hidden">
 
       <div className="relative z-10 container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-12">

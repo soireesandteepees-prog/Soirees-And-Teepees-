@@ -1,71 +1,58 @@
 'use client';
 import { ConfettiBackground } from '@/components/confettiBackground';
 import Link from 'next/link';
+import { BsInfoCircle } from "react-icons/bs";
 
 export default function Services() {
   const services = [
     {
-      id: 'slumber-parties',
-      title: 'Slumber Parties',
-      price: 'From $299',
+      id: 'kids-sleepover',
+      title: 'Kids Sleepover',
+      price: 'From $415',
       duration: '24 hours',
-      guests: 'Up to 8 children',
+      guests: 'Minimum of 3 children',
+      info: "There will be an additional fee of $100 per additional child",
       image: 'magical+teepee+slumber+party+setup+with+fairy+lights+soft+pillows+blankets+pastel+colors+cozy+indoor+camping+dreamy+atmosphere+pink+purple+decor',
       features: [
-        'Luxury teepees with premium bedding',
-        'Fairy lights and ambient lighting',
-        'Cozy pillows and blankets',
-        'Setup and breakdown included',
-        'Themed decorations',
-        'Breakfast tray setup'
+        'A frame teepees with fairylights',
+        ' Fabric teepee cover to suite party theme or color scheme',
+        ' Air Mattresses', 
+        ' Fitted shee8',
+        ' Soft/fleece blankets',
+        ' Pillows',
+        ' Themes throw pillows', 
+        ' Tent Name tags',
+        ' Lap Trays',
+        ' Themed placemats', 
+        ' Themed frames',
+        ' LED table lights',
+        'Furfootmats'
       ]
     },
     {
-      id: 'bridal/baby shower',
-      title: 'Bridal/Baby Shower',
-      price: 'From $349',
+      id: 'adult-sleepover',
+      title: 'Adult Sleepover',
+      price: 'From $465',
       duration: '24 hours',
-      guests: 'Up to 6 children',
+      guests: 'Minimum of 3 Person',
+      info: "There will be an additional fee of $100 per additional Person",
       image: 'princess+themed+slumber+party+with+pink+gold+decorations+crowns+magical+setup+fairy+tale+atmosphere+elegant+sleepover+decor+dreamy+bedroom',
       features: [
-        'Royal themed decorations',
-        'Princess crowns and accessories',
-        'Elegant canopy beds',
-        'Rose petals and flowers',
-        'Pink and gold color scheme',
-        'Royal breakfast service'
-      ]
-    },
-    {
-      id: 'luxe picnic',
-      title: 'Luxe Picnic',
-      price: 'From $329',
-      duration: '24 hours',
-      guests: 'Up to 8 children',
-      image: 'boho+chic+slumber+party+setup+with+macrame+dreamcatchers+natural+textures+earth+tones+cozy+bohemian+decor+relaxed+sleepover+atmosphere',
-      features: [
-        'Macrame and dreamcatcher decor',
-        'Natural textures and materials',
-        'Earth tone color palette',
-        'Floor cushions and poufs',
-        'Bohemian tapestries',
-        'Organic breakfast options'
-      ]
-    },
-    {
-      id: 'backyard movie-night',
-      title: 'Backyard Movie Night',
-      price: 'From $279',
-      duration: '6-8 hours',
-      guests: 'Up to 10 children',
-      image: 'cozy+movie+night+slumber+party+setup+with+projector+popcorn+blankets+pillows+cinema+atmosphere+comfortable+viewing+area+snacks',
-      features: [
-        'HD projector and screen setup',
-        'Comfortable seating arrangement',
-        'Popcorn and movie snacks',
-        'Cozy blankets and pillows',
-        'Movie selection assistance',
-        'Late night snack service'
+        ' A frame teepees with fairylights',
+        ' Fabric teepee cover to suite party theme or color scheme', 
+        ' Air Mattresses', 
+        ' Fitted shee8',
+        ' Soft/fleece blankets',
+        ' Pillows',
+        ' Themes throw pillows', 
+        ' Tent Name tags',
+        ' Lap Trays',
+        ' Themed placemats', 
+        ' Themed frames',
+        ' Dinner candles',
+        ' Fur foot mats', 
+        ' Two bored games',
+        ' Red or white wine'
       ]
     },
   ];
@@ -102,7 +89,7 @@ export default function Services() {
                 </div>
                 <div className="p-8">
                   <h3 className="text-3xl font-bold text-gray-800 mb-4">{service.title}</h3>
-                  <div className="flex items-center space-x-6 mb-6 text-gray-600">
+                  <div className="flex items-center space-x-6 mb-2 text-gray-600">
                     <div className="flex items-center">
                       <i className="ri-time-line w-5 h-5 mr-2 text-[#d6665b]"></i>
                       {service.duration}
@@ -112,6 +99,10 @@ export default function Services() {
                       {service.guests}
                     </div>
                   </div>
+                  <div className="flex items-center mb-6 text-gray-600">
+                      <BsInfoCircle className="w-5 h-5 mr-2 text-[#d6665b]" />
+                      {service.info}
+                    </div>
                   <div className="space-y-3 mb-8">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center">
