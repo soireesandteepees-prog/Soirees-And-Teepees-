@@ -60,7 +60,7 @@ const updateBooking = async (req, res) => {
 
 
 const addBookings = async (req, res) => {
-    const {parentName, childName, phone, email, address, city, zipcode, packageType, addOns, eventDate, eventTime,eventDuration, guestCount, childAge, paymentStatus, specialRequests, totalAmount, paymentMethod} = req.body;
+    const {parentName, childName, phone, email, address, city, zipcode, packageType, addOns, eventDate, eventTime,eventDuration, guestCount, childAge, paymentStatus, specialRequests, totalAmount, paymentMethod, theme} = req.body;
 
     if (!parentName || !phone || !email || !address || !packageType || !eventDate || !eventTime || !eventDuration || !paymentStatus || !totalAmount || !guestCount) {
         return res.status(400).json({ error: 'All fields are required.' });
@@ -84,6 +84,7 @@ const addBookings = async (req, res) => {
             eventDuration,
             guestCount,
             childAge,
+            theme,
             paymentStatus,
             paymentMethod,
             specialRequests,

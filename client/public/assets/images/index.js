@@ -28,11 +28,13 @@ import image27 from './IMG-20250712-WA0029.jpg';
 import image28 from './herosection.jpg';
 import logo from './ST Tent LOGO.png'
 import admin from './admin.jpg'
+import pjmask from './pjmask.png'
 
 
 export {
     image1,
     image2,
+    pjmask,
     image3,
     image4,
     image5,

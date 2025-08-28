@@ -41,6 +41,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.JSON,
         allowNull: true
       },
+      theme: {
+        type: DataTypes.JSON,
+        allowNull: true
+      },
       eventDate: {
         type: DataTypes.STRING,
         allowNull: false

@@ -11,6 +11,7 @@ export interface BookingState {
     id?: string,
     packageType: string
     addOns?:  string[],
+    theme?: string[],
     
     // Step 2: Event Details
     eventDate: string
@@ -43,6 +44,7 @@ const initialState: BookingState = {
     
     // Step 2: Event Details
     eventDate: '',
+    theme: [],
     eventTime: '',
     guestCount: '',
     childAge: '',
@@ -102,6 +104,9 @@ export const bookingSlice = createSlice({
     setAddress: (state, action: PayloadAction<BookingState["address"]>) => {
         state.address = action.payload
     },
+    setTheme: (state, action: PayloadAction<string[]>) => {
+        state.theme = action.payload;
+    },
     setEmail: (state, action:PayloadAction<string>) => {
       state.email = action.payload
     },
@@ -136,6 +141,7 @@ export const {
   setSpecialRequest,
   setTotalAmount,
   setZipCode,
+  setTheme
 } = bookingSlice.actions
 
 export default bookingSlice.reducer

@@ -1,21 +1,30 @@
 
 'use client';
 
-import { useState, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { AppState, AppDispatch } from '@/redux/store';
 import { useSelector} from 'react-redux';
+import { MdAddCircleOutline } from "react-icons/md";
+import { BsInfoCircle } from "react-icons/bs";
+import { image28 } from '@/public/assets/images';
 import { useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
 import { FaSpinner } from 'react-icons/fa'; // You can use other spinner icons too
 import Link from 'next/link';
-import { setAddOn, setAddress, setChildAge, setChildName, setCity, setEmail, setEventDate, setEventDuration, setEventTime, setGuestCount, setPackagetype, setParentName, setPhone, setSpecialRequest, setTotalAmount, setZipCode, resetBooking } from '@/redux/slice/BookingSlice';
+import { setAddOn, setTheme, setAddress, setChildAge, setChildName, setCity, setEmail, setEventDate, setEventDuration, setEventTime, setGuestCount, setPackagetype, setParentName, setPhone, setSpecialRequest, setTotalAmount, setZipCode, resetBooking } from '@/redux/slice/BookingSlice';
 import { loadStripe } from '@stripe/stripe-js';
 import toast from 'react-hot-toast';
+import Image from 'next/image';
+
+
 export default function Booking() {
   const [currentStep, setCurrentStep] = useState(1);
   const [loading, setLoading] = useState(false);
-  const {totalAmount, packageType, addOns, eventDate, eventTime, eventDuration, guestCount, childAge, childName, parentName, specialRequests, email, phone, city, address, zipCode} = useSelector((state: AppState) => state.booking);
+  const [isGreater, setIsGreater] = useState(false);
+  const [numberOfGuests, setNumberOfGuests] = useState(0);
+  const {totalAmount, packageType, addOns, eventDate, eventTime, eventDuration, guestCount, childAge, childName, parentName, specialRequests, email, phone, city, address, zipCode, theme} = useSelector((state: AppState) => state.booking);
   const dispatch = useDispatch<AppDispatch>();
+  const [search, setSearch] = useState('');
   const router = useRouter();
 
 
@@ -26,26 +35,82 @@ export default function Booking() {
   ];
 
   const AddOns = [
-    { id: 'balloons', name: 'Balloons', price: 100 },
+    { id: '1', name: '1 to 3 Balloons', price: 100 },
+    { id: '2', name: '3 to 5 Balloons', price: 200 },
+    { id: '3', name: '5 to 10 Balloons', price: 300 },
+    { id: '4', name: '10 to 15 Balloons', price: 400 },
+    { id: '5', name: '15 to 20 Balloons', price: 500 },
   ];
 
-
+  const Theme = [
+    'Barbie',
+    'Batman ',
+    'Black Pink',
+    'Bluey',
+    'Bohemian (boho chic)',
+    'Bow tie ( Pink & Blush)',
+    'Butterfly',
+    'Camp',
+    'Chanel',
+    'Christmas',
+    'Candyland',
+    'Disney Princesses',
+    'Fortnite',
+    'Frozen',
+    'Gamers',
+    'Groovy Retro', 
+    'Halloween ',
+    'Harry Potter',
+    'Hawaiian ',
+    'LOL Suprise Dolls',
+    'Mermaid', 
+    'Minecraft', 
+    'Moana',
+    'Movie ( cinema)',
+    'Neon glow in the dark',
+    'Numberblocks',
+    'Outer Space',
+    'Paw Patrol (Pink)',
+    'Paw Patrol',
+    'Peppa Pig',
+    'Pink Disco',
+    'Pokemon',
+    'Preppy',
+    'Paris',
+    'Rainbow High Dolls',
+    'Roblox',
+    'Roblox (pink)',
+    'Safari',
+    'Sephora', 
+    'Soccer',
+    'Sonic the Hedgehog',
+    'Spa pamper party',
+    'Spiderman', 
+    'Stitch',
+    'Super Mario',
+    'Taylor Swift',
+    'Tiffany & Co.',
+    'TikTok', 
+    'Unicorn',
+    'Winter Wonderland',
+    'WWE'
+  ]
 
   const calculateTotal = useCallback(():number =>{
     const selectedPackage = packages.find(p => p.id === packageType);
     const packagePrice = selectedPackage ? selectedPackage.price : 0;
-    const addOnPrices = addOns?.reduce((total, addOnId) => {
+    const addOnPrices = addOns?.reduce((total: number, addOnId:string) => {
       const addOn = AddOns.find(a => a.id === addOnId);
       return total + (addOn ? addOn.price : 0);
     }, 0);
 
     let total;
     if(addOnPrices) {
-      total = packagePrice + addOnPrices;
+      total = isGreater ? ((numberOfGuests - 3) * 100) + packagePrice + addOnPrices : packagePrice + addOnPrices
     }
 
     return total as number
-  }, [packageType, addOns, dispatch]);
+  }, [packageType, addOns, isGreater, numberOfGuests, dispatch]);
 
 
 
@@ -57,6 +122,23 @@ export default function Booking() {
     dispatch(setAddOn(newAddOns));
     calculateTotal()
   };
+
+  const handleAddtionalFee = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if(Number(e.target.value) > 3) setIsGreater(true);
+    setNumberOfGuests(Number(e.target.value));
+  }
+
+  const handleThemeToggle = (themes: any) => {
+    const newTheme = theme?.includes(themes)
+      ? theme.filter(id => id !== themes)
+      : [...theme as string[], themes];
+
+    dispatch(setTheme(newTheme));
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  }
 
   const nextStep = () => {
     if (currentStep < 4) {
@@ -70,12 +152,17 @@ export default function Booking() {
     }
   };
 
+  const filterTheme = Theme.filter((theme) => {
+    return theme.toLocaleLowerCase().includes(search.toLocaleLowerCase());
+  })
+
   const handleSubmit = async () => {
     setLoading(true);
     const bookingData = {
       packageType,
       addOns,
       eventDate,
+      theme,
       eventTime,
       eventDuration,
       guestCount,
@@ -207,34 +294,83 @@ export default function Booking() {
                   ))}
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">Add-ons</h3>
+                <h3 className="text-2xl font-bold text-center text-gray-800 mb-6">Add-ons</h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                   {AddOns.map((addOn) => (
-                    <label
+                    <div
                       key={addOn.id}
-                      className={`border-2 rounded-xl p-4 cursor-pointer transition-all ${
-                        addOns?.includes(addOn.id)
-                          ? 'border-[#d6665b] bg-[#d6665b]/5'
-                          : 'border-gray-200 hover:border-[#d6665b50]'
-                      }`}
+                      
                     >
-                      <input
+                      {/* <input
                         type="checkbox"
                         checked={addOns?.includes(addOn.id)}
                         onChange={() => handleAddOnToggle(addOn.id)}
                         className="sr-only"
-                      />
-                      <div className="text-center">
+                      /> */}
+                      <div className={`border-2 rounded-xl p-4 cursor-pointer transition-all ${
+                        addOns?.includes(addOn.id)
+                          ? 'border-[#d6665b] bg-[#d6665b]/5'
+                          : 'border-gray-200 hover:border-[#d6665b50]'
+                      }`} onClick={() => handleAddOnToggle(addOn.id)}>
                         <h4 className="font-semibold text-gray-800 mb-1">{addOn.name}</h4>
                         <p className="text-[#d6665b] font-bold">+${addOn.price}</p>
                       </div>
-                    </label>
+                    </div>
                   ))}
                 </div>
 
-                <div className="text-center">
+                <div>
+                  <div className='flex items-center justify-center space-x-5'>
+                    <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">Choose a Theme </h1>
+                    
+                    <input
+                      type='text'
+                      placeholder='Search theme'
+                      className='bg-gray-100 focus:border-[#dd3d2f] focus:outline-none border-2 px-2 text-gray-700 border-gray-200 rounded-lg py-2 mb-6'
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange(e)}
+                    />
+                  </div>
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 h-96 overflow-y-auto">
+                    {filterTheme.map((themeItem) => (
+                      <div
+                        key={themeItem}
+                        onClick={() => handleThemeToggle(themeItem) }
+                        className={`border-2 rounded-xl p-4 cursor-pointer space-y-2 transition-all text-center
+                          ${theme?.includes(themeItem) ? 'border-[#dd3d2f] bg-[#dd3d2f]/10' : 'border-gray-200 hover:border-[#cf403350]'}
+                        `}
+                      >
+                        {/* <input
+                          type="radio"
+                          name="theme"
+                          value={themeItem}
+                          checked={theme?.includes(themeItem)}
+                          className="sr-only"
+                        /> */}
+                        <Image src={image28.src} alt='' width={100} height={50} className='relative w-full rounded-xl mb-2'/>
+                        <span className="font-bold text-lg text-gray-700">{themeItem}</span>
+                      </div>
+                    ))}
+
+                    <div
+                        // onClick={() => handleThemeToggle(themeItem) }
+                        className={`border-2 rounded-xl p-4 flex flex-col justify-center items-center cursor-pointer space-y-2 transition-all text-center text-gray-500
+                        `}
+                    >
+                      <MdAddCircleOutline size={40}/>
+                      <span className="font-semibold text-base "> Add custom theme</span>
+
+                      <div className="flex items-center mb-6 text-gray-600 text-sm">
+                        <BsInfoCircle className="w-4 h-4 mr-2 text-[#d6665b]" />
+                        Extra fees may apply
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div className="text-center mt-4">
                   <div className="text-2xl font-bold text-gray-800 mb-6">
-                    Total: <span className="text-[#d6665b]">${calculateTotal()}</span>
+                    Total: <span className="text-[#d6665b]">${calculateTotal() || 0}</span>
                   </div>
                   <button
                     onClick={nextStep}
@@ -281,18 +417,31 @@ export default function Booking() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-gray-700 font-medium mb-2">Number of Guests *</label>
+                      <label className="block text-gray-700 font-medium mb-2">Number of {packageType === 'kids-sleepover' ? 'Kids' : 'Guests'} *</label>
                       <input
                         type="number"
                         name="guestCount"
                         value={guestCount}
-                        onChange={(e) => dispatch(setGuestCount(e.target.value))}
+                        onChange={(e) => {dispatch(setGuestCount(e.target.value)); handleAddtionalFee(e)}}
                         required
                         min="1"
                         max="12"
                         className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                         placeholder="6"
                       />
+                      
+                      {
+                        isGreater ? (
+                        <div className='flex items-center mt-3'>
+                          <BsInfoCircle size={50} className="mr-2 text-[#d6665b]" />
+                          <div className='text-sm text-gray-400 flex flex-col font-semibold'> 
+                            {/* <span>Base price: $415 for 3 guests</span> */}
+                            <span>An additional fee of ${(numberOfGuests - 3) * 100} will be added for {numberOfGuests - 3} extra {packageType === 'kids-sleepover' ? 'Kids' : 'Guests'}</span>
+                          </div>
+                        </div>
+                        ) : ''
+                      }
+                      
                     </div>
                     <div>
                       <label className="block text-gray-700 font-medium mb-2">Birthday Child's Age</label>
@@ -473,11 +622,17 @@ export default function Booking() {
                   
                   <div className="space-y-3">
                     <div className="flex justify-between">
-                      <span className="text-gray-700">
+                      <span className="text-gray-700 flex flex-col">
                         {packages.find(p => p.id === packageType)?.name}
+                        {isGreater ? (
+                          <span>{numberOfGuests - 3} additional guests</span>
+                        ) : ''}
                       </span>
-                      <span className="font-semibold">
+                      <span className="font-semibold flex flex-col">
                         ${packages.find(p => p.id === packageType)?.price}
+                        {isGreater ? (
+                          <span>${(numberOfGuests - 3) * 100}</span>
+                        ) : ''}
                       </span>
                     </div>
                     

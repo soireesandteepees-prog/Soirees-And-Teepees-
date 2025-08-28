@@ -102,7 +102,7 @@ export default function Services() {
                   <div className="flex items-center mb-6 text-gray-600">
                       <BsInfoCircle className="w-5 h-5 mr-2 text-[#d6665b]" />
                       {service.info}
-                    </div>
+                  </div>
                   <div className="space-y-3 mb-8">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center">
