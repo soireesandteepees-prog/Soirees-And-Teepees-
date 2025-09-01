@@ -55,6 +55,65 @@ export default function Services() {
         ' Red or white wine'
       ]
     },
+
+    {
+      id: 'luxe-indoor-picnics',
+      title: 'Luxe Indoor Picnics ',
+      price: 'From $350',
+      duration: '4 hours',
+      guests: 'Minimum of 4 Guests',
+      info: "There will be an additional fee of $100 per additional Person",
+      image: 'princess+themed+slumber+party+with+pink+gold+decorations+crowns+magical+setup+fairy+tale+atmosphere+elegant+sleepover+decor+dreamy+bedroom',
+      features: [
+        'Picnic table',
+        'Seat pads',
+        'Throw pillows', 
+        'Centerpieces /flowers',
+        'Charger plates, plates/ tableware', 
+        'Cultleries, cups and napkins,silverware', 
+        'Welcome signage', 
+        'One lace Teepee( complementary)',
+        'Food table (small side table )',
+        'Picnic rug',
+        'Choose up to 3 games',
+        'Bluetooth speaker(JBL)',
+        'Sanitizer',
+        'Paper napkins' 
+
+      ]
+    },
+
+    {
+      id: 'luxe-outdoor-picnics',
+      title: 'Luxe Outdoor Picnics ',
+      price: 'From $400',
+      duration: '4 hours',
+      guests: 'Minimum of 4 Guests',
+      info: "There will be an additional fee of $100 per additional Person",
+      image: 'princess+themed+slumber+party+with+pink+gold+decorations+crowns+magical+setup+fairy+tale+atmosphere+elegant+sleepover+decor+dreamy+bedroom',
+      features: [
+        'Outdoor Luxe Picnic',
+        'Picnic table',
+        'Seat pads',
+        'Throw pillows', 
+        'Centerpieces /flowers',
+        'Charger plates, plates/ tableware', 
+        'Cultleries, cups and napkins,silverware', 
+        'Welcome signage', 
+        'One lace Teepee( complementary)',
+        'Food table (small side table )',
+        'Picnic rug',
+        'Outdoor Luxe Picnic',
+        'Boho Umbrellas', 
+        'Portable charger for phones',
+        'Portable fan',
+        'Choose up yo 3 games',
+        'Bluetooth seaker( JBL)',
+        'Sanitizer (Complementary)',
+        'Paper napkins', 
+        'Bug spray (Complementary)',
+      ]
+    },
   ];
 
   return (

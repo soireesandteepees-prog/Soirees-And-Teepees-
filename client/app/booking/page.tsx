@@ -20,7 +20,8 @@ import Image from 'next/image';
 export default function Booking() {
   const [currentStep, setCurrentStep] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [isGreater, setIsGreater] = useState(false);
+  const [isGreater1, setIsGreater1] = useState(false);
+  const [isGreater2, setIsGreater2] = useState(false);
   const [numberOfGuests, setNumberOfGuests] = useState(0);
   const {totalAmount, packageType, addOns, eventDate, eventTime, eventDuration, guestCount, childAge, childName, parentName, specialRequests, email, phone, city, address, zipCode, theme} = useSelector((state: AppState) => state.booking);
   const dispatch = useDispatch<AppDispatch>();
@@ -32,6 +33,10 @@ export default function Booking() {
   const packages = [
     { id: 'kids-sleepover', name: 'Kids Sleepover', price: 415, duration: '24 hours', guests: 'Minimum of 3 Children' },
     { id: 'adult-sleepover', name: 'Adult Sleepover', price: 465, duration: '24 hours', guests: 'Minimum of 3 Adults' },
+    
+    { id: 'luxe-indoor-picnics', name: 'Luxe Indoor Picnics', price: 350, duration: '4 hours', guests: 'Minimum of 4 Guests' },
+
+    { id: 'luxe-outdoor-picnics', name: 'Luxe Outdoor Picnics', price: 400, duration: '4 hours', guests: 'Minimum of 4 Guests' },
   ];
 
   const AddOns = [
@@ -106,11 +111,17 @@ export default function Booking() {
 
     let total;
     if(addOnPrices) {
-      total = isGreater ? ((numberOfGuests - 3) * 100) + packagePrice + addOnPrices : packagePrice + addOnPrices
+      if (isGreater1) {
+        total = ((numberOfGuests - 3) * 100) + packagePrice + addOnPrices
+      } else if (isGreater2) {
+        total = (Math.floor(numberOfGuests / 4) * 200) + packagePrice + addOnPrices
+      } else {
+        total = packagePrice + addOnPrices
+      }
     }
 
     return total as number
-  }, [packageType, addOns, isGreater, numberOfGuests, dispatch]);
+  }, [packageType, addOns, isGreater1, isGreater2, numberOfGuests, dispatch]);
 
 
 
@@ -124,8 +135,13 @@ export default function Booking() {
   };
 
   const handleAddtionalFee = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if(Number(e.target.value) > 3) setIsGreater(true);
-    setNumberOfGuests(Number(e.target.value));
+    if(packageType === 'kids-sleepover' || packageType === 'adult-sleepover' && Number(e.target.value) > 3) {
+      setIsGreater1(true);
+      setNumberOfGuests(Number(e.target.value));
+    } else if (packageType === 'luxe-indoor-picnics' || packageType === 'luxe-outdoor-picnics' && Number(e.target.value) > 4) {
+      setIsGreater2(true);
+      setNumberOfGuests(Number(e.target.value));
+    }
   }
 
   const handleThemeToggle = (themes: any) => {
@@ -138,6 +154,10 @@ export default function Booking() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
+    if (Number(e.target.value) < 3) {
+      setIsGreater1(false);
+      setIsGreater2(false);
+    }
   }
 
   const nextStep = () => {
@@ -391,7 +411,7 @@ export default function Booking() {
                 <form id="event-details" className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-gray-700 font-medium mb-2">Event Date *</label>
+                      <label className="block text-gray-700 font-medium mb-2">Event Dates *</label>
                       <input
                         type="date"
                         name="eventDate"
@@ -424,22 +444,33 @@ export default function Booking() {
                         value={guestCount}
                         onChange={(e) => {dispatch(setGuestCount(e.target.value)); handleAddtionalFee(e)}}
                         required
-                        min="1"
-                        max="12"
+                        min="4"
                         className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#d6665b] transition-colors text-sm"
                         placeholder="6"
                       />
                       
                       {
-                        isGreater ? (
+                        isGreater1 ? (
                         <div className='flex items-center mt-3'>
                           <BsInfoCircle size={50} className="mr-2 text-[#d6665b]" />
                           <div className='text-sm text-gray-400 flex flex-col font-semibold'> 
                             {/* <span>Base price: $415 for 3 guests</span> */}
-                            <span>An additional fee of ${(numberOfGuests - 3) * 100} will be added for {numberOfGuests - 3} extra {packageType === 'kids-sleepover' ? 'Kids' : 'Guests'}</span>
+                            <span>Your total fee is ${((numberOfGuests - 3) * 100 + 415).toLocaleString()} for {numberOfGuests} {packageType === 'kids-sleepover' ? 'Kids' : 'Guests'}</span>
                           </div>
                         </div>
-                        ) : ''
+                        ) : null
+                      }
+
+                      {
+                        isGreater2 ? (
+                        <div className='flex items-center mt-3'>
+                          <BsInfoCircle size={50} className="mr-2 text-[#d6665b]" />
+                          <div className='text-sm text-gray-400 flex flex-col font-semibold'> 
+                            {/* <span>Base price: $415 for 3 guests</span> */}
+                            <span>Your total fee is ${(Math.floor(numberOfGuests / 4) * 200 + 350).toLocaleString()} for {numberOfGuests} Guests</span>
+                          </div>
+                        </div>
+                        ) : null
                       }
                       
                     </div>
@@ -624,14 +655,13 @@ export default function Booking() {
                     <div className="flex justify-between">
                       <span className="text-gray-700 flex flex-col">
                         {packages.find(p => p.id === packageType)?.name}
-                        {isGreater ? (
-                          <span>{numberOfGuests - 3} additional guests</span>
-                        ) : ''}
                       </span>
-                      <span className="font-semibold flex flex-col">
-                        ${packages.find(p => p.id === packageType)?.price}
-                        {isGreater ? (
-                          <span>${(numberOfGuests - 3) * 100}</span>
+                      <span className="font-semibold flex flex-col">                      
+                        {isGreater1 ? (
+                          <span>${((numberOfGuests - 3) * 100 + 415).toLocaleString()}</span>
+                        ) : ''}
+                        {isGreater2 ? (
+                          <span>${(Math.floor(numberOfGuests / 4) * 200 + 350).toLocaleString()}</span>
                         ) : ''}
                       </span>
                     </div>
@@ -665,10 +695,11 @@ export default function Booking() {
                     <i className="ri-information-line text-yellow-600 text-xl mr-3 mt-0.5"></i>
                     <div>
                       <h4 className="font-semibold text-yellow-800 mb-1">Booking Deposit</h4>
-                      <p className="text-yellow-700 text-sm">
+                      <p className="text-sm">
                         A 50% deposit of ${Math.round(calculateTotal() * 0.5)} is required to secure your booking. 
-                        The remaining balance will be due on the day of your event.
+                        The remaining balance will be due 5 days before event.
                       </p>
+                      <p className="text-sm mt-5"> Note: Any booking less than 5 days prior to event date, would require a Full Payment before setup</p>
                     </div>
                   </div>
                 </div>
