@@ -350,13 +350,13 @@ export default function Booking() {
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange(e)}
                     />
                   </div>
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 h-96 overflow-y-auto">
+                  <div className=" h-96 overflow-y-auto space-y-2">
                     {filterTheme.map((themeItem) => (
                       <div
                         key={themeItem}
                         onClick={() => handleThemeToggle(themeItem) }
-                        className={`border-2 rounded-xl p-4 cursor-pointer space-y-2 transition-all text-center
-                          ${theme?.includes(themeItem) ? 'border-[#dd3d2f] bg-[#dd3d2f]/10' : 'border-gray-200 hover:border-[#cf403350]'}
+                        className={`rounded-xl p-4 cursor-pointer space-y-2 transition-all flex items-center space-x-2 
+                          ${theme?.includes(themeItem) ? '' : ''}
                         `}
                       >
                         {/* <input
@@ -366,7 +366,9 @@ export default function Booking() {
                           checked={theme?.includes(themeItem)}
                           className="sr-only"
                         /> */}
-                        <Image src={image28.src} alt='' width={100} height={50} className='relative w-full rounded-xl mb-2'/>
+                        <div className={`w-6 h-6 border-2 border-gray-300 rounded-full flex justify-center ${theme?.includes(themeItem) ? 'bg-[#d6665b]' : ''} text-center items-center`}>
+                          <div className='w-2 h-2 rounded-full bg-white'></div>
+                        </div>
                         <span className="font-bold text-lg text-gray-700">{themeItem}</span>
                       </div>
                     ))}
