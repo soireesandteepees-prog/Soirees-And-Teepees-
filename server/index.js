@@ -8,7 +8,7 @@ const bookingRoutes = require('./routes/booking');
 // const usersRoutes = require('./routes/userRoute');
 // const cartRoutes = require('./routes/cart');
 // const galleryRoutes = require('./routes/gallery');
-const stripe = require('stripe')('pk_test_51S2edpRv3PF4cPLK09xRB1uO0SPvVFmpesulvrnAzAj7B8HvWZhGJWwptna6LzIY6xGrxSQbi4JErJNtuMsYkNug00wt8W6d1m');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 console.log("STRIPE_KEY:", process.env.STRIPE_SECRET_KEY);
 console.log("MYSQLHOST:", process.env.MYSQLHOST);
