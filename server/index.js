@@ -10,6 +10,10 @@ const bookingRoutes = require('./routes/booking');
 // const galleryRoutes = require('./routes/gallery');
 const stripe = require('stripe')('pk_test_51S2edpRv3PF4cPLK09xRB1uO0SPvVFmpesulvrnAzAj7B8HvWZhGJWwptna6LzIY6xGrxSQbi4JErJNtuMsYkNug00wt8W6d1m');
 
+console.log("STRIPE_KEY:", process.env.STRIPE_KEY);
+console.log("MYSQLHOST:", process.env.MYSQLHOST);
+console.log("MYSQLDATABASE:", process.env.MYSQLDATABASE);
+
 app.use(cors({
   origin: ['https://soiress-and-teepees.vercel.app', 'http://localhost:3000'],
   credentials: true,           
