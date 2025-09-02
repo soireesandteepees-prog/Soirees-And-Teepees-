@@ -202,7 +202,7 @@ export default function Booking() {
 
 
     try {
-      const response = await fetch('soirees-and-teepees-production.up.railway.app/api/booking/addBooking', {
+      const response = await fetch('https://soirees-and-teepees-production.up.railway.app/api/booking/addBooking', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -222,7 +222,7 @@ export default function Booking() {
         bookingId: data.newBooking.id
       }
 
-      const stripeResponse = await fetch('soirees-and-teepees-production.up.railway.app/api/create-stripe-session', {
+      const stripeResponse = await fetch('https://soirees-and-teepees-production.up.railway.app/api/create-stripe-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
