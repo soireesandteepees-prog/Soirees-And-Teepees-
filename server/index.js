@@ -12,7 +12,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 console.log("STRIPE_KEY:", process.env.STRIPE_SECRET_KEY);
 console.log("MYSQLHOST:", process.env.MYSQLHOST);
-console.log("MYSQLDATABASE:", process.env.MYSQLDATABASE);
+console.log("MYSQLDATABASE:", process.env.MYSQLDATABASE); 
 
 app.use(cors({
   origin: ['https://soiress-and-teepees.vercel.app', 'http://localhost:3000'],
