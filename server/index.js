@@ -15,7 +15,7 @@ console.log("MYSQLHOST:", process.env.MYSQLHOST);
 console.log("MYSQLDATABASE:", process.env.MYSQLDATABASE); 
 
 app.use(cors({
-  origin: ['https://soiress-and-teepees.vercel.app', 'http://localhost:3000'],
+  origin: ['https://soirees-and-teepees.vercel.app', 'http://localhost:3000'],
   credentials: true,           
 }));
 

@@ -191,7 +191,7 @@ export default function Booking() {
             status: newStatus
         }
         try {
-            const patch = await fetch(`https://soirees-and-teepees-production.up.railway.app/booking/${bookingId}/status`, {
+            const patch = await fetch(`https://soirees-and-teepees-production.up.railway.app/api/booking/${bookingId}/status`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
