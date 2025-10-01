@@ -15,7 +15,7 @@ console.log("MYSQLHOST:", process.env.MYSQLHOST);
 console.log("MYSQLDATABASE:", process.env.MYSQLDATABASE); 
 
 app.use(cors({
-  origin: ['https://soirees-and-teepees.vercel.app', 'http://localhost:3000'],
+  origin: ['https://soireesandteepees.com', 'http://localhost:3000'],
   credentials: true,           
 }));
 
@@ -79,8 +79,8 @@ app.post('/api/create-stripe-session', async (req, res) => {
         },
       ],
       metadata: {bookingId},
-      success_url: 'https://soirees-and-teepees.vercel.app/thank-you',
-      cancel_url: 'https://soirees-and-teepees.vercel.app/error',
+      success_url: 'https://soireesandteepees.com/thank-you',
+      cancel_url: 'https://soireesandteepees.com/error',
     });
     res.json({ sessionId: session.id });
   } catch (error) {
