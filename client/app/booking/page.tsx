@@ -232,6 +232,7 @@ export default function Booking() {
       const { sessionId } = await stripeResponse.json();
 
       const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY as string);
+      console.log(process.env.NEXT_PUBLIC_STRIPE_KEY);
       await stripe?.redirectToCheckout({ sessionId });
 
       dispatch(resetBooking());
