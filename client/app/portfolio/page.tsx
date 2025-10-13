@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { image10, image11, image12, image16, image25, image28} from '@/public/assets/images';
 import {picnic1} from '@/public/assets/picnic'
+import {babyShower1} from '@/public/assets/babyShower';
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -29,7 +30,7 @@ export default function Portfolio() {
       title: "Create New Beginnings in Style",
       category: "Baby Shower",
       description: "Celebrate the upcoming arrival of your little one in style! Our Baby Showers are designed to reflect warmth, excitement, and love, blending soft pastels or bold themes with elegant backdrops, balloon garlands, florals, and photo-worthy décor. Whether you’re going for classic charm or modern chic, we’ll design a space that feels like a warm embrace. Why book with us? Because we turn your baby shower into a heartfelt, picture-perfect experience that guests will talk about long after the confetti settles",
-      images: image11,
+      images: babyShower1,
     },
     {
       id: 4,
