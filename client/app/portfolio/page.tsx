@@ -3,8 +3,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ConfettiBackground } from '@/components/confettiBackground';
-import { image1, image10, image11, image12, image13, image16, image2, image22, image23, image24, image25, image26, image28, image4, image7 } from '@/public/assets/images';
+import { image10, image11, image12, image16, image25, image28} from '@/public/assets/images';
+import {picnic1} from '@/public/assets/picnic'
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -27,7 +27,7 @@ export default function Portfolio() {
       guests: 8,
       theme: "Royal Palace",
       description: "An elegant princess-themed slumber party fit for royalty. Complete with canopy beds, golden accents, and princess accessories that made every little girl feel like true royalty for the night.",
-      images: image10,
+      images: picnic1,
       highlights: ["Canopy bed installations", "Princess dress-up station", "Royal tea party setup", "Crown making activity", "Palace backdrop"],
       testimonial: "Sofia felt like a real princess! The setup was absolutely stunning and magical.",
       client: "Maria L."
@@ -115,11 +115,9 @@ export default function Portfolio() {
                       alt={`${project.title}`}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
-                    {/* {imgIndex === 0 && (
-                      <div className="absolute top-4 left-4 bg-[#d6665b] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                        {project.category}
-                      </div>
-                    )} */}
+                    <div className="absolute top-4 left-4 bg-[#d6665b] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      {project.category}
+                    </div>
                   </div>
                 </div>
                 
