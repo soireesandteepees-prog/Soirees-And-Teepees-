@@ -70,7 +70,7 @@ export default function Portfolio() {
       {/* Portfolio Grid */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-3 gap-12">
             {portfolioProjects.map((project, index) => (
               <div key={project.id} className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow">
                 <div className="grid grid-cols-2 gap-2 p-2">
