@@ -4,7 +4,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ConfettiBackground } from '@/components/confettiBackground';
-import {image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, image17, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27} from '../../public/assets/images/index';
+import {image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image13, image14, image15, image16, image17, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27} from '../../public/assets/images/index';
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -30,7 +30,7 @@ export default function Gallery() {
     { category: 'shower', title: 'Desert Oasis', image: image9 },
     { category: 'movie', title: 'Retro Cinema', image: image10 },
     { category: 'slumber', title: 'Galaxy Dreams', image: image11 },
-    { category: 'luxe', title: 'Cotton Candy Clouds', image: image12 },
+    // { category: 'luxe', title: 'Cotton Candy Clouds', image: image12 },
     { category: 'luxe', title: 'Garden Spa', image: image13 },
     { category: 'luxe', title: 'Frozen Wonderland', image: image14 },
     { category: 'shower', title: 'Sunset Vibes', image: image15 },

@@ -3,7 +3,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { image10, image11, image16, image25, image28} from '@/public/assets/images';
 import {picnic1} from '@/public/assets/picnic'
 import {babyShower1} from '@/public/assets/babyShower';
 import {briderShower3} from '@/public/assets/briderShower'
@@ -11,19 +11,16 @@ import {backyard1} from '@/public/assets/backyardMovie'
 import {bellTent1} from '@/public/assets/bellTent'
 import {slumber20} from '@/public/assets/slumber'
 
-export default function Portfolio() {
-  // const [selectedProject, setSelectedProject] = useState<number | null>(null);
+export default function SlumberParty() {
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
-  const router = useRouter();
-
-  const portfolioProjects = [
+  const slumberParties = [
     {
       id: 1,
       title: "Dreamy Nights, Beautiful Memories",
       category: "Slumber Party",
       description: "Transform your living room into a dreamy sleepover paradise! Our signature Teepee-style slumber setups come complete with themed décor, plush bedding, cozy lighting, and fun accessories that turn bedtime into an adventure. Perfect for kids, teens, or even grown-up girls’ nights, our slumber parties create unforgettable memories full of laughter, giggles, and comfort.Why book with us? Because we handle every detail—from setup to styling—so all you have to do is say “sweet dreams.” ",
       images: slumber20,
-      href: '/portfolio/slumber'
     },
     {
       id: 2,
@@ -31,7 +28,6 @@ export default function Portfolio() {
       category: "Luxe Picnic",
       description: "Imagine lounging in style on lush blankets and plush cushions, sipping bubbly, and enjoying a beautifully styled picnic spread in the park, your backyard, or even indoors. Our Luxe Picnics are designed to bring elegance and comfort to the outdoors. With stunning tablescapes, floral accents, candles, and tailored themes, we set the perfect scene for proposals, birthdays, date nights, or brunch with friends. Why book with us? Because every picnic we create is Pinterest-perfect and effort-free—you show up, and we handle the magic.",
       images: picnic1,
-      href: '/portfolio/luxe_picnic'
     },
     {
       id: 3,
@@ -39,7 +35,6 @@ export default function Portfolio() {
       category: "Baby Shower",
       description: "Celebrate the upcoming arrival of your little one in style! Our Baby Showers are designed to reflect warmth, excitement, and love, blending soft pastels or bold themes with elegant backdrops, balloon garlands, florals, and photo-worthy décor. Whether you’re going for classic charm or modern chic, we’ll design a space that feels like a warm embrace. Why book with us? Because we turn your baby shower into a heartfelt, picture-perfect experience that guests will talk about long after the confetti settles",
       images: babyShower1,
-      href: '/portfolio/baby_shower'
     },
     {
       id: 4,
@@ -47,7 +42,6 @@ export default function Portfolio() {
       category: "Bridal Shower",
       description: "Every bride deserves a pre-wedding celebration as stunning as her love story. Our Bridal Showers are the epitome of sophistication and fun—filled with luxe décor, custom tablescapes, elegant floral designs, and that perfect balance of romance and celebration. Whether it’s boho-chic, glam, or timeless elegance, we’ll make sure every detail matches the bride’s unique vibe. Why book with us? Because we take your vision and elevate it into an experience that feels tailored, timeless, and totally unforgettable.",
       images: briderShower3,
-      href: '/portfolio/brider_shower'
     },
     {
       id: 5,
@@ -55,7 +49,6 @@ export default function Portfolio() {
       category: "Backyard Movie Night",
       description: "Bring the cinema home! Our Backyard Movie Night setups turn your outdoor space into a cozy private theater with large screens, ambient lighting, plush seating, and snack stations. Perfect for birthdays, date nights, or family gatherings, it’s all the fun of the movies—without leaving your yard. Why book with us? Because we combine comfort, creativity, and technology to create a one-of-a-kind, starry-night movie experience right in your backyard.",
       images: backyard1,
-      href: '/portfolio/backyard_movie_night'
     },
     {
       id: 6,
@@ -63,7 +56,6 @@ export default function Portfolio() {
       category: "Bell Tent Glamping",
       description: "Who says adventure can’t be glamorous? Our Bell Tent Glamping service is a luxurious escape into nature—without sacrificing comfort. We provide fully furnished, beautifully styled tents with soft bedding, boho décor, fairy lights, and chic lounge touches. Ideal for romantic getaways, birthdays, or family weekends, it’s outdoor living at its finest. Why book with us? Because we bring the wonder of the outdoors together with the elegance of a boutique hotel—creating an experience that feels both magical and indulgent.",
       images: bellTent1,
-      href: '/portfolio/bell_tent'
     }
   ];
 
@@ -72,11 +64,8 @@ export default function Portfolio() {
       <section className="py-20">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold font-heading text-[#EE8F63] mb-6 leading-tight">
-            Our <span className="text-[#EE8F63] tracking-widest">Portfolio</span>
+            Slumber <span className="text-[#EE8F63] tracking-widest">Parties</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-            Explore our portfolio to see how we turn simple spaces into stunning celebrations. Each setup is thoughtfully designed with creativity, love, and attention to detail. ✨ Every photo tells the story of a moment made unforgettable.
-          </p>
         </div>
       </section>
 
@@ -84,8 +73,8 @@ export default function Portfolio() {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-12">
-            {portfolioProjects.map((project, index) => (
-              <div key={project.id} className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow cursor-pointer" onClick={() => router.push(project.href)}>
+            {slumberParties.map((project, index) => (
+              <div key={project.id} className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow" onClick={() => {}}>
                 <div className="grid grid-cols-2 gap-2 p-2">
                   <div 
                     className={`relative overflow-hidden col-span-2 rounded-xl cursor-pointer`}

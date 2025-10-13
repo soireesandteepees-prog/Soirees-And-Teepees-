@@ -9,7 +9,7 @@ import image8 from './IMG-20250712-WA0010.jpg';
 import image9 from './IMG-20250712-WA0011.jpg';
 import image10 from './IMG-20250712-WA0012.jpg';
 import image11 from './IMG-20250712-WA0013.jpg';
-import image12 from './IMG-20250712-WA0014.jpg';
+// import image12 from './IMG-20250712-WA0014.jpg';
 import image13 from './IMG-20250712-WA0015.jpg';
 import image14 from './IMG-20250712-WA0016.jpg';
 import image15 from './IMG-20250712-WA0017.jpg';    
@@ -44,7 +44,7 @@ export {
     image9,
     image10,
     image11,
-    image12,
+    // image12,
     image13,
     image14,
     image15,
