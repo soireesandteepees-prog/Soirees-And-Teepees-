@@ -12,26 +12,22 @@ export default function Portfolio() {
   const portfolioProjects = [
     {
       id: 1,
-      title: "Emma's Enchanted Forest",
+      title: "Dreamy Nights, Beautiful Memories",
       category: "Slumber Party",
-      age: "8th Birthday",
       guests: 6,
       theme: "Woodland Adventure",
-      description: "A magical forest-themed slumber party complete with fairy lights, woodland creatures, and nature-inspired decorations. The birthday girl and her friends spent the night in a enchanted forest setting right in their living room.",
-      images: [image1, image2, image4],
-      highlights: ["Custom woodland backdrop", "LED fairy lights", "Plush forest animals", "Nature scavenger hunt", "S'mores station"],
-      testimonial: "Emma is still talking about her magical forest party! The attention to detail was incredible.",
-      client: "Jennifer M."
+      description: "Transform your living room into a dreamy sleepover paradise! Our signature Teepee-style slumber setups come complete with themed décor, plush bedding, cozy lighting, and fun accessories that turn bedtime into an adventure. Perfect for kids, teens, or even grown-up girls’ nights, our slumber parties create unforgettable memories full of laughter, giggles, and comfort.Why book with us? Because we handle every detail—from setup to styling—so all you have to do is say “sweet dreams.” ",
+      images: image28,
     },
     {
       id: 2,
       title: "Princess Sofia's Royal Celebration",
-      category: "Luxe Party",
+      category: "Luxe Picnic",
       age: "7th Birthday",
       guests: 8,
       theme: "Royal Palace",
       description: "An elegant princess-themed slumber party fit for royalty. Complete with canopy beds, golden accents, and princess accessories that made every little girl feel like true royalty for the night.",
-      images: [image10, image11, image7],
+      images: image10,
       highlights: ["Canopy bed installations", "Princess dress-up station", "Royal tea party setup", "Crown making activity", "Palace backdrop"],
       testimonial: "Sofia felt like a real princess! The setup was absolutely stunning and magical.",
       client: "Maria L."
@@ -44,7 +40,7 @@ export default function Portfolio() {
       guests: 5,
       theme: "Desert Oasis",
       description: "A sophisticated boho-chic party featuring macrame decorations, earthy tones, and comfortable floor seating. Perfect for the free-spirited birthday girl who loves artistic and natural elements.",
-      images: [image11, image12, image13],
+      images: image11,
       highlights: ["Macrame wall hangings", "Succulent centerpieces", "Floor cushion seating", "Dream catcher workshop", "Natural fiber textiles"],
       testimonial: "Zoe loved the artistic vibe! It perfectly matched her personality and style.",
       client: "Sarah K."
@@ -57,7 +53,7 @@ export default function Portfolio() {
       guests: 7,
       theme: "Rainbow Magic",
       description: "A whimsical unicorn-themed party filled with rainbows, sparkles, and magical creatures. Every detail was designed to transport the children into a fantasy world of unicorns and dreams.",
-      images: [image16, image23, image24],
+      images: image16,
       highlights: ["Rainbow balloon arch", "Unicorn horn headbands", "Glitter station", "Magic potion making", "Cloud decorations"],
       testimonial: "Pure magic! Mia and her friends were in awe of the unicorn wonderland.",
       client: "Amanda R."
@@ -70,7 +66,7 @@ export default function Portfolio() {
       guests: 10,
       theme: "Hollywood Cinema",
       description: "A classic movie night setup with a professional projector, comfortable seating, and a full concession stand. The perfect way to bring the cinema experience home for a memorable birthday celebration.",
-      images: [image12, image28, image26],
+      images: image12,
       highlights: ["HD projector setup", "Popcorn machine rental", "Movie poster decorations", "Candy bar station", "Comfortable viewing area"],
       testimonial: "Lily's movie night was a huge hit! The setup was professional and so much fun.",
       client: "Jessica T."
@@ -83,7 +79,7 @@ export default function Portfolio() {
       guests: 4,
       theme: "Zen Garden",
       description: "A relaxing spa-themed party designed for ultimate pampering. Complete with DIY face masks, nail painting stations, and a peaceful zen atmosphere for the perfect girls' night in.",
-      images: [image25, image23, image22],
+      images: image25,
       highlights: ["DIY face mask station", "Professional nail art", "Aromatherapy elements", "Zen garden decorations", "Healthy snack options"],
       testimonial: "Ava felt so pampered and relaxed! The spa setup was absolutely perfect.",
       client: "Rachel W."
@@ -109,34 +105,30 @@ export default function Portfolio() {
           <div className="grid lg:grid-cols-2 gap-12">
             {portfolioProjects.map((project, index) => (
               <div key={project.id} className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow">
-                <div className="grid grid-cols-3 gap-2 p-2">
-                  {project.images.map((image, imgIndex) => (
-                    <div 
-                      key={imgIndex}
-                      className={`relative overflow-hidden rounded-xl cursor-pointer ${imgIndex === 0 ? 'col-span-2 row-span-2' : ''}`}
-                      onClick={() => alert('added')}
-                    >
-                      <img 
-                        src={image.src}
-                        alt={`${project.title} - Image ${imgIndex + 1}`}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                      {imgIndex === 0 && (
-                        <div className="absolute top-4 left-4 bg-[#d6665b] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                          {project.category}
-                        </div>
-                      )}
-                    </div>
-                  ))}
+                <div className="grid grid-cols-2 gap-2 p-2">
+                  <div 
+                    className={`relative overflow-hidden col-span-2 rounded-xl cursor-pointer`}
+                    // onClick={() => alert('added')}
+                  >
+                    <img 
+                      src={project.images.src}
+                      alt={`${project.title}`}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                    {/* {imgIndex === 0 && (
+                      <div className="absolute top-4 left-4 bg-[#d6665b] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        {project.category}
+                      </div>
+                    )} */}
+                  </div>
                 </div>
                 
                 <div className="p-8">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-2xl font-bold text-gray-800">{project.title}</h3>
-                    <span className="text-[#d6665b] font-semibold">{project.age}</span>
                   </div>
                   
-                  <div className="flex items-center space-x-6 mb-4 text-gray-600">
+                  {/* <div className="flex items-center space-x-6 mb-4 text-gray-600">
                     <div className="flex items-center">
                       <i className="ri-group-line w-5 h-5 mr-2 text-[#d6665b]"></i>
                       {project.guests} guests
@@ -145,11 +137,11 @@ export default function Portfolio() {
                       <i className="ri-palette-line w-5 h-5 mr-2 text-[#d6665b]"></i>
                       {project.theme}
                     </div>
-                  </div>
+                  </div> */}
                   
                   <p className="text-gray-600 mb-6 leading-relaxed">{project.description}</p>
                   
-                  <div className="mb-6">
+                  {/* <div className="mb-6">
                     <h4 className="font-semibold text-gray-800 mb-3">Party Highlights:</h4>
                     <div className="flex flex-wrap gap-2">
                       {project.highlights.map((highlight, idx) => (
@@ -158,12 +150,12 @@ export default function Portfolio() {
                         </span>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
                   
-                  <div className="bg-gradient-to-r from-primary_background to-secondary_background p-4 rounded-xl mb-6">
+                  {/* <div className="bg-gradient-to-r from-primary_background to-secondary_background p-4 rounded-xl mb-6">
                     <p className="text-gray-700 italic mb-2">"{project.testimonial}"</p>
                     <p className="text-[#d6665b] font-semibold">- {project.client}</p>
-                  </div>
+                  </div> */}
                   
                   {/* <button 
                     onClick={() => setSelectedProject(selectedProject === project.id ? null : project.id)}
@@ -255,3 +247,21 @@ export default function Portfolio() {
     </div>
   );
 }
+
+
+
+
+
+    // {
+    //   id: 5,
+    //   title: "Lily's Movie Marathon",
+    //   category: "Backyard Movie Night",
+    //   age: "9th Birthday",
+    //   guests: 10,
+    //   theme: "Hollywood Cinema",
+    //   description: "A classic movie night setup with a professional projector, comfortable seating, and a full concession stand. The perfect way to bring the cinema experience home for a memorable birthday celebration.",
+    //   images: image12,
+    //   highlights: ["HD projector setup", "Popcorn machine rental", "Movie poster decorations", "Candy bar station", "Comfortable viewing area"],
+    //   testimonial: "Lily's movie night was a huge hit! The setup was professional and so much fun.",
+    //   client: "Jessica T."
+    // },

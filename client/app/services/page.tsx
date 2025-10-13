@@ -26,7 +26,8 @@ export default function Services() {
         ' Themed placemats', 
         ' Themed frames',
         ' LED table lights',
-        'Furfootmats'
+        'Furfootmats',
+        'Minimal balloon Garland'
       ]
     },
     {
@@ -52,7 +53,8 @@ export default function Services() {
         ' Dinner candles',
         ' Fur foot mats', 
         ' Two bored games',
-        ' Red or white wine'
+        ' Red or white wine',
+        'Minimal balloon Garland'
       ]
     },
 
