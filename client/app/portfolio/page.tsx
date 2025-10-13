@@ -9,6 +9,7 @@ import {babyShower1} from '@/public/assets/babyShower';
 import {briderShower3} from '@/public/assets/briderShower'
 import {backyard1} from '@/public/assets/backyardMovie'
 import {bellTent1} from '@/public/assets/bellTent'
+import {slumber20} from '@/public/assets/slumber'
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -19,7 +20,7 @@ export default function Portfolio() {
       title: "Dreamy Nights, Beautiful Memories",
       category: "Slumber Party",
       description: "Transform your living room into a dreamy sleepover paradise! Our signature Teepee-style slumber setups come complete with themed décor, plush bedding, cozy lighting, and fun accessories that turn bedtime into an adventure. Perfect for kids, teens, or even grown-up girls’ nights, our slumber parties create unforgettable memories full of laughter, giggles, and comfort.Why book with us? Because we handle every detail—from setup to styling—so all you have to do is say “sweet dreams.” ",
-      images: image28,
+      images: slumber20,
     },
     {
       id: 2,
@@ -88,10 +89,11 @@ export default function Portfolio() {
                       height={50}
                       className="object-cover max-h-96 w-full hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute top-4 left-4 bg-[#d6665b] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      {project.category}
-                    </div>
                   </div>
+                </div>
+
+                <div className="bg-[#d6665b] text-white px-3 py-1 text-center text-lg font-semibold">
+                  {project.category}
                 </div>
                 
                 <div className="p-8">
