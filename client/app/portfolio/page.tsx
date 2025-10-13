@@ -76,7 +76,7 @@ export default function Portfolio() {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-12">
             {portfolioProjects.map((project, index) => (
-              <div key={project.id} className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow">
+              <div key={project.id} className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow" onClick={() => {}}>
                 <div className="grid grid-cols-2 gap-2 p-2">
                   <div 
                     className={`relative overflow-hidden col-span-2 rounded-xl cursor-pointer`}
@@ -85,7 +85,8 @@ export default function Portfolio() {
                     <img 
                       src={project.images.src}
                       alt={`${project.title}`}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      height={50}
+                      className="object-cover max-h-96 w-full hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute top-4 left-4 bg-[#d6665b] text-white px-3 py-1 rounded-full text-sm font-semibold">
                       {project.category}
