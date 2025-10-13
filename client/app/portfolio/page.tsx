@@ -6,6 +6,9 @@ import Link from 'next/link';
 import { image10, image11, image12, image16, image25, image28} from '@/public/assets/images';
 import {picnic1} from '@/public/assets/picnic'
 import {babyShower1} from '@/public/assets/babyShower';
+import {briderShower3} from '@/public/assets/briderShower'
+import {backyard1} from '@/public/assets/backyardMovie'
+import {bellTent1} from '@/public/assets/bellTent'
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -37,21 +40,21 @@ export default function Portfolio() {
       title: "Because Every Bride Deserves a Beautiful Beginning",
       category: "Bridal Shower",
       description: "Every bride deserves a pre-wedding celebration as stunning as her love story. Our Bridal Showers are the epitome of sophistication and fun—filled with luxe décor, custom tablescapes, elegant floral designs, and that perfect balance of romance and celebration. Whether it’s boho-chic, glam, or timeless elegance, we’ll make sure every detail matches the bride’s unique vibe. Why book with us? Because we take your vision and elevate it into an experience that feels tailored, timeless, and totally unforgettable.",
-      images: image16,
+      images: briderShower3,
     },
     {
       id: 5,
       title: "Your Own Private Cinema Under the Stars",
       category: "Backyard Movie Night",
       description: "Bring the cinema home! Our Backyard Movie Night setups turn your outdoor space into a cozy private theater with large screens, ambient lighting, plush seating, and snack stations. Perfect for birthdays, date nights, or family gatherings, it’s all the fun of the movies—without leaving your yard. Why book with us? Because we combine comfort, creativity, and technology to create a one-of-a-kind, starry-night movie experience right in your backyard.",
-      images: image12,
+      images: backyard1,
     },
     {
       id: 6,
       title: "Adventure, Elevated",
       category: "Bell Tent Glamping",
       description: "Who says adventure can’t be glamorous? Our Bell Tent Glamping service is a luxurious escape into nature—without sacrificing comfort. We provide fully furnished, beautifully styled tents with soft bedding, boho décor, fairy lights, and chic lounge touches. Ideal for romantic getaways, birthdays, or family weekends, it’s outdoor living at its finest. Why book with us? Because we bring the wonder of the outdoors together with the elegance of a boutique hotel—creating an experience that feels both magical and indulgent.",
-      images: image25,
+      images: bellTent1,
     }
   ];
 
