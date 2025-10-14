@@ -13,11 +13,11 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-[#EE8F63] mb-6 leading-tight font-heading">
-                About Our 
-                <span className="text-[#EE8F63] block">Magical Story</span>
+                ✨ Welcome to 
+                <span className="text-[#EE8F63] block">Soirées and Teepees ✨</span>
               </h1>
-              <p className="text-lg text-black mb-8 leading-relaxed italic font-semibold">
-                Founded with a passion for creating unforgettable childhood memories, SOIREES & TEEPEES transforms ordinary sleepovers into extraordinary magical experiences.
+              <p className="text-lg text-black mb-8 leading-relaxed italic">
+                Where celebrations become unforgettable experiences. At Soirées and Teepees, we believe every occasion deserves to feel magical. We don’t just decorate—we curate experiences that inspire joy, connection, and wonder. Whether you’re hosting a slumber party, celebrating love, or creating a cozy night under the stars, we handle every detail so you can relax, enjoy, and make beautiful memories.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/booking" className="border-2 border-peach px-8 py-4 rounded-full text-lg font-semibold bg-[#d6665b] text-white hover:bg-[#b7534b] transition-colors whitespace-nowrap">
@@ -43,37 +43,22 @@ export default function About() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-[#EE8F63] mb-8 font-heading">Our Story</h2>
             <p className="text-lg text-black mb-12 leading-relaxed">
-              It all started when our founder, Sarah, wanted to create the perfect slumber party for her daughter's 8th birthday. What began as a simple idea quickly blossomed into a passion for creating magical experiences that children treasure forever.
+              Soirées and Teepees began shortly after the world slowly started finding its way back to joy after COVID-19. At the time, large gatherings were still restricted, and so many families longed to celebrate life’s special moments but couldn’t do it the way they used to.
+
+              That’s when the idea was born — to create beautiful, intimate celebrations right at home. A cozy sleepover for kids who missed their friends. A backyard picnic for couples who wanted to feel close again. A small but stunning baby shower for moms-to-be who deserved something magical.
+
+              What started as a creative way to bring connection, comfort, and celebration into smaller spaces soon grew into a full event styling experience. Each teepee, picnic, and tent setup became more than just décor — it became a reminder that joy can bloom anywhere, even in the simplest settings.
+
+              Today, Soirées and Teepees continues to craft unforgettable moments that bring people together — proving that magic isn’t found in the size of a party, but in the love and laughter shared within it.
+
+              ✨ From our heart to your home — we’re here to help you celebrate beautifully, no matter the season.
             </p>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center bg-peach w-full p-2 rounded-xl border-4 border-white">
-                <div className="w-16 h-16 bg-[#EE8F63] border-4 border-white rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="ri-lightbulb-line text-white text-2xl"></i>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-3">The Idea</h3>
-                <p className="text-gray-600">Born from a desire to create something truly special for children's celebrations</p>
-              </div>
-              <div className="text-center bg-peach w-full p-2 rounded-xl border-4 border-white">
-                <div className="w-16 h-16 bg-[#EAB3C6] border-4 border-white rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="ri-heart-line text-white text-2xl"></i>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-3">The Passion</h3>
-                <p className="text-gray-600">Driven by love for creating joy and wonder in children's lives</p>
-              </div>
-              <div className="text-center bg-peach w-full p-2 rounded-xl border-4 border-white">
-                <div className="w-16 h-16 bg-[#D5666D] border-4 border-white rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="ri-star-line text-white text-2xl"></i>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-3">The Magic</h3>
-                <p className="text-gray-600">Every party is crafted with attention to detail and genuine care</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Team Section */}
-      <section className="py-20 relative">
+      <section className="pb-20 pt-10 relative">
         <div className="container mx-auto px-6">
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-[#EE8F63] font-heading mb-4">Meet the creative director</h2>

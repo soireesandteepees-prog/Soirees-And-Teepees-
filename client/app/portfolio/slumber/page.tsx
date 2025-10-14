@@ -70,7 +70,7 @@ export default function SlumberParty() {
       </section>
 
       {/* Portfolio Grid */}
-      <section className="py-20">
+      <section className=" pt-5 pb-20">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-12">
             {slumberParties.map((project, index) => (
