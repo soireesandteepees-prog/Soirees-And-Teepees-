@@ -4,12 +4,13 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ConfettiBackground } from '@/components/confettiBackground';
-import {image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, image17, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27, image28} from '../public/assets/images/index';
+import {image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image13, image14, image15, image16, image17, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27, image28} from '../public/assets/images/index';
 import {picnic1} from '@/public/assets/picnic'
+import {slumber20} from '@/public/assets/slumber'
 
   const images = [
     picnic1,
-    image13,
+    slumber20,
     image28,
     image10,
     image4,

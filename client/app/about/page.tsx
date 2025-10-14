@@ -67,7 +67,7 @@ export default function About() {
           </div>
           <div>
             {[
-              { name: "Rukevwe Osuhor", role: "Founder & Creative Director", bio: "Mother of two with 5+ years of event planning experience" }
+              { name: "Ruke Osuhor", role: "Founder & Creative", bio: "Mother of two with 6+ years of event styling experience" }
             ].map((member, index) => (
               <div key={index} className="text-center group">
                 <div className="relative mb-6">
@@ -98,10 +98,11 @@ export default function About() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: "ri-magic-line", color:'[#EE8F63]', title: "Creativity", description: "Every party is uniquely designed to spark imagination" },
-              { icon: "ri-shield-check-line", color:'[#EAB3C6]', title: "Safety", description: "Child safety is our top priority in every setup" },
-              { icon: "ri-heart-line", color:'[#D5666D]', title: "Love", description: "We pour love into every detail of your celebration" },
-              { icon: "ri-star-line", color:'[#E89C62]', title: "Excellence", description: "We strive for perfection in every experience we create" }
+              { icon: "ri-magic-line", color:'[#EE8F63]', title: "Creativity", description: "Every event tells its own story. We transform ordinary spaces into unforgettable experiences with thoughtful design and imagination." },
+              { icon: "ri-shield-check-line", color:'[#EAB3C6]', title: "Safety", description: "Your peace of mind comes first. Every detail is handled with care to ensure a clean, safe, and stress-free celebration." },
+              
+              { icon: "ri-heart-line", color:'[#D5666D]', title: "Love", description: "Love inspires everything we do — from the way we design to the joy we help create for families and friends." },
+              { icon: "ri-star-line", color:'[#E89C62]', title: "Excellence", description: "We aim for perfection in every detail, delivering a seamless, beautiful experience from start to finish." }
             ].map((value, index) => (
               <div key={index} className="text-center p-6 bg-peach rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                 <div className={`w-16 h-16 bg-${value.color} border-4 border-white rounded-full flex items-center justify-center mx-auto mb-4`}>
