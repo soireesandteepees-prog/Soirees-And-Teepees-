@@ -49,9 +49,10 @@ export default function About() {
 
               What started as a creative way to bring connection, comfort, and celebration into smaller spaces soon grew into a full event styling experience. Each teepee, picnic, and tent setup became more than just décor — it became a reminder that joy can bloom anywhere, even in the simplest settings.
 
-              Today, Soirées and Teepees continues to craft unforgettable moments that bring people together — proving that magic isn’t found in the size of a party, but in the love and laughter shared within it.
+              Today, Soirées and Teepees continues to craft unforgettable moments that bring people together — proving that magic isn’t found in the size of a party, but in the love and laughter shared within it. 
 
-              ✨ From our heart to your home — we’re here to help you celebrate beautifully, no matter the season.
+              <br></br>
+               ✨ From our heart to your home — we’re here to help you celebrate beautifully, no matter the season.
             </p>
           </div>
         </div>
