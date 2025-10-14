@@ -30,7 +30,7 @@ export const WhyChooseUs = () => {
         >
           <h2 className="text-4xl md:text-5xl font-heading text-[#D5666D] mb-4">Why Choose Us?</h2>
           <p className="text-xl text-gray-700 font-body max-w-2xl mx-auto">
-            We craft magical moments that your little ones will never forget 💫
+            ✨ Choose us for the magic we bring, the memories we create, and the peace of mind that comes from knowing your celebration is in the best hands.
           </p>
         </motion.div>
 

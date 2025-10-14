@@ -17,7 +17,9 @@ export default function About() {
                 <span className="text-[#EE8F63] block">Soirées and Teepees ✨</span>
               </h1>
               <p className="text-lg text-black mb-8 leading-relaxed italic">
-                Where celebrations become unforgettable experiences. At Soirées and Teepees, we believe every occasion deserves to feel magical. We don’t just decorate—we curate experiences that inspire joy, connection, and wonder. Whether you’re hosting a slumber party, celebrating love, or creating a cozy night under the stars, we handle every detail so you can relax, enjoy, and make beautiful memories.
+                Where celebrations become unforgettable experiences. 
+                <br></br>
+                At Soirées and Teepees, we believe every occasion deserves to feel magical. We don’t just decorate—we curate experiences that inspire joy, connection, and wonder. Whether you’re hosting a slumber party, celebrating love, or creating a cozy night under the stars, we handle every detail so you can relax, enjoy, and make beautiful memories.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/booking" className="border-2 border-peach px-8 py-4 rounded-full text-lg font-semibold bg-[#d6665b] text-white hover:bg-[#b7534b] transition-colors whitespace-nowrap">
@@ -100,7 +102,7 @@ export default function About() {
             {[
               { icon: "ri-magic-line", color:'[#EE8F63]', title: "Creativity", description: "Every event tells its own story. We transform ordinary spaces into unforgettable experiences with thoughtful design and imagination." },
               { icon: "ri-shield-check-line", color:'[#EAB3C6]', title: "Safety", description: "Your peace of mind comes first. Every detail is handled with care to ensure a clean, safe, and stress-free celebration." },
-              
+
               { icon: "ri-heart-line", color:'[#D5666D]', title: "Love", description: "Love inspires everything we do — from the way we design to the joy we help create for families and friends." },
               { icon: "ri-star-line", color:'[#E89C62]', title: "Excellence", description: "We aim for perfection in every detail, delivering a seamless, beautiful experience from start to finish." }
             ].map((value, index) => (
