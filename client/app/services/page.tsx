@@ -124,10 +124,10 @@ export default function Services() {
       <section className="py-20">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold font-heading text-[#EE8F63] mb-6 leading-tight">
-            Our <span className="text-[#EE8F63]">Services</span>
+            Our <span className="text-[#EE8F63]">Signature Experiences</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-            Choose from our carefully crafted slumber party packages, each designed to create magical memories that will last a lifetime. Every package includes setup, styling, and cleanup.
+          <p className="text-2xl text-gray-600 max-w-3xl mx-auto mb-12">
+            Stylish. Intimate. Unforgettable.
           </p>
         </div>
       </section>
