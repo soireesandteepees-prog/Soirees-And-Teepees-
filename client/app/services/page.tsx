@@ -138,17 +138,10 @@ export default function Services() {
           <div className="grid lg:grid-cols-2 gap-12">
             {services.map((service, index) => (
               <div key={service.id} className="bg-white drop-shadow-lg rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow group">
-                <div className="relative">
-                  <img 
-                    src={`https://readdy.ai/api/search-image?query=$%7Bservice.image%7D&width=600&height=400&seq=service-${index}&orientation=landscape`}
-                    alt={service.title}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-6 left-6 bg-[#d6665b] text-white px-4 py-2 rounded-full font-semibold">
+                <div className="p-8">
+                  <div className="relative items-center text-xl text-center mb-3 bg-[#d6665b] text-white px-4 py-2 rounded-full font-semibold">
                     {service.price}
                   </div>
-                </div>
-                <div className="p-8">
                   <h3 className="text-3xl font-bold text-gray-800 mb-4">{service.title}</h3>
                   <div className="flex items-center space-x-6 mb-2 text-gray-600">
                     <div className="flex items-center">
