@@ -116,6 +116,131 @@ export default function Services() {
         'Bug spray (Complementary)',
       ]
     },
+
+    {
+      id: 'backyard-movie-night',
+      title: 'Backyard Movie Night',
+      // price: 'From $400',
+      duration: '4 hours',
+      // guests: 'Minimum of  Guests',
+      // info: "There will be an additional fee of $100 per additional Person",
+      // image: 'princess+themed+slumber+party+with+pink+gold+decorations+crowns+magical+setup+fairy+tale+atmosphere+elegant+sleepover+decor+dreamy+bedroom',
+      features: [
+        'Inflatable movie screen',
+        'HD projector',
+        'Projector stand',
+        'Media source (laptop)',
+        'Fairy/string lights',
+        'sound system',
+        'Fire pit or heaters (depending on weather)',
+        'Red carpet (for VIP effect)',
+        'Small tables or trays for guests',
+        'Mini bar cart or themed concession stand',
+        'Trash and recycling bins (discreetly placed)',
+        'Beverage dispenser or cooler (soda, lemonade, water)',
+        'Movie-themed signage (“Now Showing”, “Concessions”)',
+        'Bug repellent (spray or citronella candles)',
+        'Outdoor fans or heaters (seasonal)',
+        'Outdoor-safe extension cords',
+        'First aid kit',
+        'Personalized seating place cards',
+        'Custom movie tickets or wristbands',
+        'Themed favor bags',
+        'Glow sticks for kids',
+        'Cozy socks/slippers giveaway',
+        'Surge protectors',
+        'Test run BEFORE guests arrive!',
+        'Teepees or luxury tents (individual lounges or decor)',
+        'Cozy low seating (floor cushions, bean bags, poufs)',
+        'Blankets & throws (neutral or themed colors)',
+        'Outdoor rugs or ground coverings',
+        'Pillows for comfort and style',
+        'Decorative elements (signage, flowers)',
+      ]
+    },
+
+    {
+      id: 'bell-tent-glamping',
+      title: 'Bell Tent Glamping',
+      price: 'From $750',
+      // duration: '4 hours',
+      // guests: 'Minimum of 4 Guests',
+      info: "Additional fee for Tent Balloon Garland ($300)",
+      image: 'princess+themed+slumber+party+with+pink+gold+decorations+crowns+magical+setup+fairy+tale+atmosphere+elegant+sleepover+decor+dreamy+bedroom',
+      features: [
+        '4-5 Mattresses',
+        'Decorative Pillows',
+        'Bedding',
+        'Light Blanket',
+        'Outdoor Entry Rug',
+        'Lap Trays',
+        'Decorative Lanterns',
+        'Themed Decor & Decorations',
+        'Night Time Lanterns',
+        'Welcome signage',
+        'Tent Topper or Dream Catcher',
+        'Wicker Basket for Shoes',
+        'Decorative Plants'
+      ]
+    },
+
+    {
+      id: 'bridal/baby-shower',
+      title: 'Bridal/Baby Shower',
+      // price: 'From $750',
+      // duration: '4 hours',
+      // guests: 'Minimum of 4 Guests',
+      // info: "Additional fee for Tent Balloon Garland ($300)",
+      image: 'princess+themed+slumber+party+with+pink+gold+decorations+crowns+magical+setup+fairy+tale+atmosphere+elegant+sleepover+decor+dreamy+bedroom',
+      features: [
+        'Welcome sign',
+        'Entrance balloon arch or garland',
+        'Entry backdrop or draping',
+        'Directional or themed signage',
+        'Main backdrop or feature wall',
+        'Balloon garland or floral installation',
+        'Custom sign or neon sign (e.g. “Bride-to-Be” / “Mama-to-Be”)',
+        'Statement chair or throne chair',
+        'Couch, wicker chair, or sweetheart seating',
+        'Floor decor (lanterns, flowers, crates)',
+        'Dessert/cake table',
+        'Cake stand(s) and risers',
+        'Dessert labels or signage',
+        'Centerpieces (flowers, candles, props)',
+        'Table linens or tablecloths',
+        'Table runners or overlays',
+        'Plates, napkins, cups (coordinated with theme)',
+        'Chargers or decorative place settings',
+        'Place cards or name tags (optional)',
+        'Confetti, petals, or table scatter',
+        'Guest seating area with styled chairs or bows (optional)',
+        'Gift table with sign or decor',
+        'Favor table or display',
+        'Personalized favor tags or labels',
+        'Food/grazing table setup',
+        'Beverage or mimosa bar station',
+        'Signage for food/drinks',
+        'Balloon columns or clusters (optional)',
+        'Floral arrangements (fresh or faux)',
+        'Hanging decor (lanterns, fans, tassels)',
+        'Ceiling balloons or florals (optional)',
+        'Lighting (string lights, fairy lights)',
+        'LED candles or lanterns',
+        'Photo booth or selfie station',
+        'Photo props (themed)',
+        'Game station or table',
+        'Pens, cards, or activity items',
+        '“Advice for Bride/Mom” cards or station',
+        'Gift-opening area with seating',
+        'Themed props (baby blocks, veil decor, etc.)',
+        'Accent decor (ribbons, bows, signs)',
+        'Coordinated color palette throughout',
+        'Music or background ambiance',
+        'Trash bin discreetly placed',
+        'Extra balloons or decor for filler spaces',
+        'Backup supplies and tape/hooks'
+      ]
+    },
   ];
 
   return (
@@ -137,25 +262,51 @@ export default function Services() {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12">
             {services.map((service, index) => (
-              <div key={service.id} className="bg-white drop-shadow-lg rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow group">
+              <div key={service.id} className="bg-white drop-shadow-lg rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow">
                 <div className="p-8">
-                  <div className="relative items-center text-xl text-center mb-3 bg-[#d6665b] text-white px-4 py-2 rounded-full font-semibold">
-                    {service.price}
-                  </div>
+                  {
+                    service.price && ( 
+                      <>
+                        <div className="relative items-center text-xl text-center mb-3 bg-[#d6665b] text-white px-4 py-2 rounded-full font-semibold">
+                          {service.price}
+                        </div>
+                      </>
+                    )
+                  }
+                  
                   <h3 className="text-3xl font-bold text-gray-800 mb-4">{service.title}</h3>
                   <div className="flex items-center space-x-6 mb-2 text-gray-600">
                     <div className="flex items-center">
-                      <i className="ri-time-line w-5 h-5 mr-2 text-[#d6665b]"></i>
-                      {service.duration}
+                      {
+                        service.duration && (
+                          <>
+                            <i className="ri-time-line w-6 h-6 mr-2 text-[#d6665b]"></i>
+                            {service.duration}
+                          </>
+                        )
+                      }
                     </div>
                     <div className="flex items-center">
-                      <i className="ri-group-line w-5 h-5 mr-2 text-[#d6665b]"></i>
-                      {service.guests}
+                      {
+                        service.guests && (
+                          <>
+                            <i className="ri-group-line w-5 h-5 mr-2 text-[#d6665b]"></i>
+                            {service.guests}
+                          </>
+                        )
+                      }
                     </div>
                   </div>
                   <div className="flex items-center mb-6 text-gray-600">
-                      <BsInfoCircle className="w-5 h-5 mr-2 text-[#d6665b]" />
-                      {service.info}
+                    {
+                      service.info && (
+                        <>
+                          <BsInfoCircle className="w-5 h-5 mr-2 text-[#d6665b]" />
+                          {service.info}
+                        </>
+                      )
+                    }
+                    
                   </div>
                   <div className="space-y-3 mb-8">
                     {service.features.map((feature, idx) => (
@@ -165,9 +316,19 @@ export default function Services() {
                       </div>
                     ))}
                   </div>
-                  <Link href="/booking" className="w-full bg-[#d6665b] text-white py-4 px-6 rounded-full font-semibold hover:bg-[#FFB88C] transition-colors cursor-pointer block text-center whitespace-nowrap">
-                    Book This Package
-                  </Link>
+
+                  {
+                    (service.id !== 'backyard-movie-night' && service.id !== 'bridal/baby-shower') ? (
+                      <Link href="/booking" className="w-full bg-[#d6665b] text-white py-4 px-6 rounded-full font-semibold hover:bg-[#FFB88C] transition-colors cursor-pointer block text-center whitespace-nowrap">
+                        Book This Package
+                      </Link>
+                    ) : (
+                      <div className="w-full text-[#d6665b] text-xl  py-4 px-6 rounded-full font-semibold transition-colors block text-center whitespace-nowrap">
+                        Contact us for quotes
+                      </div>
+                    )
+                  }
+                  
                 </div>
               </div>
             ))}

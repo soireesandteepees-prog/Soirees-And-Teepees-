@@ -32,11 +32,16 @@ export default function Booking() {
 
   const packages = [
     { id: 'kids-sleepover', name: 'Kids Sleepover', price: 4, duration: '24 hours', guests: 'Minimum of 3 Children' },
+
     { id: 'adult-sleepover', name: 'Adult Sleepover', price: 465, duration: '24 hours', guests: 'Minimum of 3 Adults' },
     
     { id: 'luxe-indoor-picnics', name: 'Luxe Indoor Picnics', price: 350, duration: '4 hours', guests: 'Minimum of 4 Guests' },
 
     { id: 'luxe-outdoor-picnics', name: 'Luxe Outdoor Picnics', price: 400, duration: '4 hours', guests: 'Minimum of 4 Guests' },
+
+    // { id: 'backyard-movie-night', name: 'Backyard Movie Night', price: 400, duration: '4 hours', },
+
+    { id: 'bell-tent-glamping', name: 'Bell Tent Glamping', price: 750, info: 'Additional fee for Tent Balloon Garland ($300)'},
   ];
 
   const AddOns = [
@@ -303,12 +308,35 @@ export default function Booking() {
                         <div className="text-3xl font-bold text-[#d6665b] mb-3">${pkg.price}</div>
                         <div className="text-gray-600 space-y-1">
                           <p className="flex items-center justify-center">
-                            <i className="ri-time-line w-4 h-4 mr-2"></i>
-                            {pkg.duration}
+                            {
+                              pkg.duration && (
+                                <>
+                                  <i className="ri-time-line w-4 h-4 mr-2"></i>
+                                  {pkg.duration}
+                                </>
+                              )
+                            }
                           </p>
                           <p className="flex items-center justify-center">
-                            <i className="ri-group-line w-4 h-4 mr-2"></i>
-                            {pkg.guests}
+                            {
+                              pkg.guests && (
+                                <>
+                                <i className="ri-group-line w-4 h-4 mr-2"></i>
+                                {pkg.guests}
+                                </>
+                              )
+                            }                          
+                          </p>
+
+                          <p className="flex items-center justify-center">
+                            {
+                              pkg.info && (
+                                <>
+                                <BsInfoCircle className="w-7 h-7 text-[#d6665b]" />
+                                {pkg.info}
+                                </>
+                              )
+                            }                          
                           </p>
                         </div>
                       </div>
