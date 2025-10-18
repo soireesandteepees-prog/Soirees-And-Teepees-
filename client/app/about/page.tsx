@@ -123,12 +123,12 @@ export default function About() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-5xl font-bold mb-2">500+</div>
+              <div className="text-5xl font-bold mb-2">800+</div>
               <div className="text-xl">Magical Parties</div>
             </div>
             <div>
-              <div className="text-5xl font-bold mb-2">1000+</div>
-              <div className="text-xl">Happy Children</div>
+              <div className="text-5xl font-bold mb-2">5000+</div>
+              <div className="text-xl">Happy Guests</div>
             </div>
             <div>
               <div className="text-5xl font-bold mb-2">6+</div>
