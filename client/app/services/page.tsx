@@ -337,7 +337,7 @@ export default function Services() {
       </section>
 
       {/* Add-ons Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Popular Add-ons</h2>
@@ -365,7 +365,7 @@ export default function Services() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Process Section */}
       <section className="py-20">
