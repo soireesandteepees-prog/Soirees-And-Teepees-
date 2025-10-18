@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState('');
   const handleModal = () => setIsMenuOpen(!isMenuOpen);
 
   return (
@@ -32,7 +33,8 @@ export default function Header() {
             <Link
               key={idx}
               href={`/${text.toLowerCase() === 'home' ? '' : text.toLowerCase()}`}
-              className="hover:text-[#d6665b] transition-colors duration-300"
+              className={`hover:text-[#d6665b] ${text.toLowerCase() === currentPage ? 'text-[#d6665b]' : ''} transition-colors duration-300`}
+              onClick={() => setCurrentPage(text.toLowerCase())}
             >
               {text}
             </Link>
