@@ -252,7 +252,7 @@ export default function Services() {
             Our <span className="text-[#EE8F63]">Signature Experiences</span>
           </h1>
           <p className="text-2xl text-gray-600 max-w-3xl mx-auto mb-12">
-            Stylish. Intimate. Unforgettable.
+            Luxury. Intimate. Unforgettable.
           </p>
         </div>
       </section>
