@@ -118,6 +118,8 @@ export default function Booking() {
       } else {
         total = packagePrice + addOnPrices
       }
+    } else {
+      total = packagePrice;
     }
 
     return total as number
@@ -289,7 +291,7 @@ export default function Booking() {
                   {packages.map((pkg) => (
                     <div
                       key={pkg.id}
-                      onClick={() => {dispatch(setPackagetype(pkg.id))}}
+                      onClick={() => {dispatch(setPackagetype(pkg.id)); calculateTotal()}}
                       className={`border-2 rounded-2xl p-6 cursor-pointer transition-all ${
                         packageType === pkg.id
                           ? 'border-[#d6665b] bg-[#d6665b]/5'
@@ -658,13 +660,22 @@ export default function Booking() {
                       <span className="text-gray-700 flex flex-col">
                         {packages.find(p => p.id === packageType)?.name}
                       </span>
-                      <span className="font-semibold flex flex-col">                      
-                        {isGreater1 ? (
-                          <span>${((numberOfGuests - 3) * 100 + 415).toLocaleString()}</span>
-                        ) : ''}
-                        {isGreater2 ? (
-                          <span>${(Math.floor(numberOfGuests / 4) * 200 + 350).toLocaleString()}</span>
-                        ) : ''}
+                      <span className="font-semibold flex flex-col"> 
+                        {
+                          (isGreater1 || isGreater2 ? (
+                            <span>
+                              {isGreater1 ? (
+                                <span>${((numberOfGuests - 3) * 100 + (packages.find(p => p.id === packageType)?.price as number)).toLocaleString()}</span>
+                              ) : ''}
+                              {isGreater2 ? (
+                                <span>${(Math.floor(numberOfGuests / 4) * 200 + (packages.find(p => p.id === packageType)?.price as number)).toLocaleString()}</span>
+                              ) : ''}
+                            </span>
+                          ) : (
+                            <span>{packages.find(p => p.id === packageType)?.price}</span>
+                          ))
+                        }                     
+                        
                       </span>
                     </div>
                     
