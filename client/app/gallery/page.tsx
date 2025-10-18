@@ -150,7 +150,7 @@ export default function Gallery() {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 text-shadow-lg">Ready to Create Your Own Magic?</h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto text-shadow-lg">
-            Let us design a one-of-a-kind slumber party experience that your child will treasure forever
+            ✨ Let’s make your next celebration a Soirée to remember. ✨
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/booking" className="bg-[#d6665b] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#b7534b] transition-colors cursor-pointer whitespace-nowrap">

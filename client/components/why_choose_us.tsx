@@ -47,7 +47,7 @@ export const WhyChooseUs = () => {
               icon: 'ri-magic-line',
               title: 'Themed Experiences',
               bg: 'border-[#EEC7D9] bg-[#EEC7D9] text-white',
-              desc: "From princess castles to boho dreams, every theme is tailored to your child's imagination.",
+              desc: "Every detail is styled with intention, transforming your vision into a beautifully curated celebration guests will remember.",
             },
             {
               icon: 'ri-heart-line',

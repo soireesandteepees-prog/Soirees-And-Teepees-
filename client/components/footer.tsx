@@ -14,12 +14,12 @@ export const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-10 h-10 bg-[#FFD3B8] rounded-full flex items-center justify-center shadow-md">
-                <Image src={logo} alt="Logo" className="w-10 h-10 rounded-xl" />
+                <Image src={logo} alt="Logo" className="w-8 h-8 rounded-xl" />
               </div>
               <span className="text-2xl font-pacifico text-[#FFD3B8]">SOIREES & TEEPEES</span>
             </div>
             <p className="text-[#fdf5f2]/80 leading-relaxed">
-              Creating memorable slumber party experiences you’ll treasure forever.
+              ✨ Let’s make your next celebration a Soirée to remember. ✨
             </p>
           </div>
 

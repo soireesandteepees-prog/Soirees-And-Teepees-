@@ -213,7 +213,7 @@ export default function Portfolio() {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-shadow-lg mb-6">Ready to Create Your Story?</h2>
           <p className="text-xl text-gray-600 text-shadow-lg mb-8 max-w-2xl mx-auto">
-            Let us design a magical experience that will become a cherished memory for your family
+            Let’s help you create a celebration full of joy, colors, and unforgettable memories!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/booking" className="px-8 py-4 rounded-full text-lg font-semibold  bg-[#d6665b] text-white hover:bg-[#b7534b] transition-colors cursor-pointer whitespace-nowrap">
