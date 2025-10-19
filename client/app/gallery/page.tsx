@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { ConfettiBackground } from '@/components/confettiBackground';
 import {image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image13, image14, image15, image16, image17, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27} from '../../public/assets/images/index';
 import { slumber1, slumber2, slumber3, slumber4, slumber5, slumber6, slumber7, slumber8, slumber9, slumber10, slumber11, slumber12, slumber13, slumber14, slumber15, slumber16, slumber17, slumber18, slumber20 } from '@/public/assets/slumber';
-import { picnic1 } from '@/public/assets/picnic';
+import { picnic1, picnic2, picnic3, picnic4, picnic5, picnic6, picnic7, picnic8, picnic9, picnic10, picnic11, picnic12, picnic13, picnic14, picnic15, picnic16, picnic17, picnic18, picnic19, picnic20, picnic21, picnic22, picnic23, picnic24, picnic25, picnic26, picnic27, picnic28, picnic29, picnic30, picnic31, picnic32, picnic33, picnic34, picnic35, picnic36, picnic37, picnic38, picnic39 } from '@/public/assets/picnic';
 import { briderShower1, briderShower2, briderShower3, briderShower4, briderShower5, briderShower6, briderShower7 } from '@/public/assets/briderShower';
 import { babyShower1, babyShower2, babyShower3, babyShower4, babyShower5, babyShower6, babyShower7 } from '@/public/assets/babyShower';
 import { bellTent1, bellTent2, bellTent3 } from '@/public/assets/bellTent';
@@ -63,6 +63,44 @@ export default function Gallery() {
     { category: 'slumber', title: '', image: slumber20 },
 
     { category: 'luxe', title: '', image: picnic1 },
+    { category: 'luxe', title: '', image: picnic2 },
+    { category: 'luxe', title: '', image: picnic3 },
+    { category: 'luxe', title: '', image: picnic4 },
+    { category: 'luxe', title: '', image: picnic5 },
+    { category: 'luxe', title: '', image: picnic6 },
+    { category: 'luxe', title: '', image: picnic7 },
+    { category: 'luxe', title: '', image: picnic8 },
+    { category: 'luxe', title: '', image: picnic9 },
+    { category: 'luxe', title: '', image: picnic10 },
+    { category: 'luxe', title: '', image: picnic11 },
+    { category: 'luxe', title: '', image: picnic12 },
+    { category: 'luxe', title: '', image: picnic13 },
+    { category: 'luxe', title: '', image: picnic14 },
+    { category: 'luxe', title: '', image: picnic15 },
+    { category: 'luxe', title: '', image: picnic16 },
+    { category: 'luxe', title: '', image: picnic17 },
+    { category: 'luxe', title: '', image: picnic18 },
+    { category: 'luxe', title: '', image: picnic19 },
+    { category: 'luxe', title: '', image: picnic20 },
+    { category: 'luxe', title: '', image: picnic21 },
+    { category: 'luxe', title: '', image: picnic22 },
+    { category: 'luxe', title: '', image: picnic23 },
+    { category: 'luxe', title: '', image: picnic24 },
+    { category: 'luxe', title: '', image: picnic25 },
+    { category: 'luxe', title: '', image: picnic26 },
+    { category: 'luxe', title: '', image: picnic27 },
+    { category: 'luxe', title: '', image: picnic28 },
+    { category: 'luxe', title: '', image: picnic29 },
+    { category: 'luxe', title: '', image: picnic30 },
+    { category: 'luxe', title: '', image: picnic31 },
+    { category: 'luxe', title: '', image: picnic32 },
+    { category: 'luxe', title: '', image: picnic33 },
+    { category: 'luxe', title: '', image: picnic34 },
+    { category: 'luxe', title: '', image: picnic35 },
+    { category: 'luxe', title: '', image: picnic36 },
+    { category: 'luxe', title: '', image: picnic37 },
+    { category: 'luxe', title: '', image: picnic38 },
+    { category: 'luxe', title: '', image: picnic39},
 
     { category: 'shower', title: '', image: briderShower1 },
     { category: 'shower', title: '', image: briderShower2 },
