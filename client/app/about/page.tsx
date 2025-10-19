@@ -78,9 +78,6 @@ export default function About() {
                     alt={member.name}
                     className="w-72 h-72 rounded-full mx-auto object-cover shadow-lg group-hover:shadow-xl transition-shadow"
                   />
-                  <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-peach rounded-full flex items-center justify-center">
-                    <i className="ri-star-line text-white text-lg"></i>
-                  </div>
                 </div>
                 <h3 className="text-3xl font-bold text-black mb-0">{member.name}</h3>
                 <p className="text-black text-xl font-bold mb-2">{member.role}</p>

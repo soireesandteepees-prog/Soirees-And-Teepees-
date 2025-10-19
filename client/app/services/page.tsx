@@ -17,7 +17,7 @@ export default function Services() {
         'A frame teepees with fairylights',
         ' Fabric teepee cover to suite party theme or color scheme',
         ' Air Mattresses', 
-        ' Fitted shee8',
+        ' Fitted sheet',
         ' Soft/fleece blankets',
         ' Pillows',
         ' Themes throw pillows', 
