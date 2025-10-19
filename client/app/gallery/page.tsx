@@ -172,7 +172,7 @@ export default function Gallery() {
       {/* Gallery Grid */}
       <section className="pb-20 pt-10">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-5 md:grid-cols-5 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {filteredImages.map((item, index) => (
               <div 
                 key={index}
