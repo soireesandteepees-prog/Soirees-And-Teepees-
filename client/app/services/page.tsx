@@ -109,7 +109,7 @@ export default function Services() {
         'Boho Umbrellas', 
         'Portable charger for phones',
         'Portable fan',
-        'Choose up yo 3 games',
+        'Choose up to 3 games',
         'Bluetooth seaker( JBL)',
         'Sanitizer (Complementary)',
         'Paper napkins', 
