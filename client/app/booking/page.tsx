@@ -370,13 +370,13 @@ export default function Booking() {
                 </div>
 
                 <div>
-                  <div className='flex items-center justify-center space-x-5'>
-                    <h1 className="text-2xl font-bold text-center flex flex-col md:flex-row text-gray-800 mb-6">Choose a Theme </h1>
+                  <div className='flex items-center justify-center flex-col md:flex-row space-x-5'>
+                    <h1 className="text-2xl font-bold text-center text-gray-800 mb-3">Choose a Theme </h1>
                     
                     <input
                       type='text'
                       placeholder='Search theme'
-                      className='bg-gray-100 focus:border-[#dd3d2f] focus:outline-none border-2 px-2 text-gray-700 border-gray-200 rounded-lg py-2 mb-6'
+                      className='bg-gray-100 focus:border-[#dd3d2f] focus:outline-none border-2 px-2 text-gray-700 border-gray-200 rounded-lg py-2 mb-3'
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange(e)}
                     />
                   </div>
