@@ -123,7 +123,6 @@ export default function Booking() {
 
     const total = packagePrice + addOnPrices + extraFee;
 
-    console.log('calculateTotal', total);
     return total;
   }, [packageType, addOns, isGreater1, isGreater2, numberOfGuests]);
 
