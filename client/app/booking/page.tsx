@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { AppState, AppDispatch } from '@/redux/store';
 import { useSelector} from 'react-redux';
 import { MdAddCircleOutline } from "react-icons/md";
@@ -106,29 +106,26 @@ export default function Booking() {
     'WWE'
   ]
 
-  const calculateTotal = useCallback(():number =>{
+  const calculateTotal = useMemo(():number =>{
     const selectedPackage = packages.find(p => p.id === packageType);
     const packagePrice = selectedPackage ? selectedPackage.price : 0;
-    const addOnPrices = addOns?.reduce((total: number, addOnId:string) => {
+    const addOnPrices = (addOns?.reduce((total: number, addOnId:string) => {
       const addOn = AddOns.find(a => a.id === addOnId);
       return total + (addOn ? addOn.price : 0);
-    }, 0);
+    }, 0) ?? 0);
 
-    let total;
-    if(addOnPrices) {
-      if (isGreater1) {
-        total = ((numberOfGuests - 3) * 100) + packagePrice + addOnPrices
-      } else if (isGreater2) {
-        total = (Math.floor(numberOfGuests / 4) * 200) + packagePrice + addOnPrices
-      } else {
-        total = packagePrice + addOnPrices
-      }
-    } else {
-      total = packagePrice;
+    let extraFee = 0;
+    if (isGreater1) {
+      extraFee = ((Number(numberOfGuests) - 3) * 100);
+    } else if (isGreater2) {
+      extraFee = (Math.floor(Number(numberOfGuests) / 4) * 200);
     }
 
-    return total as number
-  }, [packageType, addOns, isGreater1, isGreater2, numberOfGuests, dispatch]);
+    const total = packagePrice + addOnPrices + extraFee;
+
+    console.log('calculateTotal', total);
+    return total;
+  }, [packageType, addOns, isGreater1, isGreater2, numberOfGuests]);
 
 
 
@@ -138,7 +135,6 @@ export default function Booking() {
       : [...addOns as string[], addOnId];
 
     dispatch(setAddOn(newAddOns));
-    calculateTotal()
   };
 
   const handleAddtionalFee = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -202,7 +198,7 @@ export default function Booking() {
       city,
       zipCode,
       specialRequests,
-      totalAmount: calculateTotal(),
+      totalAmount: calculateTotal,
       paymentStatus: 'Pending',
       paymentMethod: 'Deposit'
     };
@@ -296,7 +292,7 @@ export default function Booking() {
                   {packages.map((pkg) => (
                     <div
                       key={pkg.id}
-                      onClick={() => {dispatch(setPackagetype(pkg.id)); calculateTotal()}}
+                      onClick={() => {dispatch(setPackagetype(pkg.id));}}
                       className={`border-2 rounded-2xl p-6 cursor-pointer transition-all ${
                         packageType === pkg.id
                           ? 'border-[#d6665b] bg-[#d6665b]/5'
@@ -422,7 +418,7 @@ export default function Booking() {
 
                 <div className="text-center mt-4">
                   <div className="text-2xl font-bold text-gray-800 mb-6">
-                    Total: <span className="text-[#d6665b]">${calculateTotal() || 0}</span>
+                    Total: <span className="text-[#d6665b]">${calculateTotal || 0}</span>
                   </div>
                   <button
                     onClick={nextStep}
@@ -726,7 +722,7 @@ export default function Booking() {
                     
                     <div className="border-t pt-3 flex justify-between text-xl font-bold">
                       <span>Total:</span>
-                      <span className="text-[#d6665b]">${calculateTotal()}</span>
+                      <span className="text-[#d6665b]">${calculateTotal}</span>
                     </div>
                   </div>
                 </div>
@@ -737,7 +733,7 @@ export default function Booking() {
                     <div>
                       <h4 className="font-semibold text-yellow-800 mb-1">Booking Deposit</h4>
                       <p className="text-sm">
-                        A 50% deposit of ${Math.round(calculateTotal() * 0.5)} is required to secure your booking. 
+                        A 50% deposit of ${Math.round(calculateTotal * 0.5)} is required to secure your booking. 
                         The remaining balance will be due 5 days before event.
                       </p>
                       <p className="text-sm mt-5"> Note: Any booking less than 5 days prior to event date, would require a Full Payment before setup</p>
@@ -753,7 +749,7 @@ export default function Booking() {
                     {loading ? (
                       <FaSpinner className="animate-spin mr-2" />
                     ) : (
-                      `Pay Deposit $(${Math.round(calculateTotal() * 0.5)})`
+                      `Pay Deposit $(${Math.round(calculateTotal * 0.5)})`
                     )}
                   </button>
                   
