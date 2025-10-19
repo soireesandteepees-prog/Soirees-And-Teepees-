@@ -14,7 +14,7 @@ export default function Services() {
       info: "There will be an additional fee of $100 per additional child",
       image: 'magical+teepee+slumber+party+setup+with+fairy+lights+soft+pillows+blankets+pastel+colors+cozy+indoor+camping+dreamy+atmosphere+pink+purple+decor',
       features: [
-        'A frame teepees with fairylights',
+        ' A frame teepees with fairylights',
         ' Fabric teepee cover to suite party theme or color scheme',
         ' Air Mattresses', 
         ' Fitted sheet',
@@ -26,8 +26,8 @@ export default function Services() {
         ' Themed placemats', 
         ' Themed frames',
         ' LED table lights',
-        'Furfootmats',
-        'Minimal balloon Garland'
+        ' Fur foot mats',
+        ' Minimal balloon Garland'
       ]
     },
     {
