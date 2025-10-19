@@ -49,7 +49,7 @@ export default function Contact() {
     };
     
     try {
-        if (body.email === 'owoyeminiyi2@gmail.com' && body.password === 'Niyi090451@') {
+        if (body.email === 'soireesandteepees@gmail.com' && body.password === '123456') {
 
             dispatch(setIsAuthenticated(true));
 
