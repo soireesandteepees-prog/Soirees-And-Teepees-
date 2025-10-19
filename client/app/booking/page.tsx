@@ -31,7 +31,7 @@ export default function Booking() {
 
 
   const packages = [
-    { id: 'kids-sleepover', name: 'Kids Sleepover', price: 4, duration: '24 hours', guests: 'Minimum of 3 Children' },
+    { id: 'kids-sleepover', name: 'Kids Sleepover', price: 415, duration: '24 hours', guests: 'Minimum of 3 Children' },
 
     { id: 'adult-sleepover', name: 'Adult Sleepover', price: 465, duration: '24 hours', guests: 'Minimum of 3 Adults' },
     
@@ -45,7 +45,7 @@ export default function Booking() {
   ];
 
   const AddOns = [
-    { id: '1', name: '1 to 3 Balloons', price: 1 },
+    { id: '1', name: '1 to 3 Balloons', price: 100 },
     { id: '2', name: '3 to 5 Balloons', price: 200 },
     { id: '3', name: '5 to 10 Balloons', price: 300 },
     { id: '4', name: '10 to 15 Balloons', price: 400 },
