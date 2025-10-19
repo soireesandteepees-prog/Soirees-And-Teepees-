@@ -371,7 +371,7 @@ export default function Booking() {
 
                 <div>
                   <div className='flex items-center justify-center space-x-5'>
-                    <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">Choose a Theme </h1>
+                    <h1 className="text-2xl font-bold text-center flex flex-col md:flex-row text-gray-800 mb-6">Choose a Theme </h1>
                     
                     <input
                       type='text'
