@@ -1,5 +1,6 @@
 const { where } = require('sequelize');
 const { Booking, User } = require('../models');
+const {sendAdminBookingEmail, sendClientBookingEmail} = require('./emailController')
 
 const allBookings = async (req, res) => {
     try {
@@ -67,7 +68,7 @@ const addBookings = async (req, res) => {
     };
 
     try {
-        const user = await  User.findOne({where: {email}});
+        // const user = await  User.findOne({where: {email}});
 
         const newBooking = await Booking.create({
             parentName,
@@ -91,6 +92,9 @@ const addBookings = async (req, res) => {
             totalAmount,
         });
 
+        await sendAdminBookingEmail(newBooking);
+
+        console.log('niyi');
         return res.status(201).json({
             success: true,
             message: 'Booking created Successfully',
