@@ -29,6 +29,7 @@ const sendAdminBookingEmail = async (bookingData) => {
   };
 
   try {
+    console.log(process.env.EMAIL_USER, process.env.EMAIL_PASS)
     const info = await transporter.sendMail(mailOptions);
     console.log("Email sent:", info.response);
   } catch (error) {
