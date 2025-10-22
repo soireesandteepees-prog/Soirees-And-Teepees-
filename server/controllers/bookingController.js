@@ -1,6 +1,9 @@
 const { where } = require('sequelize');
 const { Booking, User } = require('../models');
 const {sendAdminBookingEmail, sendClientBookingEmail} = require('./emailController')
+const sgMail = require('@sendgrid/mail')
+
+sgMail.setApiKey(process.env.EMAIL_PASS);
 
 const allBookings = async (req, res) => {
     try {
@@ -92,7 +95,12 @@ const addBookings = async (req, res) => {
             totalAmount,
         });
 
-        await sendAdminBookingEmail(newBooking);
+        await sgMail.send({
+            to: process.env.EMAIL_USER,
+            from: process.env.EMAIL_USER,
+            subject: `New Booking`,
+            html: `<p>Booking details here...</p>`,
+        });
 
         console.log('niyi');
         return res.status(201).json({
