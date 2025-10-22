@@ -97,10 +97,46 @@ const addBookings = async (req, res) => {
 
         console.log(process.env.SENDGRID_API_KEY, process.env.EMAIL_USER);
         await sgMail.send({
-            to: process.env.EMAIL_USER,
+            to: email,
             from: process.env.EMAIL_USER,
             subject: `New Booking`,
-            html: `<p>Booking details here...</p>`,
+            html: `
+            <h2>Hi ${parentName},</h2>
+            <p>Thank you for booking with <b>Soirees and Teepees</b>! 💅</p>
+
+            <p>
+                We’ve successfully received your deposit of 
+                <b>₦${Math.round(totalAmount * 0.5)}</b> for your <b>${packageType}</b> appointment scheduled on 
+                <b>${new Date(eventDate).toLocaleString()}</b>.
+            </p>
+
+            <p>
+                Your booking is now <b>partially confirmed</b>. 
+                To secure your spot fully, please complete the remaining balance of 
+                <b>₦${Math.round(totalAmount * 0.5)}</b> at least <b>24 hours</b> before your appointment.
+            </p>
+
+            <p>
+                Once full payment is received, you’ll get another confirmation email 
+                with your final booking details.
+            </p>
+
+            <hr/>
+            <p><b>Booking Summary:</b></p>
+            <ul>
+                <li><b>Service:</b> ${packageType}</li>
+                <li><b>Date & Time:</b> ${new Date(eventDate).toLocaleString()}</li>
+                <li><b>Deposit Paid:</b> ₦${Math.round(totalAmount * 0.5)}</li>
+                <li><b>Balance Remaining:</b> ₦${Math.round(totalAmount * 0.5)}</li>
+            </ul>
+
+            <hr/>
+            <p>
+                If you have any questions or need to make changes, feel free to reply to this email or contact us directly.
+            </p>
+            <p>We can’t wait to pamper you! 💖</p>
+            <p>— The <b>Nails by Ronnie</b> Team</p>
+            `,
         });
 
         return res.status(201).json({
