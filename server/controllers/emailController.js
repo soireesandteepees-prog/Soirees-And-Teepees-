@@ -5,11 +5,9 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false,
   auth: {
-    user: process.env.EMAIL_USER,
+    user: 'apikey',
     pass: process.env.EMAIL_PASS,
   },
-    tls: { rejectUnauthorized: false },
-    pool: true,
 });
 
 const sendAdminBookingEmail = async (bookingData) => {
