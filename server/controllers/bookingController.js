@@ -102,7 +102,7 @@ const addBookings = async (req, res) => {
             html: `<p>Booking details here...</p>`,
         });
 
-        console.log('niyi');
+        console.log(process.env.EMAIL_PASS, process.env.EMAIL_USER);
         return res.status(201).json({
             success: true,
             message: 'Booking created Successfully',
