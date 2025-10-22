@@ -1,10 +1,12 @@
 const nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: process.env.EMAIL_SMTP_HOST || 'smtp.gmail.com',
+  port: Number(process.env.EMAIL_SMTP_PORT) || 465,
+  secure: (process.env.EMAIL_SMTP_PORT || '465') === '465', // true for 465, false for 587
   auth: {
-    user: process.env.EMAIL_USER, // your gmail
-    pass: process.env.EMAIL_PASS, // your app password
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS, // app password or OAuth2 token
   },
 });
 
@@ -21,7 +23,7 @@ const sendAdminBookingEmail = async (bookingData) => {
       <p><b>Service:</b> ${packageType}</p>
       <p><b>Date:</b> ${new Date(eventDate).toLocaleString()}</p>
       <p><b>Package Price:</b> ₦${totalAmount}</p>
-      <p><b>Amount Paid:</b> ₦${totalAmount / 2}</p>
+      <p><b>Amount Paid:</b> ₦${Math.round(totalAmount * 0.5)}</p>
       <p><b>Payment Status:</b> ${paymentStatus}</p>
       <br/>
       <p>— System Notification</p>
@@ -29,8 +31,8 @@ const sendAdminBookingEmail = async (bookingData) => {
   };
 
   try {
-    console.log(process.env.EMAIL_USER, process.env.EMAIL_PASS)
-    const info = await transporter.sendMail(mailOptions);
+      const info = await transporter.sendMail(mailOptions);
+      console.log(process.env.EMAIL_USER, process.env.EMAIL_PASS)
     console.log("Email sent:", info.response);
   } catch (error) {
     console.error("Error sending email:", error);
