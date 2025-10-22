@@ -98,7 +98,7 @@ const addBookings = async (req, res) => {
         console.log(process.env.SENDGRID_API_KEY, process.env.EMAIL_USER);
         await sgMail.send({
             to: email,
-            from: process.env.EMAIL_USER,
+            from: 'ruke@soireesandteepees.com',  
             subject: `New Booking`,
             html: `
             <h2>Hi ${parentName},</h2>
