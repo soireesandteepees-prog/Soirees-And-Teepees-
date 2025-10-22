@@ -1,15 +1,15 @@
 
 
-import sgMail from '@sendgrid/mail';
+// import sgMail from '@sendgrid/mail';
 
-sgMail.setApiKey(process.env.EMAIL_PASS);
+// sgMail.setApiKey(process.env.EMAIL_PASS);
 
-await sgMail.send({
-  to: process.env.EMAIL_USER,
-  from: process.env.EMAIL_USER,
-  subject: `New Booking`,
-  html: `<p>Booking details here...</p>`,
-});
+// await sgMail.send({
+//   to: process.env.EMAIL_USER,
+//   from: process.env.EMAIL_USER,
+//   subject: `New Booking`,
+//   html: `<p>Booking details here...</p>`,
+// });
 
 // const sendAdminBookingEmail = async (bookingData) => {
 //   const { parentName, email, eventDate, packageType, totalAmount, paymentStatus } = bookingData;
