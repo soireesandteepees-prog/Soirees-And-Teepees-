@@ -3,7 +3,7 @@ const { Booking, User } = require('../models');
 const {sendAdminBookingEmail, sendClientBookingEmail} = require('./emailController')
 const sgMail = require('@sendgrid/mail')
 
-sgMail.setApiKey(process.env.EMAIL_PASS);
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const allBookings = async (req, res) => {
     try {
@@ -95,6 +95,7 @@ const addBookings = async (req, res) => {
             totalAmount,
         });
 
+        console.log(process.env.SENDGRID_API_KEY, process.env.EMAIL_USER);
         await sgMail.send({
             to: process.env.EMAIL_USER,
             from: process.env.EMAIL_USER,
@@ -102,7 +103,6 @@ const addBookings = async (req, res) => {
             html: `<p>Booking details here...</p>`,
         });
 
-        console.log(process.env.EMAIL_PASS, process.env.EMAIL_USER);
         return res.status(201).json({
             success: true,
             message: 'Booking created Successfully',
