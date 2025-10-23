@@ -104,42 +104,134 @@ const addBookings = async (req, res) => {
             },   
             subject: `New Booking`,
             html: `
-            <h2>Hi ${parentName},</h2>
-            <p>Thank you for booking with <b>Soirees and Teepees</b>! 💅</p>
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Booking Confirmation - Soirees and Teepees</title>
+                <style>
+                    body {
+                    background-color: #fef6f5;
+                    font-family: 'Poppins', Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    color: #444;
+                    }
+                    .email-container {
+                    max-width: 650px;
+                    background-color: #fff;
+                    margin: 40px auto;
+                    border-radius: 16px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+                    }
+                    .header {
+                    background-color: #f9d8d0;
+                    padding: 24px;
+                    text-align: center;
+                    }
+                    .header h1 {
+                    margin: 0;
+                    color: #e87b67;
+                    font-size: 26px;
+                    }
+                    .content {
+                    padding: 30px;
+                    line-height: 1.7;
+                    }
+                    .content h2 {
+                    color: #e87b67;
+                    font-size: 22px;
+                    margin-bottom: 12px;
+                    }
+                    .content p {
+                    margin: 8px 0;
+                    }
+                    .summary {
+                    background-color: #fff4f3;
+                    border-radius: 12px;
+                    padding: 16px 20px;
+                    margin: 24px 0;
+                    }
+                    .summary ul {
+                    padding: 0;
+                    list-style: none;
+                    margin: 0;
+                    }
+                    .summary li {
+                    margin: 6px 0;
+                    font-size: 15px;
+                    }
+                    hr {
+                    border: none;
+                    border-top: 1px solid #eee;
+                    margin: 24px 0;
+                    }
+                    .footer {
+                    background-color: #fef2f1;
+                    text-align: center;
+                    padding: 20px;
+                    color: #999;
+                    font-size: 14px;
+                    }
+                    .footer a {
+                    color: #e87b67;
+                    text-decoration: none;
+                    font-weight: 500;
+                    }
+                </style>
+                </head>
+                <body>
+                <div class="email-container">
+                    <div class="header">
+                    <h1>Soirées and Teepees</h1>
+                    </div>
+                    <div class="content">
+                    <h2>Hi ${parentName},</h2>
+                    <p>Thank you for booking with <b>Soirées and Teepees</b>! 🎉</p>
+                    <p>
+                        We’ve successfully received your deposit of 
+                        <b>₦${Math.round(totalAmount * 0.5)}</b> for your <b>${packageType}</b> appointment scheduled on 
+                        <b>${new Date(eventDate).toLocaleString()}</b>.
+                    </p>
+                    <p>
+                        Your booking is now <b>partially confirmed</b>. 
+                        To secure your spot fully, please complete the remaining balance of 
+                        <b>₦${Math.round(totalAmount * 0.5)}</b> at least <b>24 hours</b> before your appointment.
+                    </p>
+                    <p>
+                        Once full payment is received, you’ll get another confirmation email 
+                        with your final booking details.
+                    </p>
 
-            <p>
-                We’ve successfully received your deposit of 
-                <b>₦${Math.round(totalAmount * 0.5)}</b> for your <b>${packageType}</b> appointment scheduled on 
-                <b>${new Date(eventDate).toLocaleString()}</b>.
-            </p>
+                    <div class="summary">
+                        <p><b>Booking Summary:</b></p>
+                        <ul>
+                        <li><b>Service:</b> ${packageType}</li>
+                        <li><b>Date & Time:</b> ${new Date(eventDate).toLocaleString()}</li>
+                        <li><b>Deposit Paid:</b> ₦${Math.round(totalAmount * 0.5)}</li>
+                        <li><b>Balance Remaining:</b> ₦${Math.round(totalAmount * 0.5)}</li>
+                        </ul>
+                    </div>
 
-            <p>
-                Your booking is now <b>partially confirmed</b>. 
-                To secure your spot fully, please complete the remaining balance of 
-                <b>₦${Math.round(totalAmount * 0.5)}</b> at least <b>24 hours</b> before your appointment.
-            </p>
+                    <p>
+                        If you have any questions or need to make changes, feel free to reply to this email or contact us directly.
+                    </p>
+                    <p>We can’t wait to make your event magical! ✨</p>
+                    <p>— The <b>Soirées and Teepees</b> Team</p>
+                    </div>
 
-            <p>
-                Once full payment is received, you’ll get another confirmation email 
-                with your final booking details.
-            </p>
-
-            <hr/>
-            <p><b>Booking Summary:</b></p>
-            <ul>
-                <li><b>Service:</b> ${packageType}</li>
-                <li><b>Date & Time:</b> ${new Date(eventDate).toLocaleString()}</li>
-                <li><b>Deposit Paid:</b> ₦${Math.round(totalAmount * 0.5)}</li>
-                <li><b>Balance Remaining:</b> ₦${Math.round(totalAmount * 0.5)}</li>
-            </ul>
-
-            <hr/>
-            <p>
-                If you have any questions or need to make changes, feel free to reply to this email or contact us directly.
-            </p>
-            <p>We can’t wait to pamper you! 💖</p>
-            <p>— The <b>Nails by Ronnie</b> Team</p>
-            `,
+                    <div class="footer">
+                    <p>
+                        Soirées and Teepees • Los Angeles, CA<br/>
+                        <a href="https://soireesandteepees.com">soireesandteepees.com</a>
+                    </p>
+                    </div>
+                </div>
+                </body>
+                </html>
+            `
         });
 
         return res.status(201).json({
