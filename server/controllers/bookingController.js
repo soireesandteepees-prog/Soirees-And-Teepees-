@@ -99,7 +99,7 @@ const addBookings = async (req, res) => {
         await sgMail.send({
             to: email,
             from: {
-                email: 'ruke@soireesandteepees.com',
+                email: 'Ruke@soireesandteepees.com',
                 name: 'Soirees and Teepees Bookings'
             },   
             subject: `New Booking`,
@@ -109,7 +109,7 @@ const addBookings = async (req, res) => {
                 <head>
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title>Booking Confirmation - Soirees and Teepees</title>
+                <title>Booking Confirmation - Soirées and Teepees</title>
                 <style>
                     body {
                     background-color: #fef6f5;
@@ -131,10 +131,15 @@ const addBookings = async (req, res) => {
                     padding: 24px;
                     text-align: center;
                     }
+                    .logo {
+                    width: 80px;
+                    height: auto;
+                    margin-bottom: 8px;
+                    }
                     .header h1 {
                     margin: 0;
                     color: #e87b67;
-                    font-size: 26px;
+                    font-size: 24px;
                     }
                     .content {
                     padding: 30px;
@@ -185,6 +190,7 @@ const addBookings = async (req, res) => {
                 <body>
                 <div class="email-container">
                     <div class="header">
+                    <img src="https://i.ibb.co/0pTr6k4z/Screenshot-17.png" alt="Soirées and Teepees Logo" class="logo" />
                     <h1>Soirées and Teepees</h1>
                     </div>
                     <div class="content">
