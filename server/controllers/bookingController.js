@@ -20,6 +20,15 @@ const transporter = nodemailer.createTransport({
     }
 });
 
+transporter.verify(function (error, success) {
+    if (error) {
+        console.log("❌ Email Connection Error:");
+        console.error(error);
+    } else {
+        console.log("✅ Email Server is ready to take our messages");
+    }
+});
+
 const allBookings = async (req, res) => {
     try {
         const allBookings = await Booking.findAll({
@@ -112,11 +121,11 @@ const addBookings = async (req, res) => {
 
 
         await transporter.sendMail({
-            // from: `"NidavTech" <${process.env.EMAIL_USER}>`,
-            from: {
-                email: 'Ruke@soireesandteepees.com',
-                name: 'Soirees and Teepees Bookings'
-            },
+            from: `"Soirees and Teepees Bookings" <${process.env.EMAIL_USER}>`,
+            // from: {
+            //     email: 'Ruke@soireesandteepees.com',
+            //     name: 'Soirees and Teepees Bookings'
+            // },
             to: email,
             subject: `New Booking`,
             html: `
