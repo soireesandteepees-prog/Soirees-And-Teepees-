@@ -203,8 +203,7 @@ const addBookings = async (req, res) => {
                     </p>
                     <p>
                         Your booking is now <b>partially confirmed</b>. 
-                        To secure your spot fully, please complete the remaining balance of 
-                        <b>₦${Math.round(totalAmount * 0.5)}</b> at least <b>24 hours</b> before your appointment.
+                        To secure your spot fully, balance is required atleast 5 days before event date.
                     </p>
                     <p>
                         Once full payment is received, you’ll get another confirmation email 
