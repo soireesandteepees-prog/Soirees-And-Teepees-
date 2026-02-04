@@ -7,13 +7,17 @@ const sgMail = require('@sendgrid/mail')
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const transporter = nodemailer.createTransport({
+    service: "gmail",
     host: "smtp.gmail.com",
     port: 587,
     secure: false,
     auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
     },
+    tls: {
+        rejectUnauthorized: false // Helps if you are behind a proxy/firewall
+    }
 });
 
 const allBookings = async (req, res) => {
@@ -215,8 +219,7 @@ const addBookings = async (req, res) => {
                     </p>
                     <p>
                         Your booking is now <b>partially confirmed</b>. 
-                        To secure your spot fully, please complete the remaining balance of 
-                        <b>₦${Math.round(totalAmount * 0.5)}</b> at least <b>24 hours</b> before your appointment.
+                        To secure your spot fully, balance is required atleast 5 days before event date.
                     </p>
                     <p>
                         Once full payment is received, you’ll get another confirmation email 
