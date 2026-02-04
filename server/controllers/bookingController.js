@@ -1,6 +1,6 @@
 const { where } = require('sequelize');
 const { Booking, User } = require('../models');
-const {nodemailer} = require('nodemailer')
+const nodemailer = require('nodemailer')
 const {sendAdminBookingEmail, sendClientBookingEmail} = require('./emailController')
 const sgMail = require('@sendgrid/mail')
 
