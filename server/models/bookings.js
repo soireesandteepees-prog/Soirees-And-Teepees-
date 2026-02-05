@@ -66,13 +66,18 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       },
       paymentStatus: {
-        type: DataTypes.ENUM('pending', 'paid', 'failed'),
+        type: DataTypes.ENUM('pending', 'partially_paid', 'paid', 'failed'),
         allowNull: false,
         defaultValue: 'pending'
       },
       paymentMethod: {
         type: DataTypes.STRING,
         allowNull: true
+      },
+      paymentType: {
+        type: DataTypes.ENUM('deposit', 'full'),
+        allowNull: false,
+        defaultValue: 'deposit'
       },
       specialRequests: {
         type: DataTypes.JSON,
@@ -83,7 +88,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       },
       status: {
-        type: DataTypes.ENUM('pending', 'completed', 'cancelled'),
+        type: DataTypes.ENUM('pending', 'confirmed', 'completed', 'cancelled'),
         allowNull: false,
         defaultValue: 'pending'
       }
@@ -91,6 +96,13 @@ module.exports = (sequelize, DataTypes) => {
       tableName: 'Bookings',
       underscored: true
     });
+
+    Booking.associate = (models) => {
+      Booking.hasMany(models.Payment, {
+        foreignKey: 'booking_id',
+        as: 'Payments' // This is the alias you'll use in 'include' queries
+      });
+    };
   
     return Booking;
   };

@@ -6,6 +6,16 @@ type Addons = {
     price: number
 }
 
+export interface PaymentRecord {
+    id: string;
+    booking_id: string;
+    amount: number;
+    type: 'deposit' | 'full';
+    status: string; // usually 'succeeded'
+    stripeSessionId?: string;
+    created_at: string;
+    updated_at: string;
+}
 
 export interface BookingState {
     id?: string,
@@ -32,10 +42,14 @@ export interface BookingState {
     
     // Step 4: Payment
     totalAmount: number
-    status?: string
-    paymentStatus?: string
+    status?: 'pending' | 'confirmed' | 'completed' | 'cancelled';
+    paymentStatus?: 'pending' | 'partially_paid' | 'paid' | 'failed';
     updatedAt?: string
     createdAt?: string
+    paymentMethod?: string
+    paymentType?: string
+
+    Payments?: PaymentRecord[]
 }
 
 const initialState: BookingState = {

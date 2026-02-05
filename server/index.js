@@ -5,14 +5,14 @@ const cors = require('cors');
 const db = require('./models');
 // const authRoutes = require('./routes/auth');
 const bookingRoutes = require('./routes/booking');
+const {sendFinalInvoice} = require('./controllers/bookingController')
 // const usersRoutes = require('./routes/userRoute');
 // const cartRoutes = require('./routes/cart');
 // const galleryRoutes = require('./routes/gallery');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-console.log("STRIPE_KEY:", process.env.STRIPE_SECRET_KEY);
-console.log("MYSQLHOST:", process.env.MYSQLHOST);
-console.log("MYSQLDATABASE:", process.env.MYSQLDATABASE); 
+const sgMail = require('@sendgrid/mail')
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 app.use(cors({
   origin: ['https://soireesandteepees.com', 'http://localhost:3000'],
@@ -31,28 +31,70 @@ app.post('/api/webhooks/stripe', express.raw({ type: 'application/json' }), asyn
     return res.status(400).send(`Webhook Error: ${err.message}`);
   }
 
-  // Handle the event
+  const session = event.data.object;
+  const {bookingId, paymentType} = session.metadata;
+  const booking = await db.Booking.findByPk(bookingId);
+
+  if (!booking) {
+    return res.status(404).json({ error: "Booking not found" });
+  }
+
+
   if (event.type === 'checkout.session.completed') {
-    const session = event.data.object;
-    const bookingId = session.metadata.bookingId;
-    // Update booking status to 'Completed'
-    await db.Booking.update(
-      { paymentStatus: 'paid' },
-      { where: { id: bookingId } }
-    );
+    await db.Payment.create({
+      booking_id: booking.id,
+      amount: session.amount_total / 100,
+      type: paymentType,
+      stripeSessionId: session.id,
+      status: 'succeeded'
+    });
+
+    if (paymentType === 'full') {
+
+      // UPDATE TO FULLY PAID
+      await booking.update({ paymentStatus: 'paid' });
+      
+      await sendFinalInvoice(booking); 
+
+      await sgMail.send({
+        to: 'Ruke@soireesandteepees.com',
+        from: 'system@soireesandteepees.com',
+        subject: `💰 Balance Cleared: ${booking.parentName}`,
+        text: `The balance for booking ${booking.id} has been paid in full.`
+      });
+    } else {
+        // UPDATE TO PARTIALLY PAID (Initial Deposit)
+        await booking.update({ paymentStatus: 'partially_paid' });
+    }
+
   } else if (
     event.type === 'checkout.session.expired' ||
     event.type === 'checkout.session.async_payment_failed'
   ) {
-    const session = event.data.object;
-    const bookingId = session.metadata.bookingId;
-    // Update booking status to 'Failed'
-    await db.Booking.update(
-      { paymentStatus: 'failed' },
-      { where: { id: bookingId } }
-    );
-  }
 
+    await db.Payment.create({
+      booking_id: booking.id,
+      amount: session.amount_total / 100,
+      type: paymentType,
+      stripeSessionId: session.id,
+      status: 'failed'
+    });
+
+    if (paymentType === 'full') {
+      console.log(`Balance payment failed for Booking ${bookingId}. Keeping status as partially_paid.`);
+      
+      // OPTIONAL: Notify Admin that the balance payment failed
+      await sgMail.send({
+        to: 'Ruke@soireesandteepees.com',
+        from: 'system@soireesandteepees.com',
+        subject: `⚠️ Balance Payment Failed: ${booking.parentName}`,
+        text: `The client attempted to pay the balance for booking ${booking.id}, but the transaction failed or expired.`
+      });
+    } else {
+      // Update booking status to 'Failed'
+      await booking.update({paymentStatus: 'failed'})
+    }
+  }
   res.json({ received: true });
 });
 
@@ -78,7 +120,10 @@ app.post('/api/create-stripe-session', async (req, res) => {
           quantity: 1,
         },
       ],
-      metadata: {bookingId},
+      metadata: { 
+        bookingId: bookingId, 
+        paymentType: 'deposit'
+      },
       success_url: 'https://soireesandteepees.com/thank-you',
       cancel_url: 'https://soireesandteepees.com/error',
     });
