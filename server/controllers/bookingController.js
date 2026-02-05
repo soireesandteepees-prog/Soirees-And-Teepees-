@@ -52,53 +52,89 @@ const sendFinalInvoice = async (booking) => {
     from: { email: 'Ruke@soireesandteepees.com', name: 'Soirées & Teepees' },
     subject: `Official Receipt: Payment Complete! (#${booking.id.slice(0, 8)})`,
     html: `
-    <div style="background-color: #fef6f5; padding: 30px; font-family: sans-serif;">
-        <div style="background: white; max-width: 600px; margin: auto; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); overflow: hidden;">
-            <div style="background-color: #f9d8d0; padding: 30px; text-align: center;">
-                <h1 style="color: #e87b67; margin: 0; font-size: 24px;">PAID IN FULL</h1>
-                <p style="color: #666; font-size: 14px;">Thank you for choosing Soirées & Teepees</p>
-            </div>
-            <div style="padding: 30px;">
-                <p>Hi ${booking.parentName},</p>
-                <p>We’ve received your final payment! Your booking is now fully settled. We are so excited to bring the magic to <b>${booking.childName}</b>'s celebration.</p>
-                
-                <table style="width: 100%; border-top: 1px solid #eee; margin-top: 20px;">
-                    <tr style="font-size: 14px;">
-                        <td style="padding: 10px 0; color: #999;">Package</td>
-                        <td style="padding: 10px 0; text-align: right; font-weight: bold;">${booking.packageType}</td>
-                    </tr>
-                    <tr style="font-size: 14px;">
-                        <td style="padding: 10px 0; color: #999;">Date</td>
-                        <td style="padding: 10px 0; text-align: right; font-weight: bold;">${new Date(booking.eventDate).toLocaleDateString()}</td>
-                    </tr>
-                </table>
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <style>
+                .wrapper { background-color: #fef6f5; padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+                .invoice-card { background: #ffffff; max-width: 600px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(232, 123, 103, 0.1); }
+                .header { background-color: #f9d8d0; padding: 40px 20px; text-align: center; }
+                .content { padding: 40px; color: #444; }
+                .details-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+                .details-table td { padding: 12px 0; border-bottom: 1px solid #eee; font-size: 14px; }
+                .label { color: #999; font-weight: bold; text-transform: uppercase; font-size: 11px; }
+                .value { text-align: right; font-weight: 600; color: #333; }
+                .total-section { background: #fff4f3; padding: 20px; border-radius: 12px; margin-top: 20px; }
+                .total-row { display: flex; justify-content: space-between; margin: 5px 0; font-size: 14px; }
+                .grand-total { font-size: 20px; font-weight: 900; color: #e87b67; margin-top: 10px; border-top: 2px solid #f9d8d0; pt-10px; }
+                .footer { text-align: center; padding: 20px; font-size: 12px; color: #999; }
+            </style>
+        </head>
+        <body>
+            <div class="wrapper">
+                <div class="invoice-card">
+                    <div class="header">
+                        <h1 style="margin:0; color: #e87b67; letter-spacing: 2px;">RECEIPT</h1>
+                        <p style="margin:5px 0 0; color: #888;">Thank you for your full payment!</p>
+                    </div>
+                    <div class="content">
+                        <h2>Hi ${booking.parentName},</h2>
+                        <p>Your celebration is officially on the calendar. Below is your final booking summary and receipt.</p>
+                        
+                        <table class="details-table">
+                            <tr>
+                                <td class="label">Guest of Honor</td>
+                                <td class="value">${booking.childName} (${booking.childAge} yrs)</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Event Date</td>
+                                <td class="value">${new Date(booking.eventDate).toLocaleDateString()} at ${booking.eventTime}</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Package</td>
+                                <td class="value">${booking.packageType}</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Theme</td>
+                                <td class="value">${booking.theme?.length > 0 ? booking.theme.join(", ") : "Standard"}</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Location</td>
+                                <td class="value">${booking.address}, ${booking.city}</td>
+                            </tr>
+                        </table>
 
-                <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; margin-top: 20px;">
-                    <div style="display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 10px;">
-                        <span>Total Amount</span>
-                        <span>₦${total.toLocaleString()}</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; font-size: 13px; color: #666;">
-                        <span>Initial Deposit (Paid)</span>
-                        <span>- ₦${deposit.toLocaleString()}</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; font-size: 13px; color: #666;">
-                        <span>Balance Payment (Paid)</span>
-                        <span>- ₦${balance.toLocaleString()}</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; font-size: 18px; font-weight: bold; color: #e87b67; margin-top: 15px; border-top: 2px solid #fff; padding-top: 10px;">
-                        <span>REMAINING BALANCE</span>
-                        <span>₦0.00</span>
+                        <div class="total-section">
+                            <div class="total-row">
+                                <span>Total Amount</span>
+                                <span>₦${total.toLocaleString()}</span>
+                            </div>
+                            <div class="total-row" style="color: #666;">
+                                <span>Deposit Paid</span>
+                                <span>- ₦${deposit.toLocaleString()}</span>
+                            </div>
+                            <div class="total-row" style="color: #666;">
+                                <span>Balance Paid</span>
+                                <span>- ₦${balance.toLocaleString()}</span>
+                            </div>
+                            <div class="total-row grand-total">
+                                <span>BALANCE DUE</span>
+                                <span>₦0.00</span>
+                            </div>
+                        </div>
+                        
+                        <p style="margin-top:30px; font-size: 13px; color: #666;">
+                            <b>Note:</b> ${booking.specialRequests || "No special requests noted."}
+                        </p>
                     </div>
                 </div>
-
-                <p style="font-size: 12px; color: #aaa; text-align: center; margin-top: 30px;">
-                    Invoice ID: ${booking.id}<br>
-                    Location: ${booking.address}, ${booking.city}
-                </p>
+                <div class="footer">
+                    <p>Soirées & Teepees | Hanover, Maryland 21076</p>
+                    <p>If you have questions, contact us at 240-930-4524</p>
+                </div>
             </div>
-        </div>
-    </div>`
+        </body>
+    </html>`
   });
 };
 
