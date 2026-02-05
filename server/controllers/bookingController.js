@@ -122,6 +122,8 @@ const updateBooking = async (req, res) => {
 
     const isNowCancelled = status === 'cancelled' && booking.status !== 'cancelled';
 
+    const isNowCompleted = status === 'completed' && booking.status !== 'completed'
+
     await booking.update({ status: status });
 
     if (isNowConfirmed) {
@@ -517,8 +519,6 @@ const resendBalanceLink = async (req, res) => {
       success_url: 'https://soireesandteepees.com/thank-you',
       cancel_url: 'https://soireesandteepees.com/error',
     });
-
-    console.log(session)
 
     // Send the Email
     await sgMail.send({
