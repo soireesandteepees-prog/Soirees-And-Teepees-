@@ -377,7 +377,7 @@ function BookingDetailModal({ book, onClose, refresh }: { book: BookingState, on
                         {book.paymentStatus !== 'paid' && (
                             <button 
                                 onClick={handleResendBalance}
-                                className="flex items-center gap-2 text-[10px] font-bold bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:bg-primary_button hover:text-white transition-all shadow-sm"
+                                className="flex items-center gap-2 text-[10px] font-bold bg-[#d6665b] hover:bg-[#d6665b]/80 border border-slate-200 px-3 py-1.5 rounded-lg hover:bg-primary_button text-white transition-all shadow-sm"
                             >
                                 <FaEnvelope size={10} /> RESEND BALANCE LINK
                             </button>
@@ -423,38 +423,40 @@ function BookingDetailModal({ book, onClose, refresh }: { book: BookingState, on
                             <option value="cancelled">❌ Cancelled / Void</option>
                         </select>
                     </div>
+                    
+                    <div className="mt-8 border-t border-slate-100 pt-6">
+                        <label className="text-[10px] uppercase font-bold text-slate-400 block mb-4 tracking-widest">
+                            Payment History & Logs
+                        </label>
+                        
+                        <div className="space-y-3">
+                            {payments.length > 0 ? payments.map((pay: any) => (
+                                <div key={pay.id} className="flex items-center justify-between bg-white border border-slate-100 p-3 rounded-xl shadow-sm">
+                                    <div className="flex items-center gap-3">
+                                        <div className={`p-2 rounded-full ${pay.type === 'balance' ? 'bg-green-50 text-green-500' : 'bg-blue-50 text-blue-500'}`}>
+                                            <FaCreditCard size={12}/>
+                                        </div>
+                                        <div>
+                                            <p className="text-xs font-bold text-slate-700 capitalize">{pay.type} Payment</p>
+                                            <p className="text-[10px] text-slate-400">{new Date(pay.createdAt).toLocaleString()}</p>
+                                        </div>
+                                    </div>
+                                    <div className="text-right">
+                                        <p className="text-sm font-black text-slate-900">₦{pay.amount?.toLocaleString()}</p>
+                                        <span className="text-[9px] font-bold text-green-500 uppercase">Succeeded</span>
+                                    </div>
+                                </div>
+                            )) : (
+                                <div className="text-center py-4 bg-slate-50 rounded-xl border border-dashed border-slate-200">
+                                    <p className="text-[10px] text-slate-400 italic">No payment records found for this booking.</p>
+                                </div>
+                            )}
+                        </div>
+                    </div>
                 </div>
+                
             </div>
 
-            <div className="mt-8 border-t border-slate-100 pt-6">
-                <label className="text-[10px] uppercase font-bold text-slate-400 block mb-4 tracking-widest">
-                    Payment History & Logs
-                </label>
-                
-                <div className="space-y-3">
-                    {payments.length > 0 ? payments.map((pay: any) => (
-                        <div key={pay.id} className="flex items-center justify-between bg-white border border-slate-100 p-3 rounded-xl shadow-sm">
-                            <div className="flex items-center gap-3">
-                                <div className={`p-2 rounded-full ${pay.type === 'balance' ? 'bg-green-50 text-green-500' : 'bg-blue-50 text-blue-500'}`}>
-                                    <FaCreditCard size={12}/>
-                                </div>
-                                <div>
-                                    <p className="text-xs font-bold text-slate-700 capitalize">{pay.type} Payment</p>
-                                    <p className="text-[10px] text-slate-400">{new Date(pay.createdAt).toLocaleString()}</p>
-                                </div>
-                            </div>
-                            <div className="text-right">
-                                <p className="text-sm font-black text-slate-900">₦{pay.amount?.toLocaleString()}</p>
-                                <span className="text-[9px] font-bold text-green-500 uppercase">Succeeded</span>
-                            </div>
-                        </div>
-                    )) : (
-                        <div className="text-center py-4 bg-slate-50 rounded-xl border border-dashed border-slate-200">
-                            <p className="text-[10px] text-slate-400 italic">No payment records found for this booking.</p>
-                        </div>
-                    )}
-                </div>
-            </div>
         </div>
     );
 }

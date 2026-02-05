@@ -518,6 +518,8 @@ const resendBalanceLink = async (req, res) => {
       cancel_url: 'https://soireesandteepees.com/error',
     });
 
+    console.log(session)
+
     // Send the Email
     await sgMail.send({
       to: booking.email,
